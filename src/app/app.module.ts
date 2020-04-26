@@ -7,13 +7,19 @@ import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent,
+    PortfolioComponent,
+    TopMenuComponent
   ],
   imports: [
     BrowserModule,
