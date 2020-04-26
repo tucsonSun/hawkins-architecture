@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
+import {AngularMaterialModule} from "./angular-material.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TopMenuComponent } from './top-menu/top-menu.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
