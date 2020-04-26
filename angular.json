@@ -121,8 +121,13 @@
               "devServerTarget": "hawkins-architecture:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "hawkins-architecture"
 }
