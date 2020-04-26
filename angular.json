@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "hawkins-architecture"
+  "defaultProject": "hawkins-architecture",
+  "cli": {
+    "analytics": false
+  }
 }
