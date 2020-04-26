@@ -4,11 +4,12 @@ import {HomeComponent} from "./pages/home/home.component";
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
   //{ path: 'login', component: LoginComponent },
   //{ path: 'register', component: RegisterComponent },
 
   // otherwise redirect to home
+  { path: '', redirectTo: 'home ', pathMatch: 'full'},
   { path: '**', redirectTo: '' }
 ];
 
