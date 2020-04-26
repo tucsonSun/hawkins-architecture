@@ -1,0 +1,57 @@
+/*---------------------------------------------------------------------*/
+/*  Colors
+/*  NOTE: Color names come from website:
+/*  http://chir.ag/projects/name-that-color/#A1A1A1
+/*  tips: https://davidwalsh.name/sass-color-variables-dont-suck
+/*---------------------------------------------------------------------*/
+
+$dove-gray: #6E6E6E;
+$cod-gray: #171717;
+$silver-chalice: #a1a1a1;
+$thunder: #282428;
+$mine-shaft: #2e2e2e;
+$tundora: #484848;
+$black: #000000;
+$white: #ffffff;
+
+/** TODO: rename colors **/
+$persian-green: #D0AE89;
+$teal: #B1895E;
+$pine-green: #6B5946;
+
+
+/*---------------------------------------------------------------------*/
+/*  Font size
+/*---------------------------------------------------------------------*/
+$font-size-14: 14px;
+$font-size-16: 16px;
+$font-size-18: 18px;
+$font-size-20: 20px;
+$font-size-22: 22px;
+$font-size-24: 24px;
+$font-size-28: 28px;
+$font-size-30: 30px;
+$font-size-35: 35px;
+$font-size-38: 38px;
+$font-size-40: 40px;
+$font-size-45: 45px;
+$font-size-48: 48px;
+$font-size-50: 50px;
+$font-size-58: 58px;
+$font-size-66: 66px;
+$font-size-68: 68px;
+$font-size-170: 170px;
+
+
+/*---------------------------------------------------------------------*/
+/*  Font family
+/*---------------------------------------------------------------------*/
+$font-lato: 'Lato', sans-serif;
+$font-raleway: 'Raleway', sans-serif;
+$font-icomoon: 'icomoon';
+/*---------------------------------------------------------------------*/
+/*  Image Paths
+/*---------------------------------------------------------------------*/
+// $image-path: '../img' !default;
+// $fallback-extension: 'png' !default;
+// $retina-suffix: '@2x';

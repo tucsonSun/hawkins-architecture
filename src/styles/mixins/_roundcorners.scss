@@ -1,0 +1,71 @@
+
+// Example of a whole load of mixins to make round corners 
+// (including individual corners) easy to remember in SASS
+@mixin roundcorners($radius) {
+    -moz-border-radius: $radius;    // firefox
+    -webkit-border-radius: $radius; // safari/chrome
+    border-radius: $radius;         // CSS3, works in IE9
+}
+
+@mixin roundcorner1($radius, $corner: "top-left") {
+    -moz-border-#{$corner}-radius:    $radius ; // firefox
+    -webkit-border-#{$corner}-radius: $radius;  // safari/chrome
+    border-#{$corner}-radius:         $radius;  // CSS3, works in IE9
+}
+@mixin squarecorner1($corner: "top-left") {
+    @include roundcorner1(0px, $corner);
+}
+
+@mixin roundcornerTL($radius:5px) { @include roundcorner1($radius, "top-left");     }
+@mixin roundcornerTR($radius:5px) { @include roundcorner1($radius, "top-right");    }
+@mixin roundcornerBL($radius:5px) { @include roundcorner1($radius, "bottom-left");  }
+@mixin roundcornerBR($radius:5px) { @include roundcorner1($radius, "bottom-right"); }
+@mixin squarecornerTL()           { @include roundcornerTL(0px);     }
+@mixin squarecornerTR()           { @include roundcornerTR(0px);     }
+@mixin squarecornerBL()           { @include roundcornerBL(0px);     }
+@mixin squarecornerBR()           { @include roundcornerBR(0px);     }
+
+// Most simplistic application of above
+// .rounded { 
+//   @include roundcorners(5px);
+// }
+
+// .roundedTop { 
+//   @include roundcornerTL(5px);
+//   @include roundcornerTR(5px);
+// }
+
+
+
+/// Separated border-radius helpers
+/// @access public
+/// @param {Length} $top-left-radius - Top left radius
+/// @param {Length} $top-right-radius - Top right radius
+/// @param {Length} $bottom-right-radius - Bottom right radius
+/// @param {Length} $bottom-left-radius - Bottom left radius
+/// @example scss - Usage
+///   .foo {
+///     @include border-radius-separate(1px, 2px, 3px, 4px);
+///   }
+/// @example css - Result
+///   .foo {
+///     -webkit-border-top-left-radius: 1px;
+///     -moz-border-top-left-radius: 1px;
+///     border-top-left-radius: 1px;
+///     -webkit-border-top-right-radius: 2px;
+///     -moz-border-top-right-radius: 2px;
+///     border-top-right-radius: 2px;
+///     -webkit-border-bottom-right-radius: 3px;
+///     -moz-border-bottom-right-radius: 3px;
+///     border-bottom-right-radius: 3px;
+///     -webkit-border-bottom-left-radius: 4px;
+///     -moz-border-bottom-left-radius: 4px;
+///     border-bottom-left-radius: 4px;
+///   }
+@mixin border-radius-separate($top-left-radius, $top-right-radius, $bottom-right-radius, $bottom-left-radius) {
+    @include prefix(border-top-left-radius, $top-left-radius, 'webkit' 'moz');
+    @include prefix(border-top-right-radius, $top-right-radius, 'webkit' 'moz');
+    @include prefix(border-bottom-right-radius, $bottom-right-radius, 'webkit' 'moz');
+    @include prefix(border-bottom-left-radius, $bottom-left-radius, 'webkit' 'moz');
+}
+

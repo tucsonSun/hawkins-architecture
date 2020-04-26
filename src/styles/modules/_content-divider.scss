@@ -1,0 +1,16 @@
+
+
+/*---------------------------------------------------------------------*/
+/*  A CONTENT DIVIDER
+/*---------------------------------------------------------------------*/
+
+.divider {
+	background-color: $persian-green;
+    margin: 35px 0px;
+    width: 500px;
+    height: 2px;
+    @include center-block;
+}
+
+
+

@@ -1,0 +1,63 @@
+/*---------------------------------------------------------------------*/
+/*  Global ANCHOR
+/*---------------------------------------------------------------------*/
+
+a {
+	color: $persian-green;
+    outline: none;
+    @include transition(all 0.2s ease-in-out);
+}
+
+a:hover,
+a:focus {
+	color: $persian-green;
+    outline: none;
+    text-decoration: none;
+}
+
+
+/*---------------------------------------------------------------------*/
+/*  Resume ANCHOR Button
+/*---------------------------------------------------------------------*/
+.resume-btn {
+	background-color: $persian-green;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+
+    @include position(absolute, $top: 0px, $left: 150px);
+    @include roundcorners(4px);
+}
+
+.resume-btn > a:before {
+    color: $white;
+}
+
+.resume-btn > a:hover {
+    background-color: $teal;
+}
+
+.resume-btn > a {
+    display: block;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    @include position(absolute, $top: 0px, $left: 0px);
+}
+
+.resume-btn > a:before {
+    display: block;
+    z-index: 15;
+    content: '-';
+    width: 40px;
+    height: 40px;
+    line-height: 38px;
+    @include font-size($font-size-30); 
+    font-weight: 700;
+    text-align: center;
+    @include position(absolute, $top: 0px, $left: 0px);
+}
+
+.resume-btn > a.collapsed:before {
+    content: '+';
+}
