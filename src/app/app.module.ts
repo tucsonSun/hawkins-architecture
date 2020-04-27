@@ -11,6 +11,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { TopMenuComponent } from './top-menu/top-menu.component';
 import {AngularMaterialModule} from "./angular-material.module";
+import { ServicesComponent } from './components/services/services.component';
+import { ContactMeComponent } from './components/contact-me/contact-me.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {AngularMaterialModule} from "./angular-material.module";
     FooterComponent,
     ProfileComponent,
     PortfolioComponent,
-    TopMenuComponent
+    TopMenuComponent,
+    ServicesComponent,
+    ContactMeComponent
   ],
   imports: [
     BrowserModule,
