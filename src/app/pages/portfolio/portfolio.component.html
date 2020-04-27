@@ -5,28 +5,24 @@
 
 <!-- PORTFOLIO SECTION START -->
 <section id="portfolio" class="section">
-    <div class="container-fluid section-wrapper">
-        <div class="section-content">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h2 class="section-title">My Portfolio</h2>
-                    <p class="section-subtitle">Here are some of my recent projects.</p>
-                    <span class="divider"></span>
-                </div>
-                <!-- //.col-md-12 -->
-            </div>
-            <!-- //.row -->
-            <!-- PORTFOLIO START -->
-            <div id="portfolio-gallery" class="portfolio">
-                <div class="row">
-                    Cards go here.....
-                </div>
-                <!-- //.row -->
-            </div>
-            <!-- PORTFOLIO END -->
-        </div>
-        <!-- //.section-content -->
-    </div>
+    <mat-card class = "tp-card">
+        <mat-card-header>
+            <div mat-card-avatar class = "tp-header-image"></div>
+            <mat-card-title>HTML5</mat-card-title>
+            <mat-card-subtitle>HTML Basics</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image height="23px" width="23px" src = "./../../../assets/images/portfolio/scfaz.png">
+        <mat-card-content>
+            <p>
+                HTML5 is the next major revision of the HTML standard superseding
+                HTML 4.01, XHTML 1.0, and XHTML 1.1. HTML5 is a standard
+            </p>
+        </mat-card-content>
+<!--        <mat-card-actions>-->
+<!--            <button mat-button>LIKE</button>-->
+<!--            <button mat-button>SHARE</button>-->
+<!--        </mat-card-actions>-->
+    </mat-card>
     <!-- //.container-fluid -->
 </section>
 <!-- //PORTFOLIO SECTION END -->
