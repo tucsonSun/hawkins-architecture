@@ -17,21 +17,13 @@
   }
 }
 
-//.flex-container-center {
-//  display: block;
-//  justify-content: center;
-//
-//  .col {
-//    flex: 1;
-//  }
-//}
 
 .flex-container-half {
   display: flex;
   justify-content: space-between;
 
   .col {
-    width: 44%;
+    width: 50%;
   }
 }
 
