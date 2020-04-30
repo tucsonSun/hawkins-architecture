@@ -1,49 +1,57 @@
 @import 'src/style-imports';
 
-
 /*---------------------------------------------------------------------*/
-/*  6.3. SECTION - SERVICES Colors
-/*---------------------------------------------------------------------*/
-#services {
-  background-color: darken($cod-gray, 5%);
-}
-.services .item.dark-bg {
-  background-color: darken($cod-gray, 5%);
-}
-
-.services .item:after {
-  border-right: 1px solid darken($mine-shaft, 1.5%);
-}
-
-.services .item.top:before {
-  border-bottom: 1px dashed darken($mine-shaft, 1.5%);
-}
-
-
-/*---------------------------------------------------------------------*/
-/*  6.3. SECTION - SERVICES
+/* 6. SECTION
 /*---------------------------------------------------------------------*/
 
-.services .item {
-  padding: 0px;
+
+.section .section-wrapper > .section-content {
+  padding: 80px 0px;
 }
 
-.services .item > .inner-content {
-  position: relative;
-  padding: 25px 15px 15px 15px;
+@media (min-width: 768px) {
+  .section .section-wrapper > .section-content {
+    padding: 100px 0px;
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
-.services .item > .inner-content > i {
-  @include font-size($font-size-38);
+.section .section-wrapper > .section-content  .section-title {
+  color: $silver-chalice;
+  margin-bottom: 20px;
+  @include font-size($font-size-35);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.services .item > .inner-content > h4 {
+.section .section-wrapper > .section-content  .section-subtitle {
+  @include font-size($font-size-18);
+  font-style: italic;
+}
+
+.section .section-wrapper > .section-content .section-title {
+  color: #a1a1a1;
+  margin-bottom: 20px;
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.section .section-wrapper .flex-container-thirds > div > h4 {
   margin-top: 15px;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-.services .item > .inner-content > p {
-  margin: 0px;
-  margin-top: 8px;
+.divider {
+  background-color: #D0AE89;
+  margin: 35px 0px;
+  width: 500px;
+  height: 2px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+
