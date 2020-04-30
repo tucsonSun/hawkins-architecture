@@ -8,8 +8,14 @@ header.hero .bg-img-table-cell .hero-text {
   color: rgba($white, 0.7);
 }
 
+header.hero .bg-img-table-cell .hero-text h1.large {
+  margin: .67em 0;
+  font-size: 4em;
+}
+
 header.hero .bg-img-table-cell .hero-text h1.small {
   color: $white;
+  paddingm: 10px 0;
 }
 
 //---------------------------------------------------------------------*/
