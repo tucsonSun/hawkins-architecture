@@ -1,11 +1,15 @@
+/** Material Design Add Ons **/
+@import 'style-mixins-and-modules-imports';
+
 //----------------------------------*\
 // Flex DESIGN
 //----------------------------------*/
 
-.center-content {
+.center-block {
   display: block;
   margin: 0 auto;
   text-align: center;
+  @include center-block;
 }
 
 
@@ -15,40 +19,30 @@
   .col {
     flex: 1;
   }
-}
 
-
-.flex-container-half {
-  display: flex;
-  justify-content: space-between;
-
-  .col {
+  .col-half {
     width: 50%;
   }
-}
 
-.flex-container-thirds {
-  display: flex;
-  justify-content: space-between;
-
-  .col {
+  .col-thirds {
     width: 32%;
   }
 
-  .col.center {
+  .center-txt {
     text-align: center;
   }
 }
 
 
 @media (max-width: 430px) {
-  .flex-container, .flex-container-half, .flex-container-thirds  {
+  .flex-container {
     display: block;
     justify-content: normal;
-    .col {
-      margin: 0 auto;
-      text-align: center;
-      padding: 10px 0;
+
+    .col, .col-half, .col-thirds {
+      @include center-block;
+      width: 100%;
+      padding: 15px 0;
     }
   }
 }
