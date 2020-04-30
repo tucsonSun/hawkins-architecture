@@ -9,5 +9,31 @@
   letter-spacing: 1px;
   font-family: Raleway,sans-serif;
   font-style: normal;
+}
 
+
+
+
+#contact .contact-details .speech-bubble {
+  position: relative;
+
+  .icon-title {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+
+    padding-top: 55px;
+    font-size: 24px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    font-family: Raleway,sans-serif;
+    font-style: normal;
+    color: #a1a1a1;
+    span {
+      margin-top:45px;
+      display: inline-block;
+    }
+  }
 }
