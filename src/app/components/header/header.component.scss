@@ -77,8 +77,8 @@ header.hero-bg-img {
   background-image: url('../../../assets/images/CTE/WM SWC Entry 1grayWhite.jpg');
 }
 
-//header.hero-bg-img2 {
-//  background-image: url('../../../assets/images/bg-hero2.png');
-//}
+header.hero-bg-img > .bg-img-table-container {
+  background-color: rgba(0,0,0, 0.1);
+}
 
 

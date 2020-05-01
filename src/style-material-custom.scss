@@ -1,0 +1,69 @@
+@import '~@angular/material/theming';
+
+
+// always include only once per project
+@include mat-core();
+
+
+
+
+
+/* ======== Angular material custom colors ======== */
+/* http://mcg.mbitson.com/#!?mcgpalette0=%23d0ae89&themename=mcgtheme */
+$my-light-brown: (
+        '50': #f9f5f1,
+        100: #f1e7dc,
+        200: #e8d7c4,
+        300: #dec6ac,
+        400: #d7ba9b,
+        500: #d0ae89,
+        600: #cba781,
+        700: #c49d76,
+        800: #be946c,
+        900: #b38459,
+        A100: #ffffff,
+        A200: #fff2e7,
+        A400: #ffd7b4,
+        A700: #ffca9b,
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $dark-primary-text,
+                400: $dark-primary-text,
+                500: $dark-primary-text,
+                600: $dark-primary-text,
+                700: $dark-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+                A100: $dark-primary-text,
+                A200: $dark-primary-text,
+                A400: $dark-primary-text,
+                A700: black,
+        )
+);
+
+
+
+
+/* ======== Angular material custom themes ======== */
+$my-custom-primary: mat-palette($my-light-brown);
+$my-custom-accent: mat-palette($my-light-brown, 100, 500, A100);
+$my-custom-warn: mat-palette($mat-lime);
+
+
+// Convert => mat-light-theme()
+$my-custom-light-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
+
+
+// Convert to this => mat-dark-theme()
+$my-custom-dark-theme: mat-dark-theme($my-custom-accent, $my-custom-primary);
+
+
+// Include the theme you want to use in code
+@include angular-material-theme($my-custom-light-theme);
+
+// Uncomment to go dark theme and comment out @include angular-material-theme($my-custom-light-theme); above
+//@include angular-material-theme($my-custom-dark-theme);
+
+

@@ -17,7 +17,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from "@angular/material/core";
 import { MatCardModule } from "@angular/material/card";
-import {MatToolbarModule} from "@angular/material/toolbar";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatButtonModule } from "@angular/material/button";
 
 //
 // Navigation
@@ -39,7 +40,8 @@ const modules: any[] = [
   MatNativeDateModule,
   // MatMomentDateModule,
   MatCardModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatButtonModule,
 
 ];
 
