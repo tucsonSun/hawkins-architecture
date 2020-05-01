@@ -18,7 +18,8 @@ body {
   color:#fff;
   font-family:Lato,sans-serif;
   font-style:normal;
-  font-size:16px;
+  //TODO Fix this shouldnt have to do imporatnt. I think its coming from Material overrides
+  font-size:16px !important;
   line-height:25px !important;
 }
 
