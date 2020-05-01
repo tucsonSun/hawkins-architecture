@@ -13,6 +13,7 @@ import { AngularMaterialModule } from "./modules/angular-material.module";
 import { ServicesComponent } from './components/services/services.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import {ProfileComponent} from "./components/profile/profile.component";
+import { StrengthsComponent } from './components/strengths/strengths.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {ProfileComponent} from "./components/profile/profile.component";
     PortfolioComponent,
     TopMenuComponent,
     ServicesComponent,
-    ContactMeComponent
+    ContactMeComponent,
+    StrengthsComponent
   ],
   imports: [
     BrowserModule,
