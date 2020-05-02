@@ -9,13 +9,28 @@
 @import 'style-app-global-pages';
 
 
-/* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body {
-  margin: 0;
+
+/*---------------------------------------------------------------------*/
+/*  1. GLOBAL STYLES
+/*---------------------------------------------------------------------*/
+
+* {
+  -webkit-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  @include box-sizing(border-box);
 }
 
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
 
-
-
+body {
+  margin: 0;
+  background-color: darken($cod-gray, 5%);
+  color: $white;
+  overflow-x: hidden;
+}

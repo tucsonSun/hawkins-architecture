@@ -13,7 +13,7 @@
     @include box-shadow(0, 3px, 0, darken($pine-green, 1.5%));
     text-transform: uppercase;
     letter-spacing: 1px;
-    @include font-setter($font-raleway, 700);
+    //@include font-setter($font-raleway, 700);
     @include roundcorners(4px);
 }
 

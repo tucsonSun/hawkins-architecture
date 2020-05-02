@@ -51,13 +51,11 @@ header.hero .bg-img-table-cell {
 header.hero .bg-img-table-cell .hero-text h1 {
   @include font-size($font-size-48);
   font-weight: 700;
-  letter-spacing: -4px;
 }
 
 header.hero .bg-img-table-cell .hero-text h1.small {
   @include font-size($font-size-45);
   font-weight: 400;
-  letter-spacing: -1px;
 }
 
 header.hero .bg-img-table-cell .hero-text p {
