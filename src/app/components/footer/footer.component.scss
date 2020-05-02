@@ -6,12 +6,29 @@
 /*---------------------------------------------------------------------*/
 footer.footer {
   background-color: $cod-gray;
+
+}
+
+
+footer.footer #backToHomeButtonId {
+  position: relative;
+  .page-scroll {
+    margin-top: -40px;
+    position: absolute;
+    top: -50px;
+  }
 }
 
 footer.footer .page-scroll > a {
   background-color: $persian-green;
   @include box-shadow(0px, 3px, 0px, $pine-green);
   color: $white;
+  padding: 5px 30px;
+  display: block;
+  height: 100%;
+  .material-icons {
+    font-size: 40px;
+  }
 }
 
 
@@ -27,49 +44,7 @@ footer.footer {
   padding-bottom: 50px;
 }
 
-footer.footer .page-scroll > a {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 48px;
-  height: 46px;
-  line-height: 48px;
-  margin-top: -94px;
-  margin-left: -24px;
-  @include font-size($font-size-24);
-  text-align: center;
-  @include roundcorners(4px);
-}
-
-footer.footer ul.social-icons {
-  margin: 0;
-  text-align: center;
-}
-
-footer.footer ul.social-icons > li {
-  padding-right: 7px;
-  padding-left: 7px;
-}
-
-footer.footer ul.social-icons > li > .item {
-  background-color: $mine-shaft;
-  @include box-shadow(0px, 3px, 0px, darken($mine-shaft, 2.5%));
-}
-
-
-footer.footer ul.social-icons > li:hover > .item img {
-  @include opacity(0.7);
-}
-
-footer.footer ul.social-icons > li > .item {
-  position: relative;
-  width: 48px;
-  height: 48px;
-  @include roundcorners(4px);
-}
-
-footer.footer ul.social-icons > li > .item > a {
+footer.footer > .flex-container > .item > a {
   display: block;
   position: absolute;
   top: 0;
@@ -79,18 +54,6 @@ footer.footer ul.social-icons > li > .item > a {
   line-height: 48px;
   @include font-size($font-size-24);
   color: darken($white, 50%);
-}
-
-footer.footer ul.social-icons > li > .item > a:hover {
-  color: darken($white, 20%);
-}
-
-
-footer.footer ul.social-icons > li > .item img {
-  margin: 0 auto;
-  margin-top: 12px;
-  @include opacity(0.5);
-  @include transition(all 0.2s ease-in-out);
 }
 
 footer.footer .copyright {

@@ -16,6 +16,10 @@
 .flex-container {
   display: flex;
 
+  &.flex-center {
+    justify-content: center;
+  }
+
   .col {
     flex: 1;
   }

@@ -14,6 +14,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { ContactMeComponent } from './components/contact-me/contact-me.component';
 import {ProfileComponent} from "./components/profile/profile.component";
 import { StrengthsComponent } from './components/strengths/strengths.component';
+import { EgrScrollToDirective } from './directives/egr-scroll-to.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { StrengthsComponent } from './components/strengths/strengths.component';
     TopMenuComponent,
     ServicesComponent,
     ContactMeComponent,
-    StrengthsComponent
+    StrengthsComponent,
+    EgrScrollToDirective
   ],
   imports: [
     BrowserModule,
