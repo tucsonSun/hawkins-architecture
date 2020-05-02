@@ -6,7 +6,8 @@
 /*---------------------------------------------------------------------*/
 footer.footer {
   background-color: $cod-gray;
-
+  padding-top: 70px;
+  padding-bottom: 50px;
 }
 
 
@@ -19,7 +20,7 @@ footer.footer #backToHomeButtonId {
   }
 }
 
-footer.footer .page-scroll > a {
+footer.footer #backToHomeButtonId > .page-scroll > a {
   background-color: $persian-green;
   @include box-shadow(0px, 3px, 0px, $pine-green);
   color: $white;
@@ -32,29 +33,16 @@ footer.footer .page-scroll > a {
 }
 
 
+footer.footer #socialLinks > .item {
 
-
-
-/*---------------------------------------------------------------------*/
-/*  8. FOOTER
-/*---------------------------------------------------------------------*/
-
-footer.footer {
-  padding-top: 70px;
-  padding-bottom: 50px;
+  svg {
+    width: 50px;
+    height: 50px;
+    fill: white;
+  }
 }
 
-footer.footer > .flex-container > .item > a {
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 48px;
-  height: 48px;
-  line-height: 48px;
-  @include font-size($font-size-24);
-  color: darken($white, 50%);
-}
+
 
 footer.footer .copyright {
   margin-top: 20px;
