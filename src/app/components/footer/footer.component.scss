@@ -5,7 +5,7 @@
 /*  8. FOOTER
 /*---------------------------------------------------------------------*/
 footer.footer {
-  background-color: $cod-gray;
+  background-color: var(--bg);
   padding-top: 70px;
   padding-bottom: 50px;
 }
@@ -23,7 +23,7 @@ footer.footer #backToHomeButtonId {
 footer.footer #backToHomeButtonId > .page-scroll > a {
   background-color: var(--bg);
   @include box-shadow(0px, 3px, 0px, $pine-green);
-  color: $white;
+  //color: $white;
   padding: 5px 30px;
   display: block;
   height: 100%;

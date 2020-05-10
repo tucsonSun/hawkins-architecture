@@ -46,3 +46,40 @@ $my-2-warn: mat-palette($mat-deep-orange, 500, 300, 700);
         --fg: #{$fg};
         --bg: #{$bg};
 }
+
+
+/** --------------------------START FONT STYLING OVERRIDES----------------------------------- **/
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines` and `body-1` levels.
+$custom-typography: mat-typography-config(
+        // $font-family: 'Roboto, monospace',
+        // $headline: mat-typography-level(32px, 48px, 700),
+        $body-1: mat-typography-level(16px, 24px, 500),
+);
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+@include mat-base-typography($custom-typography);
+
+// Override typography for a specific Angular Material components.
+@include mat-checkbox-typography($custom-typography);
+
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+/** --------------------------END FONT STYLING OVERRIDES----------------------------------- **/
+
+
+
+
+/** --------------------------START ICON STYLING OVERRIDES----------------------------------- **/
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-55 { font-size: 55px; }
+.material-icons.md-75 { font-size: 75px; }
+.material-icons.md-85 { font-size: 85px; }
+.material-icons.md-90 { font-size: 90px; }
+.material-icons.md-115 { font-size: 115px; }
+.material-icons.md-190 { font-size: 190px; }
+/** --------------------------END ICON STYLING OVERRIDES----------------------------------- **/

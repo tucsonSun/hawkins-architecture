@@ -13,10 +13,10 @@
 /*---------------------------------------------------------------------*/
 
 * {
-  -webkit-font-smoothing:antialiased;
-  font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
-  @include box-sizing(border-box);
+  //-webkit-font-smoothing:antialiased;
+  //font-smoothing:antialiased;
+  //text-rendering:optimizeLegibility;
+  //@include box-sizing(border-box);
 }
 
 body,
@@ -26,8 +26,8 @@ html {
 }
 
 body {
-  margin: 0;
-  background-color: darken($cod-gray, 5%);
-  color: $white;
+  //margin: 0;
+  //background-color: darken($cod-gray, 5%);
+  //color: $white;
   overflow-x: hidden;
 }
