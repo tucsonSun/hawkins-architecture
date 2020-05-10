@@ -1,12 +1,17 @@
 <!-- header -->
-<app-header></app-header>
+<app-header [ngClass]="appStyleName"></app-header>
 
-<app-top-menu></app-top-menu>
+<app-top-menu [ngClass]="appStyleName"></app-top-menu>
 
-<app-profile></app-profile>
-<app-services></app-services>
-<app-strengths></app-strengths>
-<app-contact-me></app-contact-me>
+
+<div class="myApp-content" [ngClass]="appStyleName">
+    <app-profile></app-profile>
+    <app-services></app-services>
+    <app-strengths></app-strengths>
+    <app-contact-me></app-contact-me>
+
+    <button mat-raised-button color="accent" (click)="toggleStyle()">Toggle Style</button>
+</div>
 
 <!-- footer -->
-<app-footer></app-footer>
+<app-footer [ngClass]="appStyleName"></app-footer>
