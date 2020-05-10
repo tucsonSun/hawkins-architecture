@@ -21,7 +21,7 @@ footer.footer #backToHomeButtonId {
 }
 
 footer.footer #backToHomeButtonId > .page-scroll > a {
-  background-color: $persian-green;
+  background-color: var(--bg);
   @include box-shadow(0px, 3px, 0px, $pine-green);
   color: $white;
   padding: 5px 30px;
