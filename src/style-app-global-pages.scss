@@ -38,26 +38,6 @@
   letter-spacing: 1px;
 }
 
-//.section .section-wrapper .flex-container > div > h4 {
-//  margin-top: 15px;
-//  text-transform: uppercase;
-//  letter-spacing: 1px;
-//  color: red;
-//}
-
-.divider {
-  background-color: var(--primary);
-  width: 50%;
-  min-width: 500px;
-  height: 2px;
-  display: block;
-}
-
-@media (max-width: 767px) {
-  .divider {
-    width: 80%;
-  }
-}
 
 .text-colored-grey {
   color: #a1a1a1;
