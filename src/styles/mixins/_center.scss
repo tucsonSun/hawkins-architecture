@@ -66,7 +66,7 @@
 /// @access public
 /// @example scss - Usage
 ///   .foo {
-///     @include center-h--unk;
+///     @include center-v--unk;
 ///   }
 /// @example css - Result
 ///   .foo {
@@ -76,7 +76,7 @@
 ///     -ms-transform: translateY(-50%);
 ///     transform: translateY(-50%);
 ///   }
-@mixin center-h--unk {
+@mixin center-v--unk {
     position: relative;
     top: 50%;
     @include prefix(transform, translateY(-50%), 'webkit' 'ms');

@@ -14,9 +14,8 @@ footer.footer {
 footer.footer #backToHomeButtonId {
   position: relative;
   .page-scroll {
-    margin-top: -40px;
-    position: absolute;
-    top: -50px;
+    @include center-v--unk;
+    margin-top: -55px;
   }
 }
 
@@ -34,6 +33,7 @@ footer.footer #backToHomeButtonId > .page-scroll > a {
 
 footer.footer #socialLinks > .item {
   svg {
+    @include center-block;
     width: 50px;
     height: 50px;
     fill: var(--bg);
@@ -43,7 +43,7 @@ footer.footer #socialLinks > .item {
 
 
 footer.footer .copyright {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: right;
 }
 
