@@ -48,7 +48,7 @@ $my-warn: mat-palette($mat-deep-orange);
 
 /** --------------------------Secondary OVERRIDES----------------------------------- **/
 $my-2-primary: mat-palette($my-light-brown, 400, 200, 600);
-$my-2-accent: mat-palette($my-light-brown, A200, A100, A400);
+$my-2-accent: mat-palette($my-light-brown, 100, 500, A100);
 $my-2-warn: mat-palette($mat-deep-orange, 500, 300, 700);
 
 .my-dark-theme {
