@@ -1,7 +1,10 @@
-/** Global App styles **/
-@import '../../../style-mixins-and-modules-imports.scss';
-
 
 .left-border {
-  border-left: 1px solid $silver-chalice;
+  border-left: 1px solid var(--primary);
+}
+
+#services {
+  div.flex-container > div.col-thirds > span.material-icons {
+    color: var(--primary);
+  }
 }
