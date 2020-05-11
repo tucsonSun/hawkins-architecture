@@ -4,13 +4,19 @@
 /*  A CONTENT DIVIDER
 /*---------------------------------------------------------------------*/
 
+
 .divider {
-	background-color: $persian-green;
-    margin: 35px 0px;
-    width: 500px;
-    height: 2px;
-    @include center-block;
+  background-color: var(--primary);
+  width: 50%;
+  margin: 35px 0;
+  min-width: 500px;
+  height: 2px;
+  display: block;
+  @include center-block;
 }
 
-
-
+@media (max-width: 767px) {
+  .divider {
+    width: 80%;
+  }
+}
