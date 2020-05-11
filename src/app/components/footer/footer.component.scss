@@ -5,7 +5,7 @@
 /*  8. FOOTER
 /*---------------------------------------------------------------------*/
 footer.footer {
-  background-color: var(--bg);
+  background-color: var(--fg);
   padding-top: 70px;
   padding-bottom: 50px;
 }
@@ -21,9 +21,8 @@ footer.footer #backToHomeButtonId {
 }
 
 footer.footer #backToHomeButtonId > .page-scroll > a {
-  background-color: var(--bg);
-  @include box-shadow(0px, 3px, 0px, $pine-green);
-  //color: $white;
+  background-color: var(--fg);
+  @include box-shadow(0px, 3px, 0px, var(--primary));
   padding: 5px 30px;
   display: block;
   height: 100%;
@@ -34,11 +33,10 @@ footer.footer #backToHomeButtonId > .page-scroll > a {
 
 
 footer.footer #socialLinks > .item {
-
   svg {
     width: 50px;
     height: 50px;
-    fill: white;
+    fill: var(--bg);
   }
 }
 
@@ -46,6 +44,7 @@ footer.footer #socialLinks > .item {
 
 footer.footer .copyright {
   margin-top: 20px;
+  text-align: right;
 }
 
 footer.footer .copyright p {
