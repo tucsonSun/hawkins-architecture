@@ -1,12 +1,54 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
+
+
+/** --------------------------CUSTOM HUGE COLORS ----------------------------------- **/
+/* ======== Angular material custom colors ======== */
+/* http://mcg.mbitson.com/#!?mcgpalette0=%23d0ae89&themename=mcgtheme */
+/* got to file for examples /home/ernesto/git/hawkins-architecture/node_modules/@angular/material/_theming.scss **/
+$my-light-brown: (
+        50: #f9f5f1,
+        100: #f1e7dc,
+        200: #e8d7c4,
+        300: #dec6ac,
+        400: #d7ba9b,
+        500: #d0ae89,
+        600: #cba781,
+        700: #c49d76,
+        800: #be946c,
+        900: #b38459,
+        A100: #ffffff,
+        A200: #fff2e7,
+        A400: #ffd7b4,
+        A700: #ffca9b,
+        contrast: (
+                50: $dark-primary-text,
+                100: $dark-primary-text,
+                200: $dark-primary-text,
+                300: $dark-primary-text,
+                400: $dark-primary-text,
+                500: $dark-primary-text,
+                600: $dark-primary-text,
+                700: $dark-primary-text,
+                800: $light-primary-text,
+                900: $light-primary-text,
+                A100: $dark-primary-text,
+                A200: $dark-primary-text,
+                A400: $dark-primary-text,
+                A700: black,
+        )
+);
+
+
+/** --------------------------Primary OVERRIDES----------------------------------- **/
 $my-primary: mat-palette($mat-blue-grey);
 $my-accent: mat-palette($mat-amber, A200, A100, A400);
 $my-warn: mat-palette($mat-deep-orange);
 
-$my-2-primary: mat-palette($mat-pink, 400, 200, 600);
-$my-2-accent: mat-palette($mat-blue, A200, A100, A400);
+/** --------------------------Secondary OVERRIDES----------------------------------- **/
+$my-2-primary: mat-palette($my-light-brown, 400, 200, 600);
+$my-2-accent: mat-palette($my-light-brown, A200, A100, A400);
 $my-2-warn: mat-palette($mat-deep-orange, 500, 300, 700);
 
 .my-dark-theme {
