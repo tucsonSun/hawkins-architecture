@@ -1,33 +1,18 @@
-@import '../../../style-mixins-and-modules-imports';
-
-
 .eh-toolbar {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  text-align: center;
-  align-items: center;
-  .filler {
-    flex: 1 1 auto;
-  }
-  .gap {
-    margin: 0 10px;
-    height: 100%;
-  }
 
-  ul {
-    display:inline-block;
-    li {
-      display:inline-block;
-      list-style-type: none;
-    }
-    li:hover {
-      background: white;
-    }
-    li > a {
-      text-decoration: none;
+  .mat-raised-button {
+    flex: 1 1 auto;
+    margin: 0 10px;
+    background-color: var(--accent);
+    //height: 100%;
+    .mat-icon {
+      padding: 0 5px;
+      color: var(--primary);
     }
   }
 

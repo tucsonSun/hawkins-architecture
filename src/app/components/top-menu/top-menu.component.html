@@ -1,12 +1,28 @@
 
 
 <mat-toolbar color = "primary" class="eh-toolbar">
-    <ul>
-        <li class = "gap"><a routerLink="/home" routerLinkActive="active">Home</a></li>
-        <li class = "gap"><a routerLink="/profile" routerLinkActive="active">Profile</a></li>
-        <li class = "gap"><a routerLink="/portfolio" routerLinkActive="active">Portfolio</a></li>
-        <li class = "gap"><a routerLink="/services" routerLinkActive="active">Services</a></li>
-        <li class = "gap"><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-    </ul>
+    <mat-toolbar-row>
+        <a mat-raised-button routerLink="/home" routerLinkActive="active">
+            <span class="btn-description">Home</span>
+            <mat-icon class="example-icon">home</mat-icon>
+        </a>
+        <a mat-raised-button routerLink="/profile" routerLinkActive="active">
+            <span class="btn-description">Profile</span>
+            <mat-icon class="example-icon">supervisor_account</mat-icon>
+        </a>
+        <a mat-raised-button routerLink="/portfolio" routerLinkActive="active">
+            <span class="btn-description">Portfolio</span>
+            <mat-icon class="example-icon">desktop_windows</mat-icon>
+        </a>
+        <a mat-raised-button routerLink="/services" routerLinkActive="active">
+            <span class="btn-description">Services</span>
+            <mat-icon class="example-icon">card_membership</mat-icon>
+        </a>
+        <a mat-raised-button routerLink="/contact" routerLinkActive="active">
+            <span class="btn-description">Contact</span>
+            <mat-icon class="example-icon">email</mat-icon>
+        </a>
+
+    </mat-toolbar-row>
 </mat-toolbar>
 
