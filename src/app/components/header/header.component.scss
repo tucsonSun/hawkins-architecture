@@ -3,42 +3,37 @@
 //---------------------------------------------------------------------*/
 //  HOME Color
 //---------------------------------------------------------------------*/
-header.hero .bg-img-table-cell .hero-text {
-  .company-logo{
+header.hero .bg-img-table-cell .hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .company-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
     padding: 5px 5px;
-    content: url('../../../assets/logos/AH-Logo-&-Sign--VECTOR-W.png');
-    max-height: 20%;
-    max-width: 20%;
-    margin: 0 auto;
-    background-color: rgba(255,255,255,0.8);
+
+    .company-logo{
+      content: url('../../../assets/logos/AH-Logo-&-Sign--VECTOR-W.png');
+      background-color: rgba(255,255,255,0.8);
+      width: 100%;
+    }
+
+    .company-slogan {
+      padding: 15px 15px;
+      //width: 100%;
+      background-color: rgba(255,255,255,0.8);
+      color: var(--fg);
+    }
+
+    .page-scroll {
+      margin-top: 40px;
+    }
   }
-
-  .company-slogan {
-    padding: 5px 5px;
-    max-height: 20%;
-    max-width: 20%;
-    margin: 0 auto;
-    background-color: rgba(255,255,255,0.8);
-    color: var(--fg);
-  }
-}
-
-
-//header.hero .bg-img-table-cell .hero-text {
-//  /* color: darken($white, 1.5%); */
-//  color: rgba($white, 0.7);
-//}
-
-
-//---------------------------------------------------------------------*/
-//  HOME
-//---------------------------------------------------------------------*/
-//header.hero {
-//  display: block;
-//}
-
-header.hero .bg-img-table-cell .hero-text .page-scroll {
-  margin-top: 40px;
 }
 
 /*---------------------------------------------------------------------*/
@@ -54,3 +49,12 @@ header.hero-bg-img > .bg-img-table-container {
 }
 
 
+
+
+header.hero .bg-img-table-cell .hero-container {
+  @media (max-width: 768px) {
+    .company-container {
+      width: 80%;
+    }
+  }
+}
