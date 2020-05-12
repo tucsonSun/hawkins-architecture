@@ -14,10 +14,10 @@ import {Directive, HostListener, Input} from '@angular/core';
 
 export class EgrScrollToDirective {
 
-  @Input() scrollToId: string;
+  @Input() appEgrScrollTo: string;
   @HostListener('click', ['$event']) onclick($event) {
     $event.preventDefault(); //ignore native button clicks
-    this.scrollToElement(this.scrollToId);
+    this.scrollToElement(this.appEgrScrollTo);
   }
 
   constructor() { }

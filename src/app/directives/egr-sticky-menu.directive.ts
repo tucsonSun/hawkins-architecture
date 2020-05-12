@@ -1,17 +1,18 @@
-import {Directive, OnDestroy, OnInit, ElementRef, Renderer2, Input} from '@angular/core';
+import {Directive, OnDestroy, OnInit, ElementRef, Renderer2} from '@angular/core';
 
 @Directive({
   selector: '[appEgrStickyMenu]'
 })
 export class EgrStickyMenuDirective implements OnDestroy, OnInit {
 
-  @Input() appEgrStickyMenu: string = '-64px';
   private prevScrollpos = window.pageYOffset;
 
   constructor(private _elemRef: ElementRef, private _renderer: Renderer2) { }
 
   ngOnInit() {
     window.addEventListener('scroll', this.scroll, true); //third parameter
+    //add show class
+    this._renderer.addClass(this._elemRef.nativeElement, 'show-element');
   }
 
   ngOnDestroy() {
@@ -24,11 +25,16 @@ export class EgrStickyMenuDirective implements OnDestroy, OnInit {
     //this is used to be able to remove the event listener
     let currentScrollPos = window.pageYOffset;
     if (this.prevScrollpos > currentScrollPos) {
-      this._elemRef.nativeElement.style.top
-      this._renderer.setStyle(this._elemRef.nativeElement, 'top', '0');
+      this.toggleClass('hide-element', 'show-element');
     } else {
-      this._renderer.setStyle(this._elemRef.nativeElement, 'top', this.appEgrStickyMenu);
+      this.toggleClass('show-element', 'hide-element');
     }
     this.prevScrollpos = currentScrollPos;
   };
+
+
+  toggleClass(styleNameNew: string, styleNameOld: string): void {
+    this._renderer.removeClass(this._elemRef.nativeElement, styleNameOld);
+    this._renderer.addClass(this._elemRef.nativeElement, styleNameNew);
+  }
 }
