@@ -16,6 +16,10 @@ import {ProfileComponent} from "./components/profile/profile.component";
 import { StrengthsComponent } from './components/strengths/strengths.component';
 import { EgrScrollToDirective } from './directives/egr-scroll-to.directive';
 import { EgrStickyMenuDirective } from './directives/egr-sticky-menu.directive';
+import { PortfolioSpecialtySchoolsComponent } from './pages/portfolio/components/portfolio-specialty-schools/portfolio-specialty-schools.component';
+import { PortfolioHigherEducationComponent } from './pages/portfolio/components/portfolio-higher-education/portfolio-higher-education.component';
+import { PortfolioSupportFacilitesComponent } from './pages/portfolio/components/portfolio-support-facilites/portfolio-support-facilites.component';
+import { PortfolioCommunityComponent } from './pages/portfolio/components/portfolio-community/portfolio-community.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { EgrStickyMenuDirective } from './directives/egr-sticky-menu.directive';
     ContactMeComponent,
     StrengthsComponent,
     EgrScrollToDirective,
-    EgrStickyMenuDirective
+    EgrStickyMenuDirective,
+    PortfolioSpecialtySchoolsComponent,
+    PortfolioHigherEducationComponent,
+    PortfolioSupportFacilitesComponent,
+    PortfolioCommunityComponent
   ],
   imports: [
     BrowserModule,
