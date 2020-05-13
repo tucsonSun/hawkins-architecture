@@ -8,7 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
-import { TopMenuComponent } from './pages/home/components/top-menu/top-menu.component';
+import { TopMenuComponent } from './components/top-menu/top-menu.component';
 import { AngularMaterialModule } from "./modules/angular-material.module";
 import { ServicesComponent } from './pages/home/components/services/services.component';
 import { ContactMeComponent } from './pages/home/components/contact-me/contact-me.component';
