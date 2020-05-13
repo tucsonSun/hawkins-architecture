@@ -1,29 +1,36 @@
 
-
-.phone-icon {
-  display: inline-block;
-}
-
-
-
-#contact .contact-details .speech-bubble {
-  position: relative;
-
-  .icon-title {
-    margin: auto;
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-
-    padding-top: 55px;
-    font-size: 24px;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-align: center;
-    letter-spacing: 1px;
-    color: #a1a1a1;
-    span {
-      margin-top:45px;
-      display: inline-block;
+#contact {
+  .flex-container {
+    align-items: center;
+    justify-content: center;
+    .phone-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        display: inline-block;
+      }
+      a.phone-icon {
+        margin-top: 10px;
+      }
     }
   }
+}
+#contact .contact-details {
+  .speech-bubble {
+    a {
+      display: inline-block;
+      height: 100%;
+      position: relative;
+    }
+    .email-icon-title {
+      display: inline-block;
+      position: absolute;
+      top: 55%; left: 60px;
+    }
+  }
+}
+
+.left-border {
+  border-left: 1px solid var(--primary);
 }
