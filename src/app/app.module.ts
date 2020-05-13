@@ -20,6 +20,7 @@ import { PortfolioSpecialtySchoolsComponent } from './pages/portfolio/components
 import { PortfolioHigherEducationComponent } from './pages/portfolio/components/portfolio-higher-education/portfolio-higher-education.component';
 import { PortfolioSupportFacilitesComponent } from './pages/portfolio/components/portfolio-support-facilites/portfolio-support-facilites.component';
 import { PortfolioCommunityComponent } from './pages/portfolio/components/portfolio-community/portfolio-community.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -38,13 +39,14 @@ import { PortfolioCommunityComponent } from './pages/portfolio/components/portfo
     PortfolioSpecialtySchoolsComponent,
     PortfolioHigherEducationComponent,
     PortfolioSupportFacilitesComponent,
-    PortfolioCommunityComponent
+    PortfolioCommunityComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
