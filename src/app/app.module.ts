@@ -16,10 +16,10 @@ import {ProfileComponent} from "./pages/home/components/profile/profile.componen
 import { StrengthsComponent } from './pages/home/components/strengths/strengths.component';
 import { EgrScrollToDirective } from './directives/egr-scroll-to.directive';
 import { EgrStickyMenuDirective } from './directives/egr-sticky-menu.directive';
-import { PortfolioSpecialtySchoolsComponent } from './pages/portfolio/components/portfolio-specialty-schools/portfolio-specialty-schools.component';
-import { PortfolioHigherEducationComponent } from './pages/portfolio/components/portfolio-higher-education/portfolio-higher-education.component';
-import { PortfolioSupportFacilitesComponent } from './pages/portfolio/components/portfolio-support-facilites/portfolio-support-facilites.component';
-import { PortfolioCommunityComponent } from './pages/portfolio/components/portfolio-community/portfolio-community.component';
+// import { PortfolioSpecialtySchoolsComponent } from './pages/portfolio/components/portfolio-specialty-schools/portfolio-specialty-schools.component';
+// import { PortfolioHigherEducationComponent } from './pages/portfolio/components/portfolio-higher-education/portfolio-higher-education.component';
+// import { PortfolioSupportFacilitesComponent } from './pages/portfolio/components/portfolio-support-facilites/portfolio-support-facilites.component';
+// import { PortfolioCommunityComponent } from './pages/portfolio/components/portfolio-community/portfolio-community.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
@@ -36,10 +36,10 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
     StrengthsComponent,
     EgrScrollToDirective,
     EgrStickyMenuDirective,
-    PortfolioSpecialtySchoolsComponent,
-    PortfolioHigherEducationComponent,
-    PortfolioSupportFacilitesComponent,
-    PortfolioCommunityComponent,
+    // PortfolioSpecialtySchoolsComponent,
+    // PortfolioHigherEducationComponent,
+    // PortfolioSupportFacilitesComponent,
+    // PortfolioCommunityComponent,
     PageNotFoundComponent
   ],
   imports: [
