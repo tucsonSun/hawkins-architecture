@@ -5,8 +5,6 @@ import { FlexModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 
 import { SidenavComponent } from './sidenav.component';
-import {HeaderComponent} from "../../components/header/header.component";
-import {FooterComponent} from "../../components/footer/footer.component";
 
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatToolbarModule} from "@angular/material/toolbar";

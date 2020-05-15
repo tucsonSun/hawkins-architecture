@@ -8,9 +8,11 @@ import {ProfileComponent} from "./profile/profile.component";
 import {ServicesComponent} from "./services/services.component";
 import {StrengthsComponent} from "./strengths/strengths.component";
 import {DirectivesModule} from "../../directives/directives.module";
+import { HomeHeaderComponent } from './home-header/home-header.component';
 
 const components: any[] = [
   HomeComponent,
+  HomeHeaderComponent,
   ContactMeComponent,
   ProfileComponent,
   ServicesComponent,

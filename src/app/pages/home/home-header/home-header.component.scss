@@ -1,4 +1,4 @@
-@import '../../../style-mixins-and-modules-imports';
+@import '../../../../style-mixins-and-modules-imports';
 
 //---------------------------------------------------------------------*/
 //  HOME Color
@@ -18,7 +18,7 @@ header.hero .bg-img-table-cell .hero-container {
     padding: 5px 5px;
 
     .company-logo{
-      content: url('../../../assets/logos/AH-Logo-&-Sign--VECTOR-W.png');
+      content: url('../../../../assets/logos/AH-Logo-&-Sign--VECTOR-W.png');
       background-color: rgba(255,255,255,0.8);
       width: 100%;
     }
@@ -41,7 +41,7 @@ header.hero .bg-img-table-cell .hero-container {
 /*---------------------------------------------------------------------*/
 
 header.hero-bg-img {
-  background-image: url('../../../assets/images/CTE/WM SWC Entry 1grayWhite.jpg');
+  background-image: url('../../../../assets/images/CTE/WM SWC Entry 1grayWhite.jpg');
 }
 
 header.hero-bg-img > .bg-img-table-container {
