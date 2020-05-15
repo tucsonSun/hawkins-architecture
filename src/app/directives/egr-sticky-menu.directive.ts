@@ -1,5 +1,28 @@
 import {Directive, OnDestroy, OnInit, ElementRef, Renderer2} from '@angular/core';
 
+
+/**
+ * Usage example:
+ *
+ *
+ * <div class="someMenu-container" appEgrStickyMenu>
+ *   <the sticky menu content here...>
+ * </div>
+ *
+ * .someMenu-container {
+ *   @include sticky-menu;
+ *
+ *   &.show-element{
+ *      top: 0;
+ *      transition: top 0.25s ease-in;
+ *    }
+ *   &.hide-element{
+ *      top: -64px;
+ *      transition: top 0.25s ease-out;
+ *    }
+ * }
+ *
+ */
 @Directive({
   selector: '[appEgrStickyMenu]'
 })

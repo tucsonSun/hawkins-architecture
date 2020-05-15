@@ -4,8 +4,12 @@ import {Directive, HostListener, Input} from '@angular/core';
 /**
  * Usage example:
  *
- * <button (click)="scrollToElement(target)"></button>
- * <div #target>Your target</div>
+ * <a mat-raised-button [appEgrScrollTo]="'#profile'">
+ *    <span class="btn-description">Profile</span>
+ *    <mat-icon class="example-icon">supervisor_account</mat-icon>
+ *</a>
+ *
+ * <div #profile>Your target</div>
  */
 
 @Directive({
