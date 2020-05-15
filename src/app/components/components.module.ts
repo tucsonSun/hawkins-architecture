@@ -7,7 +7,7 @@ import {AngularMaterialModule} from "../modules/angular-material.module";
 import {DirectivesModule} from "../directives/directives.module";
 
 
-const list :any[] = [
+const components :any[] = [
   HeaderComponent,
   FooterComponent,
   TopMenuComponent
@@ -18,9 +18,10 @@ const list :any[] = [
   imports: [
     CommonModule,
     DirectivesModule,
-    AngularMaterialModule
+
+    AngularMaterialModule,
   ],
-  declarations: [...list],
-  exports: [ ...list],
+  declarations: [...components],
+  exports: [ ...components],
 })
 export class ComponentsModule { }
