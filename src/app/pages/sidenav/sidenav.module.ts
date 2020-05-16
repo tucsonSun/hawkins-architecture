@@ -15,6 +15,7 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatMenuModule} from "@angular/material/menu";
 import {ComponentsModule} from "../../components/components.module";
 import {AngularMaterialModule} from "../../modules/angular-material.module";
+import {DirectivesModule} from "../../directives/directives.module";
 
 
 const components: any[] = [
@@ -23,23 +24,24 @@ const components: any[] = [
 
 @NgModule({
   declarations: [...components],
-  imports: [
-    ComponentsModule,
-    CommonModule,
-    RouterModule,
-    FlexModule,
+    imports: [
+        ComponentsModule,
+        CommonModule,
+        RouterModule,
+        FlexModule,
 
-    //--Material Design
-    MatSidenavModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatListModule,
-    MatMenuModule,
-    MatGridListModule,
+        //--Material Design
+        MatSidenavModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatListModule,
+        MatMenuModule,
+        MatGridListModule,
 
-    AngularMaterialModule,
-  ],
+        AngularMaterialModule,
+        DirectivesModule,
+    ],
   exports: [...components]
 })
 export class SidenavModule {}

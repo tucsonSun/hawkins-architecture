@@ -17,8 +17,13 @@
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="active-link">
         <mat-icon mat-list-icon>home</mat-icon>
-        <span class="full-width">Homex</span>
+        <span class="full-width">Home</span>
       </mat-list-item>
+      <div class="submenu" [ngClass]="{'expanded' : showSubmenuHome}" *ngIf="showSubmenuHome">
+        <a mat-list-item class="right" [appEgrScrollTo]="'#profile'">Profile</a>
+        <a mat-list-item class="right" [appEgrScrollTo]="'#services'">Services</a>
+        <a mat-list-item class="right" [appEgrScrollTo]="'#contact'">Contact</a>
+      </div>
 
 
       <mat-list-item
@@ -26,7 +31,7 @@
               [routerLinkActiveOptions]="{ exact: true }"
               routerLinkActive="active-link">
         <mat-icon mat-list-icon>desktop_windows</mat-icon>
-        <span class="full-width">Portfoliox</span>
+        <span class="full-width">Portfolio</span>
       </mat-list-item>
       <div class="submenu" [ngClass]="{'expanded' : showSubmenuProfile}" *ngIf="showSubmenuProfile">
         <a mat-list-item class="right"
