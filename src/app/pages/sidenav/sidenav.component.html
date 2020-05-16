@@ -26,10 +26,7 @@
       </div>
 
 
-      <mat-list-item
-              routerLink="/portfolio"
-              [routerLinkActiveOptions]="{ exact: true }"
-              routerLinkActive="active-link">
+      <mat-list-item (click)="showSubmenuProfile = !showSubmenuProfile">
         <mat-icon mat-list-icon>desktop_windows</mat-icon>
         <span class="full-width">Portfolio</span>
       </mat-list-item>

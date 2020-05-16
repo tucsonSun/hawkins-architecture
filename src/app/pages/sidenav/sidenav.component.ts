@@ -106,15 +106,5 @@ export class SidenavComponent implements OnInit, OnDestroy {
     snav.toggle();
   }
 
-  // mouseenter() {
-  //   if (!this.isExpanded) {
-  //     this.isShowing = true;
-  //   }
-  // }
-  //
-  // mouseleave() {
-  //   if (!this.isExpanded) {
-  //     this.isShowing = false;
-  //   }
-  // }
+
 }
