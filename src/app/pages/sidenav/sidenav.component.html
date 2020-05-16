@@ -32,23 +32,34 @@
       </mat-list-item>
       <div class="submenu" [ngClass]="{'expanded' : showSubmenuProfile}" *ngIf="showSubmenuProfile">
         <a mat-list-item class="right"
-           routerLink="/portfolio/service-facilities"
-           [routerLinkActiveOptions]="{ exact: true }"
-           routerLinkActive="active-link">Service Facilities</a>
-        <a mat-list-item class="right"
            routerLink="/portfolio/specialty-schools"
            [routerLinkActiveOptions]="{ exact: true }"
            routerLinkActive="active-link">Specialty Schools</a>
+
+        <a mat-list-item class="right"
+           routerLink="/portfolio/technical-education"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link">Career & Technical Education / Higher Education</a>
+
+        <a mat-list-item class="right"
+           routerLink="/portfolio/service-facilities"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link">Support Service Facilities</a>
+
+        <a mat-list-item class="right"
+           routerLink="/portfolio/cultural-community"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link">Cultural / Community</a>
+
       </div>
-
-
-
 
       <mat-list-item>
         <h4 matLine routerLink="/books" routerLinkActive="active-link">
           Books
         </h4>
       </mat-list-item>
+
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
