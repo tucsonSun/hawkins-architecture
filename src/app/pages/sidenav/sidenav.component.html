@@ -1,54 +1,34 @@
 <mat-sidenav-container>
   <mat-sidenav opened="false" mode="over" #snav>
     <mat-nav-list>
-      <mat-list-item>
+      <!--<mat-list-item>
         <h4
           matLine
           routerLink="/home"
           [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="active-link"
-        >
+          routerLinkActive="active-link">
+          <mat-icon mat-list-icon class="example-icon">home</mat-icon>
           Home
-        </h4>
-      </mat-list-item>
-      <mat-list-item>
-        <h4
-                matLine
-                routerLink="/portfolio"
-                [routerLinkActiveOptions]="{ exact: true }"
-                routerLinkActive="active-link"
-        >
-          Portfolio
-        </h4>
-      </mat-list-item>
- <!--     <mat-list-item>
-        <h4
-                matLine
-                routerLink="/portfolio/specialty-schools"
-                [routerLinkActiveOptions]="{ exact: true }"
-                routerLinkActive="active-link"
-        >
-          Specialty Schools
-        </h4>
-      </mat-list-item>
-      <mat-list-item>
-        <h4
-                matLine
-                routerLink="/portfolio/service-facilities"
-                [routerLinkActiveOptions]="{ exact: true }"
-                routerLinkActive="active-link"
-        >
-          Service Facilities
         </h4>
       </mat-list-item>-->
 
-
-      <mat-list-item (click)="showProfileSubmenu = !showProfileSubmenu" class="parent">
-        <span class="full-width" *ngIf="showProfileSubmenu">Parent Menu</span>
+      <mat-list-item
+              routerLink="/home"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="active-link">
         <mat-icon mat-list-icon>home</mat-icon>
-        <mat-icon class="menu-button" [ngClass]="{'rotated' : showProfileSubmenu}">expand_more</mat-icon>
+        <span class="full-width">Homex</span>
       </mat-list-item>
-      <div class="submenu" [ngClass]="{'expanded' : showProfileSubmenu}" *ngIf="showProfileSubmenu">
+
+
+      <mat-list-item
+              routerLink="/portfolio"
+              [routerLinkActiveOptions]="{ exact: true }"
+              routerLinkActive="active-link">
+        <mat-icon mat-list-icon>desktop_windows</mat-icon>
+        <span class="full-width">Portfoliox</span>
+      </mat-list-item>
+      <div class="submenu" [ngClass]="{'expanded' : showSubmenuProfile}" *ngIf="showSubmenuProfile">
         <a mat-list-item class="right"
            routerLink="/portfolio/service-facilities"
            [routerLinkActiveOptions]="{ exact: true }"
@@ -58,6 +38,8 @@
            [routerLinkActiveOptions]="{ exact: true }"
            routerLinkActive="active-link">Specialty Schools</a>
       </div>
+
+
 
 
       <mat-list-item>

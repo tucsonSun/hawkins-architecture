@@ -1,13 +1,18 @@
 //@import '../../../styles/angular-material-router-theme.scss';
 
 // Navigation Highlights
-.active-link {
-  color: blue;
-  font-weight: bold !important;
-  border: none;
+:host ::ng-deep  mat-list-item.mat-list-item.mat-focus-indicator.mat-list-item-avatar.mat-list-item-with-avatar.active-link {
+  background: none;
+  background-color: var(--primary);
 }
+
+// Navigation Highlights
+.active-link {
+  background-color: var(--primary);
+}
+
 .home-link {
-  color: white;
+  color: var(--bg);
   font-weight: normal;
   text-decoration: none;
 }

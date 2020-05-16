@@ -11,8 +11,8 @@ import {paths} from "../../app-routing.module";
 })
 export class SidenavComponent implements OnInit, OnDestroy {
 
-  public showProfileSubmenu = false;
-  public showHomeSubmenu = false;
+  public showSubmenuProfile = false;
+  public showSubmenuHome = false;
   private routerSub: Subscription;
   private currentPathName: string;
   @ViewChild('snav') public sidenav: MatSidenav;
@@ -39,14 +39,14 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
   private setShowHideSubmenus(): void {
     //reset all to false first
-    this.showProfileSubmenu = false;
-    this.showHomeSubmenu = false;
+    this.showSubmenuProfile = false;
+    this.showSubmenuHome = false;
 
     if (this.currentPathName && this.currentPathName.includes(paths.HOME)) {
-      this.showHomeSubmenu = true;
+      this.showSubmenuHome = true;
     }
     else if (this.currentPathName && this.currentPathName.includes(paths.PORTFOLIO)) {
-      this.showProfileSubmenu = true;
+      this.showSubmenuProfile = true;
     }
     else {
       return; //do nothing
