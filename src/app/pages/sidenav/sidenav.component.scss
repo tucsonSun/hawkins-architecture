@@ -111,3 +111,14 @@ mat-toolbar.mat-toolbar {
 //    500
 //  ) !important;
 //}
+
+
+/** override material menu styles **/
+:host ::ng-deep  .submenu {
+  a.mat-list-item {
+    .mat-list-item-content {
+      background-color: pink;
+      justify-content: flex-end;
+    }
+  }
+}
