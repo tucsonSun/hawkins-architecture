@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import {NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/router';
 import { Subscription } from 'rxjs';
 import {MatSidenav} from "@angular/material/sidenav";
+import {paths} from "../../app-routing.module";
 
 @Component({
   selector: 'app-sidenav',
@@ -9,12 +10,18 @@ import {MatSidenav} from "@angular/material/sidenav";
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit, OnDestroy {
-  constructor(
-    private router: Router,
-  ) {}
-  routerSub: Subscription;
+
+  public showProfileSubmenu = false;
+  public showHomeSubmenu = false;
+  private routerSub: Subscription;
+  private currentPathName: string;
   @ViewChild('snav') public sidenav: MatSidenav;
   title = `Architect Hawkins LLC`;
+
+  constructor(private router: Router,) {
+
+  }
+
 
   ngOnDestroy() {
     this.routerSub.unsubscribe();
@@ -22,15 +29,68 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
   // This will be used for closing the sidenav drawer and scrolling to the top of screen
   ngOnInit() {
-    this.routerSub = this.router.events.subscribe(event => {
-      if (this.sidenav && event instanceof NavigationEnd) {
-        this.sidenav.close();
-      }
-      if (!(event instanceof NavigationEnd)) {
-        return;
-      }
-      window.scrollTo(0, 0);
+    this.routerSub = this.router.events.subscribe(routerEvent => {
+      this.closeSideNav(routerEvent);
+      this.showLoader(routerEvent);
+      this.setCurrentPage(routerEvent);
+      this.setShowHideSubmenus();
     });
+  }
+
+  private setShowHideSubmenus(): void {
+    //reset all to false first
+    this.showProfileSubmenu = false;
+    this.showHomeSubmenu = false;
+
+    if (this.currentPathName && this.currentPathName.includes(paths.HOME)) {
+      this.showHomeSubmenu = true;
+    }
+    else if (this.currentPathName && this.currentPathName.includes(paths.PORTFOLIO)) {
+      this.showProfileSubmenu = true;
+    }
+    else {
+      return; //do nothing
+    }
+  }
+
+  public setCurrentPage(routerEvent: any): void {
+    if (routerEvent instanceof NavigationEnd) {
+      // Hide loading indicator
+      this.currentPathName = (routerEvent as NavigationEnd).url.substr(1);
+      console.log(`currentPageName=${this.currentPathName}`)
+    }
+  }
+
+  private showLoader(routerEvent: any): void {
+    if (routerEvent instanceof NavigationStart) {
+      // Show loading indicator
+    }
+
+    if (routerEvent instanceof NavigationEnd) {
+      // Hide loading indicator
+      //console.log(routerEvent, "end");
+    }
+
+    if (routerEvent instanceof NavigationError) {
+      // Hide loading indicator
+
+      // Present error to user
+      //console.log(routerEvent.error);
+    }
+  }
+
+  /**
+   * Method will close the side nav and scoll to top of page
+   * @param routerEvent
+   */
+  private closeSideNav(routerEvent: any):void {
+    if (this.sidenav && routerEvent instanceof NavigationEnd) {
+      this.sidenav.close();
+      window.scrollTo(0, 0);
+    }
+    else {
+      return;
+    }
   }
   // openThemeMenu() {}
   // pickColor(color: string) {
@@ -45,4 +105,16 @@ export class SidenavComponent implements OnInit, OnDestroy {
   snavToggle(snav) {
     snav.toggle();
   }
+
+  // mouseenter() {
+  //   if (!this.isExpanded) {
+  //     this.isShowing = true;
+  //   }
+  // }
+  //
+  // mouseleave() {
+  //   if (!this.isExpanded) {
+  //     this.isShowing = false;
+  //   }
+  // }
 }
