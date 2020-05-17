@@ -19,13 +19,24 @@ import {Directive, HostListener, Input} from '@angular/core';
 export class EgrScrollToDirective {
 
   @Input() appEgrScrollTo: string;
-  @HostListener('click', ['$event']) onclick($event) {
+  @Input() scrollTop: boolean = false;
+
+  @HostListener('click' , ['$event']) onclick($event) {
     $event.preventDefault(); //ignore native button clicks
-    this.scrollToElement(this.appEgrScrollTo);
+
+    if (this.scrollTop) {
+      this.scrollToTopOfPage();
+    }
+    else {
+      this.scrollToElement(this.appEgrScrollTo);
+    }
   }
 
   constructor() { }
 
+  public scrollToTopOfPage(): void {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
 
   scrollToElement(elementId: string): void {
     const element = document.querySelector(elementId);

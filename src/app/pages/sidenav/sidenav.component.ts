@@ -89,7 +89,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
   private closeSideNav(routerEvent: any):void {
     if (this.sidenav && routerEvent instanceof NavigationEnd) {
       this.sidenav.close();
-      window.scrollTo(0, 0);
+      window.scrollTo({top: 0, behavior: 'smooth'});
     }
     else {
       return;
