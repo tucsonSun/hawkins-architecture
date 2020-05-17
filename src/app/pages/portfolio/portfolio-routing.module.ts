@@ -15,6 +15,7 @@ export const PORFILE_PATHS = {
 }
 
 
+//todo: THIS ROUTE SETup FOR CHILDREN IS NOT RIGHT BUT GOT TI TO WORK FOR NOW....
 const routes: Routes = [
   {
     path: 'undefined',

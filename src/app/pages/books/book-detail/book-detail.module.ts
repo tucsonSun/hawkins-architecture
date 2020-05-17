@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FlexModule } from '@angular/flex-layout';
 
 
 import { BookDrawerModule } from './../book-drawer/book-drawer.module';
@@ -13,7 +12,6 @@ import {MatButtonModule} from "@angular/material/button";
   declarations: [BookDetailComponent],
   imports: [
     CommonModule,
-    FlexModule,
     BookDetailRoutingModule,
     BookDrawerModule,
     MatCardModule,

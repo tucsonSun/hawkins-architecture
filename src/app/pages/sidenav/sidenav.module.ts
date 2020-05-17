@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FlexModule } from '@angular/flex-layout';
 
 import { RouterModule } from '@angular/router';
 
@@ -28,7 +27,6 @@ const components: any[] = [
         ComponentsModule,
         CommonModule,
         RouterModule,
-        FlexModule,
 
         //--Material Design
         MatSidenavModule,

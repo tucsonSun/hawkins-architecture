@@ -65,17 +65,17 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button
+        class="header-button"
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="snavToggle(snav)"
-      >
+        (click)="snavToggle(snav)">
         <mat-icon>menu</mat-icon>
       </button>
-      <span fxFlex>
+      <span class="header-title">
         <a class="home-link" routerLink=".">{{ title }}</a>
       </span>
-      <span fxFlex="nogrow">
+      <span class="header-button">
         <button mat-icon-button [matMenuTriggerFor]="menu">
           <mat-icon>format_color_fill</mat-icon>
         </button>
@@ -98,11 +98,10 @@
 <!--          <button mat-menu-item (click)="pickColor('warn')">-->
 <!--            <div class="color-swatch color-swatch-warn" mat-menu-item></div>-->
 <!--          </button>-->
-          blahhh
+
         </mat-menu>
       </span>
     </mat-toolbar>
-    <app-top-menu></app-top-menu>
     <!-- content -->
     <router-outlet></router-outlet>
     <!-- footer -->
