@@ -20,9 +20,9 @@
         <span class="full-width">Home</span>
       </mat-list-item>
       <div class="submenu" [ngClass]="{'expanded' : showSubmenuHome}" *ngIf="showSubmenuHome">
-        <a mat-list-item class="right" [appEgrScrollTo]="'#profile'">Profile</a>
-        <a mat-list-item class="right" [appEgrScrollTo]="'#services'">Services</a>
-        <a mat-list-item class="right" [appEgrScrollTo]="'#contact'">Contact</a>
+        <a mat-list-item class="right" [appEgrScrollTo]="'#profile'" (click)="closeSideNavAction()">Profile</a>
+        <a mat-list-item class="right" [appEgrScrollTo]="'#services'" (click)="closeSideNavAction()">Services</a>
+        <a mat-list-item class="right" [appEgrScrollTo]="'#contact'" (click)="closeSideNavAction()">Contact</a>
       </div>
 
 

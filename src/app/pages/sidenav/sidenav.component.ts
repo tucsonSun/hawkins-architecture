@@ -79,6 +79,9 @@ export class SidenavComponent implements OnInit, OnDestroy {
     }
   }
 
+  public closeSideNavAction(): void {
+    setTimeout(() =>{ this.sidenav.close(); }, 1000);
+  }
   /**
    * Method will close the side nav and scoll to top of page
    * @param routerEvent
