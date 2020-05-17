@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {PortfolioComponent} from "./portfolio.component";
 import {PortfolioSpecialtySchoolsComponent} from "./portfolio-specialty-schools/portfolio-specialty-schools.component";
 import {PortfolioServiceFacilitiesComponent} from "./portfolio-service-facilities/portfolio-service-facilities.component";
 import {PortfolioTechnicalEducationComponent} from "./portfolio-technical-education/portfolio-technical-education.component";
@@ -17,11 +16,11 @@ export const PORFILE_PATHS = {
 
 
 const routes: Routes = [
-  // Parent component
   {
-    path: '', component: PortfolioComponent,
+    path: 'undefined',
+    redirectTo: ''
   },
-    // Child component
+   // Child component
   {
     path: PORFILE_PATHS.CHILD_PORTFOLIO_SPECIALITY,
     component: PortfolioSpecialtySchoolsComponent
