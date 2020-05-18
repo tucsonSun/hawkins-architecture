@@ -141,7 +141,7 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
 
-        //Variables for SCSS files
+        //Declare Variables using CSS4
         --primary: #{$primary};
         --accent: #{$accent};
         --warn: #{$warn};
@@ -159,13 +159,26 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         $bg_palette:map-get($my-4-theme-dark, background);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
+        $divider:map-get($fg_palette, divider);
 
-        //Variables for SCSS files
+        //Declare Variables using CSS4
         --primary: #{$primary};
         --accent: #{$accent};
         --warn: #{$warn};
         --fg: #{$fg};
         --bg: #{$bg};
+        --divider: #{$divider};
+
+        //Use this to debug
+        $all-fg-map-keys: map-keys($fg_palette);
+        // Log map keys (in compiler console log)
+        @debug $all-fg-map-keys;
+
+        //Use this to debug
+        $all-bg-map-keys: map-keys($bg_palette);
+        // Log map keys (in compiler console log)
+        @debug $all-bg-map-keys;
+
 }
 
 .my-light-theme {
@@ -179,7 +192,7 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
 
-        //Variables for SCSS files
+        //Declare Variables using CSS4
         --primary: #{$primary};
         --accent: #{$accent};
         --warn: #{$warn};
@@ -198,7 +211,7 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
 
-        //Variables for SCSS files
+        //Declare Variables using CSS4
         --primary: #{$primary};
         --accent: #{$accent};
         --warn: #{$warn};
@@ -242,3 +255,5 @@ $custom-typography: mat-typography-config(
 .material-icons.md-115 { font-size: 115px; }
 .material-icons.md-190 { font-size: 190px; }
 /** --------------------------END ICON STYLING OVERRIDES----------------------------------- **/
+
+
