@@ -9,7 +9,7 @@ export class ColorPickerService {
 
   //private subKiller = new Subject<void>()
   private APP_COLOR_PICKER_KEY = 'app-color-picker';
-  initialClass = 'angular-material-router-app-theme';
+  initialClass = 'my-light-theme';
   colorClass$: BehaviorSubject<string> = new BehaviorSubject(this.initialClass);
 
   constructor(private overlayContainer: OverlayContainer) {
