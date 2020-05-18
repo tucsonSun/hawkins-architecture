@@ -80,6 +80,13 @@
           <mat-icon>format_color_fill</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="pickColor('my-light-theme')">
+            <div class="color-swatch color-swatch-primary" mat-menu-item>my-light-theme</div>
+          </button>
+          <button mat-menu-item (click)="pickColor('my-dark-theme')">
+            <div class="color-swatch color-swatch-primary" mat-menu-item>my-dark-theme</div>
+          </button>
+
 <!--          <button mat-menu-item (click)="pickColor('')">-->
 <!--            <div class="color-swatch color-swatch-primary" mat-menu-item></div>-->
 <!--          </button>-->

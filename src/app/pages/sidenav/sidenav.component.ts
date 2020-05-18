@@ -3,6 +3,7 @@ import {NavigationEnd, NavigationError, NavigationStart, Router} from '@angular/
 import { Subscription } from 'rxjs';
 import {MatSidenav} from "@angular/material/sidenav";
 import {paths} from "../../app-routing.module";
+import {ColorPickerService} from "../../core/services/color-picker.service";
 
 @Component({
   selector: 'app-sidenav',
@@ -16,9 +17,9 @@ export class SidenavComponent implements OnInit, OnDestroy {
   private routerSub: Subscription;
   private currentPathName: string;
   @ViewChild('snav') public sidenav: MatSidenav;
-  title = `Architect Hawkins LLC`;
+  public title = `Architect Hawkins LLC`;
 
-  constructor(private router: Router,) {
+  constructor(private router: Router, private colorPickerService: ColorPickerService) {
 
   }
 
@@ -95,17 +96,13 @@ export class SidenavComponent implements OnInit, OnDestroy {
       return;
     }
   }
-  // openThemeMenu() {}
-  // pickColor(color: string) {
-  //   let colorTheme = '';
-  //   if (color !== '') {
-  //     colorTheme = `-${color}`;
-  //   }
-  //   this.colorPicker.setColorClass(
-  //     `angular-material-router-app-theme${colorTheme}`
-  //   );
-  // }
-  snavToggle(snav) {
+
+
+  public pickColor(color: string) {
+    this.colorPickerService.setColorClass(`${color}`);
+  }
+
+  public snavToggle(snav) {
     snav.toggle();
   }
 

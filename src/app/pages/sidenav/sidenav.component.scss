@@ -34,31 +34,25 @@ mat-toolbar {
 
 .color-swatch {
   position: relative;
-  width: 36px;
+  width: 175px;
   height: 36px;
   margin: 6px;
-  border-radius: 50%;
+  //border-radius: 50%;
   overflow: hidden;
 }
-//
-//.color-swatch-primary {
-//  background-color: mat-color($angular-material-router-app-primary, 500);
-//}
-//.color-swatch-primary:hover {
-//  background-color: mat-color(
-//    $angular-material-router-app-primary,
-//    500
-//  ) !important;
-//}
-//.color-swatch-green {
-//  background-color: mat-color($angular-material-router-app-green, 500);
-//}
-//.color-swatch-green:hover {
-//  background-color: mat-color(
-//    $angular-material-router-app-green,
-//    500
-//  ) !important;
-//}
+
+.color-swatch-primary {
+  background-color: red;
+}
+.color-swatch-primary:hover {
+  background-color: pink !important;
+}
+.color-swatch-green {
+  background-color: green;
+}
+.color-swatch-green:hover {
+  background-color: greenyellow !important;
+}
 //.color-swatch-pink {
 //  background-color: mat-color($angular-material-router-app-pink, 500);
 //}
