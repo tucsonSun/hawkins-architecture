@@ -9,6 +9,7 @@ import {DirectivesModule} from "./directives/directives.module";
 import {ComponentsModule} from "./components/components.module";
 import {MatSliderModule} from "@angular/material/slider";
 import {SidenavModule} from "./pages/sidenav/sidenav.module";
+import {RouterModule} from "@angular/router";
 import {PageNotFoundModule} from "./pages/page-not-found/page-not-found.module";
 
 @NgModule({
@@ -28,7 +29,7 @@ import {PageNotFoundModule} from "./pages/page-not-found/page-not-found.module";
 
       //pages
     SidenavModule,
-    PageNotFoundModule,
+    PageNotFoundModule
   ],
   providers: [],
   bootstrap: [AppComponent]
