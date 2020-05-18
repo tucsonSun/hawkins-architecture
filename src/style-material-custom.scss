@@ -40,25 +40,123 @@ $my-light-brown: (
         )
 );
 
+$my-light-yellow: (
+        50: #fff8e1,
+        100: #ffecb5,
+        200: #ffe083,
+        300: #ffd451,
+        400: #ffca2c,
+        500: #ffc107,
+        600: #ffbb06,
+        700: #ffb305,
+        800: #ffab04,
+        900: #ff9e02,
+        A100: #ffffff,
+        A200: #fffaf2,
+        A400: #ffe4bf,
+        A700: #ffd9a6,
+        contrast: (
+                50: #000000,
+                100: #000000,
+                200: #000000,
+                300: #000000,
+                400: #000000,
+                500: #000000,
+                600: #000000,
+                700: #000000,
+                800: #000000,
+                900: #000000,
+                A100: #000000,
+                A200: #000000,
+                A400: #000000,
+                A700: #000000
+        )
+);
+
+$my-dark-brown: (
+        50 : #e8e8e7,
+        100 : #c6c5c2,
+        200 : #a19e9a,
+        300 : #7b7772,
+        400 : #5e5953,
+        500 : #423c35,
+        600 : #3c3630,
+        700 : #332e28,
+        800 : #2b2722,
+        900 : #1d1a16,
+        A100 : #ffb264,
+        A200 : #ff9831,
+        A400 : #fd7f00,
+        A700 : #e47200,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #ffffff,
+                400 : #ffffff,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000,
+        )
+);
+
 
 /** --------------------------Primary OVERRIDES----------------------------------- **/
-$my-primary: mat-palette($mat-blue-grey);
-$my-accent: mat-palette($mat-amber, A200, A100, A400);
-$my-warn: mat-palette($mat-deep-orange);
+$my-1-primary: mat-palette($mat-blue-grey);
+$my-1-accent: mat-palette($mat-amber, A200, A100, A400);
+$my-1-warn: mat-palette($mat-deep-orange);
 
 /** --------------------------Secondary OVERRIDES----------------------------------- **/
 $my-2-primary: mat-palette($my-light-brown, 400, 200, 600);
 $my-2-accent: mat-palette($my-light-brown, 100, 500, A100);
 $my-2-warn: mat-palette($mat-deep-orange, 500, 300, 700);
 
+
+/** --------------------------Other OVERRIDES----------------------------------- **/
+$my-3-primary: mat-palette($my-light-yellow, 400, 200, 600);
+$my-3-accent: mat-palette($my-light-yellow, 100, 500, A100);
+$my-3-warn: mat-palette($my-light-yellow, 500, 300, 700);
+
+
+/** --------------------------Other OVERRIDES----------------------------------- **/
+$my-4-primary: mat-palette($my-dark-brown, 400, 200, 600);
+$my-4-accent: mat-palette($my-dark-brown, 100, 500, A100);
+$my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
+
+
 .my-dark-theme {
-        $my-theme-dark: mat-dark-theme($my-primary, $my-accent, $my-warn);
-        @include angular-material-theme($my-theme-dark);
-        $primary: mat-color($my-primary);
-        $accent: mat-color($my-accent);
-        $warn: mat-color($my-warn);
-        $fg_palette:map-get($my-theme-dark, foreground);
-        $bg_palette:map-get($my-theme-dark, background);
+        $my-1-theme-dark: mat-dark-theme($my-1-primary, $my-1-accent, $my-1-warn);
+        @include angular-material-theme($my-1-theme-dark);
+        $primary: mat-color($my-1-primary);
+        $accent: mat-color($my-1-accent);
+        $warn: mat-color($my-1-warn);
+        $fg_palette:map-get($my-1-theme-dark, foreground);
+        $bg_palette:map-get($my-1-theme-dark, background);
+        $fg:map-get($fg_palette, text);
+        $bg:map-get($bg_palette, background);
+
+        //Variables for SCSS files
+        --primary: #{$primary};
+        --accent: #{$accent};
+        --warn: #{$warn};
+        --fg: #{$fg};
+        --bg: #{$bg};
+}
+
+.my-dark-theme4 {
+        $my-4-theme-dark: mat-dark-theme($my-4-primary, $my-4-accent, $my-4-warn);
+        @include angular-material-theme($my-4-theme-dark);
+        $primary: mat-color($my-4-primary);
+        $accent: mat-color($my-4-accent);
+        $warn: mat-color($my-4-warn);
+        $fg_palette:map-get($my-4-theme-dark, foreground);
+        $bg_palette:map-get($my-4-theme-dark, background);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
 
@@ -78,6 +176,25 @@ $my-2-warn: mat-palette($mat-deep-orange, 500, 300, 700);
         $warn: mat-color($my-2-warn);
         $fg_palette:map-get($my-2-theme-light, foreground);
         $bg_palette:map-get($my-2-theme-light, background);
+        $fg:map-get($fg_palette, text);
+        $bg:map-get($bg_palette, background);
+
+        //Variables for SCSS files
+        --primary: #{$primary};
+        --accent: #{$accent};
+        --warn: #{$warn};
+        --fg: #{$fg};
+        --bg: #{$bg};
+}
+
+.my-light-theme3 {
+        $my-3-theme-light: mat-light-theme($my-3-primary, $my-3-accent, $my-3-warn);
+        @include angular-material-theme($my-3-theme-light);
+        $primary: mat-color($my-3-primary);
+        $accent: mat-color($my-3-accent);
+        $warn: mat-color($my-3-warn);
+        $fg_palette:map-get($my-3-theme-light, foreground);
+        $bg_palette:map-get($my-3-theme-light, background);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
 
