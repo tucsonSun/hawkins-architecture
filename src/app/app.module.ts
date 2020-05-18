@@ -16,8 +16,8 @@ import {PageNotFoundModule} from "./pages/page-not-found/page-not-found.module";
     AppComponent,
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     BrowserAnimationsModule,
 
     MatSliderModule, // This is a weird but for hammerjs I think
