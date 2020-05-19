@@ -140,6 +140,9 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         $bg_palette:map-get($my-1-theme-dark, background);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
+        $appBar:map-get($bg_palette, app-bar);
+        $statusBar:map-get($bg_palette, status-bar);
+        $toolTip:map-get($bg_palette, tooltip);
 
         //Declare Variables using CSS4
         --primary: #{$primary};
@@ -147,6 +150,9 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         --warn: #{$warn};
         --fg: #{$fg};
         --bg: #{$bg};
+        --bg2: #{$appBar};
+        --bg3: #{$statusBar};
+        --bg4: #{$toolTip};
 }
 
 .my-dark-theme4 {
@@ -159,7 +165,9 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         $bg_palette:map-get($my-4-theme-dark, background);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
-        $divider:map-get($fg_palette, divider);
+        $appBar:map-get($bg_palette, app-bar);
+        $statusBar:map-get($bg_palette, status-bar);
+        $toolTip:map-get($bg_palette, tooltip);
 
         //Declare Variables using CSS4
         --primary: #{$primary};
@@ -167,17 +175,23 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         --warn: #{$warn};
         --fg: #{$fg};
         --bg: #{$bg};
-        --divider: #{$divider};
+        --bg2: #{$appBar};
+        --bg3: #{$statusBar};
+        --bg4: #{$toolTip};
 
         //Use this to debug
         $all-fg-map-keys: map-keys($fg_palette);
         // Log map keys (in compiler console log)
+        @debug '-----$all-fg-map-keys START---';
         @debug $all-fg-map-keys;
+        @debug '-----$all-fg-map-keys END---';
 
         //Use this to debug
         $all-bg-map-keys: map-keys($bg_palette);
         // Log map keys (in compiler console log)
+        @debug '-----$all-bg-map-keys START---';
         @debug $all-bg-map-keys;
+        @debug '-----$all-bg-map-keys END---';
 
 }
 
@@ -191,6 +205,9 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         $bg_palette:map-get($my-2-theme-light, background);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
+        $appBar:map-get($bg_palette, app-bar);
+        $statusBar:map-get($bg_palette, status-bar);
+        $toolTip:map-get($bg_palette, tooltip);
 
         //Declare Variables using CSS4
         --primary: #{$primary};
@@ -198,6 +215,9 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         --warn: #{$warn};
         --fg: #{$fg};
         --bg: #{$bg};
+        --bg2: #{$appBar};
+        --bg3: #{$statusBar};
+        --bg4: #{$toolTip};
 }
 
 .my-light-theme3 {
@@ -210,6 +230,9 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         $bg_palette:map-get($my-3-theme-light, background);
         $fg:map-get($fg_palette, text);
         $bg:map-get($bg_palette, background);
+        $appBar:map-get($bg_palette, app-bar);
+        $statusBar:map-get($bg_palette, status-bar);
+        $toolTip:map-get($bg_palette, tooltip);
 
         //Declare Variables using CSS4
         --primary: #{$primary};
@@ -217,6 +240,9 @@ $my-4-warn: mat-palette($my-dark-brown, 500, 300, 700);
         --warn: #{$warn};
         --fg: #{$fg};
         --bg: #{$bg};
+        --bg2: #{$appBar};
+        --bg3: #{$statusBar};
+        --bg4: #{$toolTip};
 }
 
 
@@ -257,3 +283,13 @@ $custom-typography: mat-typography-config(
 /** --------------------------END ICON STYLING OVERRIDES----------------------------------- **/
 
 
+
+
+@function print-to-console($color_map) {
+        //Use this to debug
+        $all-map-keys: map-keys($color_map);
+        // Log map keys (in compiler console log)
+        @debug '-----$all-map-keys START---';
+        @debug $all-map-keys;
+        @debug '-----$all-map-keys END---';
+}
