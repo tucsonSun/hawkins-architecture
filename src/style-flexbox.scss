@@ -38,13 +38,13 @@
 }
 
 
+//Mobile styling
 @media (max-width: 430px) {
   .flex-container {
-    display: block;
     justify-content: normal;
+    flex-direction: column;
 
     .col, .col-half, .col-thirds {
-      @include center-block;
       width: 100%;
       padding: 15px 0;
     }
