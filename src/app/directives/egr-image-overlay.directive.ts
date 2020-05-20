@@ -6,21 +6,23 @@ import {Directive, ElementRef, HostListener, Input, OnInit, Renderer2} from '@an
 
 export class EgrImageOverlayDirective implements OnInit{
 
-  private newClassValue = 'img-full-page-preview';
+  private imgFullPageClassContainerName = 'img-full-page-preview';
   public isImageInLargePreviewMode = false;
-  public currentElement: Element;
+  public parentElement: Element;
+  public imageElement: HTMLImageElement;
   public currentElementOriginalClassValues: string[];
+  public imageElementOriginalClassValues: string[];
 
   @HostListener('click' , ['$event']) onclick($event) {
     $event.preventDefault(); //ignore native button clicks
-    this.addOrRemoveStyle();
+    this.addOrRemoveClasses();
   }
 
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
     console.log(event);
     //only hide only if image is in preview mode
     if (this.isImageInLargePreviewMode) {
-      this.addOrRemoveStyle();
+      this.addOrRemoveClasses();
     }
   }
 
@@ -31,42 +33,58 @@ export class EgrImageOverlayDirective implements OnInit{
   }
 
   public initCurrentElement(): void {
-    const element = this.elRef.nativeElement;
-    if (element) {
-      this.currentElement = element;
+    const parentElement = this.elRef.nativeElement;
+    const imageElement = this.elRef.nativeElement.querySelector('img') as HTMLImageElement;
 
-      if (element.className && element.className.length > 0) {
-        this.currentElementOriginalClassValues = element.className.split(' ');
+    if (parentElement) {
+      this.parentElement = parentElement;
+
+      if (parentElement.className && parentElement.className.length > 0) {
+        this.currentElementOriginalClassValues = parentElement.className.split(' ');
       }
 
-      console.log(element.src);
+      console.log(parentElement.src);
     } else {
-      throw `Error with EgrImageOverlayDirective: We were expecting a element but none was found. ${element}`;
+      throw `Error with EgrImageOverlayDirective: We were expecting a element but none was found. ${parentElement}`;
+    }
+
+    if (imageElement) {
+      this.imageElement = imageElement;
+      this.imageElementOriginalClassValues = imageElement.className.split(' ');
+      console.log(parentElement.src);
+    } else {
+      throw `Error with EgrImageOverlayDirective: We were expecting a "img" child element for parent element but none was found. ${imageElement}`;
     }
   }
 
-  public addOrRemoveStyle(): void {
+  public addOrRemoveClasses(): void {
     if (!this.isImageInLargePreviewMode) {
-      this.addStylingToElement();
+      this.addElementClasses();
     } else {
-      this.removeStylingToElement();
+      this.removeElementClasses();
     }
     this.isImageInLargePreviewMode = !this.isImageInLargePreviewMode;
   }
 
 
-  private removeStylingToElement(): void {
-    this.renderer.removeClass(this.currentElement, this.newClassValue);
+  private removeElementClasses(): void {
+    this.renderer.removeClass(this.parentElement, this.imgFullPageClassContainerName);
     this.currentElementOriginalClassValues.forEach((aClass: string) => {
-      this.renderer.addClass(this.currentElement, aClass);
+      this.renderer.addClass(this.parentElement, aClass);
+    });
+    this.imageElementOriginalClassValues.forEach((aClass: string) => {
+      this.renderer.addClass(this.imageElement, aClass);
     });
   }
 
-  private addStylingToElement(): void {
+  private addElementClasses(): void {
     this.currentElementOriginalClassValues.forEach((aClass: string) => {
-      this.renderer.removeClass(this.currentElement, aClass);
+      this.renderer.removeClass(this.parentElement, aClass);
     });
-    this.renderer.addClass(this.currentElement, this.newClassValue);
+    this.imageElementOriginalClassValues.forEach((aClass: string) => {
+      this.renderer.removeClass(this.imageElement, aClass);
+    });
+    this.renderer.addClass(this.parentElement, this.imgFullPageClassContainerName);
   }
 
 }
