@@ -1,8 +1,8 @@
-import { EgrImageOverlayDirective } from './egr-image-overlay.directive';
+import { EgrImageFullPagePreviewDirective } from './egr-image-full-page-preview.directive';
 
-describe('EgrImageOverlayDirective', () => {
+describe('EgrImageFullPagePreviewDirective', () => {
   it('should create an instance', () => {
-   // const directive = new EgrImageOverlayDirective();
+   // const directive = new EgrImageFullPagePreviewDirective();
    // expect(directive).toBeTruthy();
   });
 });

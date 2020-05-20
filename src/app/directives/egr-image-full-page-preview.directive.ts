@@ -1,10 +1,10 @@
 import {Directive, ElementRef, HostListener, Input, OnInit, Renderer2} from '@angular/core';
 
 @Directive({
-  selector: '[appEgrImageOverlay]'
+  selector: '[appEgrImageFullPagePreview]'
 })
 
-export class EgrImageOverlayDirective implements OnInit{
+export class EgrImageFullPagePreviewDirective implements OnInit{
 
   private imgFullPageClassContainerName = 'img-full-page-preview';
   public isImageInLargePreviewMode = false;
@@ -29,12 +29,12 @@ export class EgrImageOverlayDirective implements OnInit{
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
-    this.initCurrentElement();
+    this.initParentElement();
+    this.initImageElement();
   }
 
-  public initCurrentElement(): void {
+  public initParentElement(): void {
     const parentElement = this.elRef.nativeElement;
-    const imageElement = this.elRef.nativeElement.querySelector('img') as HTMLImageElement;
 
     if (parentElement) {
       this.parentElement = parentElement;
@@ -42,18 +42,19 @@ export class EgrImageOverlayDirective implements OnInit{
       if (parentElement.className && parentElement.className.length > 0) {
         this.currentElementOriginalClassValues = parentElement.className.split(' ');
       }
-
-      console.log(parentElement.src);
     } else {
-      throw `Error with EgrImageOverlayDirective: We were expecting a element but none was found. ${parentElement}`;
+      throw `Error with EgrImageFullPagePreviewDirective: We were expecting a element but none was found. ${parentElement}`;
     }
+  }
+
+  public initImageElement(): void {
+    const imageElement = this.elRef.nativeElement.querySelector('img') as HTMLImageElement;
 
     if (imageElement) {
       this.imageElement = imageElement;
       this.imageElementOriginalClassValues = imageElement.className.split(' ');
-      console.log(parentElement.src);
     } else {
-      throw `Error with EgrImageOverlayDirective: We were expecting a "img" child element for parent element but none was found. ${imageElement}`;
+      throw `Error with EgrImageFullPagePreviewDirective: We were expecting a "img" child element for parent element but none was found. ${this.elRef.nativeElement}`;
     }
   }
 
