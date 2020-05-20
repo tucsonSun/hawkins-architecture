@@ -6,15 +6,24 @@ import {Directive, ElementRef, HostListener, Input, OnInit, Renderer2} from '@an
 
 export class EgrImageOverlayDirective implements OnInit{
 
-  public hideLargeImage = false;
+  private newClassValue = 'img-full-page-preview';
+  public isImageInLargePreviewMode = false;
   public currentElement: Element;
   public currentElementOriginalClassValues: string[];
 
   @HostListener('click' , ['$event']) onclick($event) {
     $event.preventDefault(); //ignore native button clicks
     this.addOrRemoveStyle();
-
   }
+
+  @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
+    console.log(event);
+    //only hide only if image is in preview mode
+    if (this.isImageInLargePreviewMode) {
+      this.addOrRemoveStyle();
+    }
+  }
+
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
@@ -36,30 +45,18 @@ export class EgrImageOverlayDirective implements OnInit{
     }
   }
 
-
-  // public findFirstImageURL(): void {
-  //   const element = this.elRef.nativeElement.querySelector('img') as HTMLImageElement;
-  //   if (element) {
-  //     this.imageElement = element;
-  //     this.imageElementOriginalClassValues = element.className;
-  //     console.log(element.src);
-  //   } else {
-  //     throw `Error with EgrImageOverlayDirective: We were expecting a "img" child element for parent element but none was found. ${element}`;
-  //   }
-  // }
-
   public addOrRemoveStyle(): void {
-    if (!this.hideLargeImage) {
+    if (!this.isImageInLargePreviewMode) {
       this.addStylingToElement();
     } else {
       this.removeStylingToElement();
     }
-    this.hideLargeImage = !this.hideLargeImage;
+    this.isImageInLargePreviewMode = !this.isImageInLargePreviewMode;
   }
 
 
   private removeStylingToElement(): void {
-    this.renderer.removeClass(this.currentElement, `fullPage-image-overlay`);
+    this.renderer.removeClass(this.currentElement, this.newClassValue);
     this.currentElementOriginalClassValues.forEach((aClass: string) => {
       this.renderer.addClass(this.currentElement, aClass);
     });
@@ -69,29 +66,7 @@ export class EgrImageOverlayDirective implements OnInit{
     this.currentElementOriginalClassValues.forEach((aClass: string) => {
       this.renderer.removeClass(this.currentElement, aClass);
     });
-    this.renderer.addClass(this.currentElement, `fullPage-image-overlay`);
+    this.renderer.addClass(this.currentElement, this.newClassValue);
   }
-
-  // private addStylingToElement(): void {
-  //   const requiredStyles = {
-  //     // 'background-color': 'yellow',
-  //     // 'color': 'red',
-  //     // 'font-weight': 'bold',
-  //     // //...and so on
-  //
-  //     'position': 'absolute',
-  //     'bottom': '0',
-  //     'background': 'rgba(0, 0, 0, 0.5)', /* Black see-through */
-  //     'width': '100%',
-  //     'height': '100%',
-  //     'transition': '.5s ease',
-  //     'opacity': '0',
-  //     'color': 'white',
-  //   };
-  //   Object.keys(requiredStyles).forEach(newStyle => {
-  //     this.renderer.setStyle(this.imageElement, `${newStyle}`, requiredStyles[newStyle]);
-  //   });
-  // }
-
 
 }

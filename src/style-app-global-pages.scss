@@ -45,3 +45,8 @@ h3.section-title {
 .img-responsive {
   @include img-responsive();
 }
+
+
+.img-full-page-preview {
+ @include img-full-page-preview();
+}
