@@ -6,18 +6,33 @@
 //  }
 //}
 
-mat-card {
-  margin: 0 12px;
-  width: 33%;
-
-  //background: var(--bg3) !important;
-  border: 1px solid var(--primary);
-}
-
-.placeHolder2X {
-  width: 66%;
-}
-
 .flex-container {
   padding: 22px 0;
+  mat-card {
+    margin: 0 12px;
+    width: 33%;
+
+    //background: var(--bg3) !important;
+    border: 1px solid var(--primary);
+  }
+
+  .placeHolder2X {
+    width: 66%;
+  }
+}
+
+//Mobile styling
+@media (max-width: 430px) {
+  .flex-container {
+    padding: inherit;
+    mat-card {
+      margin: inherit;
+      margin-bottom: 30px;
+      width: 100%;
+    }
+
+    .placeHolder2X {
+      display: none;
+    }
+  }
 }
