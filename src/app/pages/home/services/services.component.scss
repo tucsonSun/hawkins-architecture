@@ -18,3 +18,14 @@
   }
 
 }
+
+
+@media (max-width: 430px) {
+  .flex-container {
+    .col-thirds {
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+    }
+  }
+}
