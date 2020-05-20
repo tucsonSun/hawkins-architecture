@@ -7,8 +7,8 @@ import {Directive, ElementRef, HostListener, Input, OnInit, Renderer2} from '@an
 export class EgrImageOverlayDirective implements OnInit{
 
   public hideLargeImage = false;
-  public imageElement: HTMLImageElement;
-  public imageElementOriginalClassValues: string = '';
+  public currentElement: Element;
+  public currentElementOriginalClassValues: string[];
 
   @HostListener('click' , ['$event']) onclick($event) {
     $event.preventDefault(); //ignore native button clicks
@@ -18,19 +18,35 @@ export class EgrImageOverlayDirective implements OnInit{
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   ngOnInit(): void {
-    this.findFirstImageURL();
+    this.initCurrentElement();
   }
 
-  public findFirstImageURL(): void {
-    const element = this.elRef.nativeElement.querySelector('img') as HTMLImageElement;
+  public initCurrentElement(): void {
+    const element = this.elRef.nativeElement;
     if (element) {
-      this.imageElement = element;
-      this.imageElementOriginalClassValues = element.className;
+      this.currentElement = element;
+
+      if (element.className && element.className.length > 0) {
+        this.currentElementOriginalClassValues = element.className.split(' ');
+      }
+
       console.log(element.src);
     } else {
-      throw `Error with EgrImageOverlayDirective: We were expecting a "img" child element for parent element but none was found. ${element}`;
+      throw `Error with EgrImageOverlayDirective: We were expecting a element but none was found. ${element}`;
     }
   }
+
+
+  // public findFirstImageURL(): void {
+  //   const element = this.elRef.nativeElement.querySelector('img') as HTMLImageElement;
+  //   if (element) {
+  //     this.imageElement = element;
+  //     this.imageElementOriginalClassValues = element.className;
+  //     console.log(element.src);
+  //   } else {
+  //     throw `Error with EgrImageOverlayDirective: We were expecting a "img" child element for parent element but none was found. ${element}`;
+  //   }
+  // }
 
   public addOrRemoveStyle(): void {
     if (!this.hideLargeImage) {
@@ -43,13 +59,17 @@ export class EgrImageOverlayDirective implements OnInit{
 
 
   private removeStylingToElement(): void {
-    this.renderer.removeClass(this.imageElement, `fullPage-image-overlay`);
-    this.renderer.addClass(this.imageElement, this.imageElementOriginalClassValues);
+    this.renderer.removeClass(this.currentElement, `fullPage-image-overlay`);
+    this.currentElementOriginalClassValues.forEach((aClass: string) => {
+      this.renderer.addClass(this.currentElement, aClass);
+    });
   }
 
   private addStylingToElement(): void {
-    this.renderer.removeClass(this.imageElement, this.imageElementOriginalClassValues);
-    this.renderer.addClass(this.imageElement, `fullPage-image-overlay`);
+    this.currentElementOriginalClassValues.forEach((aClass: string) => {
+      this.renderer.removeClass(this.currentElement, aClass);
+    });
+    this.renderer.addClass(this.currentElement, `fullPage-image-overlay`);
   }
 
   // private addStylingToElement(): void {
