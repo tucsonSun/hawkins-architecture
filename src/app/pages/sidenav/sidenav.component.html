@@ -18,22 +18,20 @@
       </mat-list-item>
 
 
-      <div class="submenu" [ngClass]="{'expanded' : true}" *ngIf="true">
+      <div class="submenu" [ngClass]="{'expanded' : true}">
           <a mat-list-item class="right"
-             [routerLink]="['/home/', { sectionId: 'profile' }]" [state]="{ data: { sectionId: 'profile' }}"
-             [routerLinkActiveOptions]="{ exact: true }"
-             routerLinkActive="active-link">Profile</a>
+             [routerLink]="['/home', { sectionId: 'profile' }]" [state]="{ data: { sectionId: 'profile' }}"
+             [class.active-link]="isLinkActive('profile')">Profile</a>
 
           <a mat-list-item class="right"
-             [routerLink]="['/home/', { sectionId: 'services' }]" [state]="{ data: { sectionId: 'services' }}"
-             [routerLinkActiveOptions]="{ exact: true }"
-             routerLinkActive="active-link">Services</a>
+             [routerLink]="['/home', { sectionId: 'services' }]" [state]="{ data: { sectionId: 'services' }}"
+             [class.active-link]="isLinkActive('services')">Services</a>
 
           <a mat-list-item class="right"
-             [routerLink]="['/home/', { sectionId: 'contact' }]" [state]="{ data: { sectionId: 'contact' }}"
-             [routerLinkActiveOptions]="{ exact: true }"
-             routerLinkActive="active-link">Contact</a>
+             [routerLink]="['/home', { sectionId: 'contact' }]" [state]="{ data: { sectionId: 'contact' }}"
+             [class.active-link]="isLinkActive('contact')">Contact</a>
 
+        <!--TODO: For some release the follow route didnt work....this is the popper to send navroutes-->
 <!--        <a mat-list-item class="right"
            [routerLink]="['/home/', { sectionId: 'profile' }]"
            [routerLinkActiveOptions]="{ exact: true }"
@@ -60,7 +58,7 @@
         <mat-icon mat-list-icon>desktop_windows</mat-icon>
         <span class="full-width">Portfolio</span>
       </mat-list-item>
-      <div class="submenu" [ngClass]="{'expanded' : true}" *ngIf="true">
+      <div class="submenu" [ngClass]="{'expanded' : true}">
         <a mat-list-item class="right"
            routerLink="/portfolio/specialty-schools"
            [routerLinkActiveOptions]="{ exact: true }"

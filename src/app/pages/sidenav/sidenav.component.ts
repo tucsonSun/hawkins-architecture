@@ -66,7 +66,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
             const value = state ? state.data['sectionId'] : null;
             console.log(`Route sectionId "${value}"`);
             if (value) {
-                setTimeout(() => { this.scrollerService.scrollToElement(`#${value}`), 500 });
+                setTimeout(() => { this.scrollerService.scrollToElement(`#${value}`), 1000 });
             } else {
                 this.scrollerService.scrollToTopOfPage();
             }
@@ -128,6 +128,10 @@ export class SidenavComponent implements OnInit, OnDestroy {
         }
     }
 
+    public isLinkActive(urlSubstring: string): boolean {
+        const containsUrlSubstring = this.router.url.includes(urlSubstring);
+        return containsUrlSubstring;
+    }
 
     public pickColor(color: string) {
         this.colorPickerService.setColorClass(`${color}`);
