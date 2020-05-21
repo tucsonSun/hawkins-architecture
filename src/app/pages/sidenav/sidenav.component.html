@@ -12,17 +12,47 @@
         </h4>
       </mat-list-item>-->
 
-      <mat-list-item
-              routerLink="/home"
-              [routerLinkActiveOptions]="{ exact: true }"
-              routerLinkActive="active-link">
+      <mat-list-item>
         <mat-icon mat-list-icon>home</mat-icon>
         <span class="full-width">Home</span>
       </mat-list-item>
-      <div class="submenu" [ngClass]="{'expanded' : showSubmenuHome}" *ngIf="showSubmenuHome">
-        <a mat-list-item class="right" [appEgrScrollTo]="'#profile'" (click)="closeSideNavAction()">Profile</a>
-        <a mat-list-item class="right" [appEgrScrollTo]="'#services'" (click)="closeSideNavAction()">Services</a>
-        <a mat-list-item class="right" [appEgrScrollTo]="'#contact'" (click)="closeSideNavAction()">Contact</a>
+
+
+      <div class="submenu" [ngClass]="{'expanded' : true}" *ngIf="true">
+          <a mat-list-item class="right"
+             [routerLink]="['/home/', { sectionId: 'profile' }]" [state]="{ data: { sectionId: 'profile' }}"
+             [routerLinkActiveOptions]="{ exact: true }"
+             routerLinkActive="active-link">Profile</a>
+
+          <a mat-list-item class="right"
+             [routerLink]="['/home/', { sectionId: 'services' }]" [state]="{ data: { sectionId: 'services' }}"
+             [routerLinkActiveOptions]="{ exact: true }"
+             routerLinkActive="active-link">Services</a>
+
+          <a mat-list-item class="right"
+             [routerLink]="['/home/', { sectionId: 'contact' }]" [state]="{ data: { sectionId: 'contact' }}"
+             [routerLinkActiveOptions]="{ exact: true }"
+             routerLinkActive="active-link">Contact</a>
+
+<!--        <a mat-list-item class="right"
+           [routerLink]="['/home/', { sectionId: 'profile' }]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link">Profile</a>
+
+        <a mat-list-item class="right"
+           [routerLink]="['/home/', { sectionId: 'services' }]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link">Services</a>
+
+        <a mat-list-item class="right"
+           [routerLink]="['/home/', { sectionId: 'contact' }]"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link">Contact</a>-->
+
+
+<!--        <a mat-list-item class="right" [appEgrScrollTo]="'#profile'" (click)="closeSideNavAction()">Profile</a>-->
+<!--        <a mat-list-item class="right" [appEgrScrollTo]="'#services'" (click)="closeSideNavAction()">Services</a>-->
+<!--        <a mat-list-item class="right" [appEgrScrollTo]="'#contact'" (click)="closeSideNavAction()">Contact</a>-->
       </div>
 
 
@@ -30,7 +60,7 @@
         <mat-icon mat-list-icon>desktop_windows</mat-icon>
         <span class="full-width">Portfolio</span>
       </mat-list-item>
-      <div class="submenu" [ngClass]="{'expanded' : showSubmenuProfile}" *ngIf="showSubmenuProfile">
+      <div class="submenu" [ngClass]="{'expanded' : true}" *ngIf="true">
         <a mat-list-item class="right"
            routerLink="/portfolio/specialty-schools"
            [routerLinkActiveOptions]="{ exact: true }"
@@ -52,20 +82,12 @@
            routerLinkActive="active-link">Cultural / Community</a>
 
       </div>
-
-      <mat-list-item>
-        <h4 matLine routerLink="/books" routerLinkActive="active-link">
-          Books
-        </h4>
-      </mat-list-item>
-
-
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button
-        class="header-button"
+        class="header-button nav-button"
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button

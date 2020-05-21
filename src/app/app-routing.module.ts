@@ -14,6 +14,7 @@ export const paths = {
 
 const routes: Routes = [
     { path: paths.HOME, loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
+    { path: `${paths.HOME}/:sectionId`, loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
     { path: paths.PORTFOLIO, loadChildren: () => import('./pages/portfolio/portfolio.module').then(m => m.PortfolioModule) },
     { path: paths.BOOKS, loadChildren: () => import('./pages/books/books.module').then(m => m.BooksModule) },
 
