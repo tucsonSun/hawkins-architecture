@@ -22,8 +22,6 @@ import {filter, map, takeUntil} from "rxjs/operators";
 })
 export class SidenavComponent implements OnInit, OnDestroy {
 
-    public showSubmenuProfile = false;
-    public showSubmenuHome = false;
     private subKiller = new Subject();
     private routerSub$: Subscription
     private state$: Subscription;
@@ -53,7 +51,6 @@ export class SidenavComponent implements OnInit, OnDestroy {
             this.closeSideNav(routerEvent);
             this.showLoader(routerEvent);
             this.setCurrentPage(routerEvent);
-            this.setShowHideSubmenus();
         });
 
         //init stateSub
@@ -71,20 +68,6 @@ export class SidenavComponent implements OnInit, OnDestroy {
                 this.scrollerService.scrollToTopOfPage();
             }
         });
-    }
-
-    private setShowHideSubmenus(): void {
-        //reset all to false first
-        this.showSubmenuProfile = false;
-        this.showSubmenuHome = false;
-
-        if (this.currentPathName && this.currentPathName.includes(paths.HOME)) {
-            this.showSubmenuHome = true;
-        } else if (this.currentPathName && this.currentPathName.includes(paths.PORTFOLIO)) {
-            this.showSubmenuProfile = true;
-        } else {
-            return; //do nothing
-        }
     }
 
     public setCurrentPage(routerEvent: any): void {
@@ -113,9 +96,6 @@ export class SidenavComponent implements OnInit, OnDestroy {
         }
     }
 
-    // public closeSideNavAction(): void {
-    //   setTimeout(() =>{ this.sidenav.close(); }, 1000);
-    // }
     /**
      * Method will close the side nav and scoll to top of page
      * @param routerEvent

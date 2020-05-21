@@ -16,8 +16,6 @@
         <mat-icon mat-list-icon>home</mat-icon>
         <span class="full-width">Home</span>
       </mat-list-item>
-
-
       <div class="submenu" [ngClass]="{'expanded' : true}">
           <a mat-list-item class="right"
              [routerLink]="['/home', { sectionId: 'profile' }]" [state]="{ data: { sectionId: 'profile' }}"
@@ -31,7 +29,7 @@
              [routerLink]="['/home', { sectionId: 'contact' }]" [state]="{ data: { sectionId: 'contact' }}"
              [class.active-link]="isLinkActive('contact')">Contact</a>
 
-        <!--TODO: For some release the follow route didnt work....this is the popper to send navroutes-->
+        <!--TODO: For some reason the routes declared below this comment didnt work....but it is the popper way send navroutes-->
 <!--        <a mat-list-item class="right"
            [routerLink]="['/home/', { sectionId: 'profile' }]"
            [routerLinkActiveOptions]="{ exact: true }"
@@ -54,7 +52,7 @@
       </div>
 
 
-      <mat-list-item (click)="showSubmenuProfile = !showSubmenuProfile">
+      <mat-list-item>
         <mat-icon mat-list-icon>desktop_windows</mat-icon>
         <span class="full-width">Portfolio</span>
       </mat-list-item>
