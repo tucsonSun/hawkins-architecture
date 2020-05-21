@@ -19,7 +19,6 @@ export class EgrImageFullPagePreviewDirective implements OnInit{
   }
 
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
-    console.log(event);
     //only hide only if image is in preview mode
     if (this.isImageInLargePreviewMode) {
       this.addOrRemoveClasses();
