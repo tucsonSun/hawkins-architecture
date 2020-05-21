@@ -25,6 +25,12 @@ mat-toolbar {
   display: flex;
   .header-button {
     flex-basis: 5%;
+    position: relative;
+    &.nav-button::before {
+      content: 'Menu';
+      position: absolute;
+      bottom: -18px;
+    }
   }
   .header-title {
     flex-basis: 95%;
