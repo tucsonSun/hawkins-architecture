@@ -1,4 +1,5 @@
 import {Directive, HostListener, Input} from '@angular/core';
+import {ScrollerService} from "../core/services/scroller.service";
 
 
 /**
@@ -32,18 +33,13 @@ export class EgrScrollToDirective {
     }
   }
 
-  constructor() { }
+  constructor(private scrollerService: ScrollerService) { }
 
   public scrollToTopOfPage(): void {
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    return this.scrollerService.scrollToTopOfPage();
   }
 
   scrollToElement(elementId: string): void {
-    const element = document.querySelector(elementId);
-    if (element) {
-      element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-    } else {
-      throw `Error with EgrScrollToDirective: '${elementId}' element not found on page.`;
-    }
+    return this.scrollerService.scrollToElement(elementId);
   }
 }
