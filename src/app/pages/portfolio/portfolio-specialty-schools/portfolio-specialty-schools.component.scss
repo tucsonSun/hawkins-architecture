@@ -16,6 +16,10 @@
     border: 1px solid var(--primary);
   }
 
+  .placeHolder1X {
+    width: 33%;
+  }
+
   .placeHolder2X {
     width: 66%;
   }
@@ -29,14 +33,6 @@
       margin: inherit;
       margin-bottom: 30px;
       width: 100%;
-    }
-
-    .placeHolder1X {
-      width: 33%;
-    }
-
-    .placeHolder2X {
-      width: 66%;
     }
   }
 }
