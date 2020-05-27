@@ -1,4 +1,8 @@
 import {Directive, OnDestroy, OnInit, ElementRef, Renderer2} from '@angular/core';
+import {ScrollerService} from "../core/services/scroller.service";
+import {takeUntil} from "rxjs/operators";
+import {Subject} from "rxjs";
+
 
 
 /**
@@ -26,23 +30,29 @@ import {Directive, OnDestroy, OnInit, ElementRef, Renderer2} from '@angular/core
 @Directive({
   selector: '[appEgrStickyMenu]'
 })
-export class EgrStickyMenuDirective implements OnDestroy, OnInit {
+export class EgrStickyMenuDirective implements OnInit, OnDestroy {
 
+  private subKiller$ = new Subject();
   private prevScrollpos = window.pageYOffset;
 
-  constructor(private _elemRef: ElementRef, private _renderer: Renderer2) { }
+  constructor(private _elemRef: ElementRef,
+              private _renderer: Renderer2,
+              private _scrollerService: ScrollerService) { }
 
   ngOnInit() {
-    window.addEventListener('scroll', this.scroll, true); //third parameter
+    this._scrollerService.scrollObservable$.pipe(takeUntil(this.subKiller$)).subscribe(event => {
+      this.scrollDirectionAction(event);
+    });
     //add show class
     this._renderer.addClass(this._elemRef.nativeElement, 'show-element');
   }
 
   ngOnDestroy() {
-    window.removeEventListener('scroll', this.scroll, true);
+    this.subKiller$.next()
+    this.subKiller$.complete()
   }
 
-  scroll = (event): void => {
+  private scrollDirectionAction = (event): void => {
     //handle your scroll here
     //notice the 'odd' function assignment to a class field
     //this is used to be able to remove the event listener
@@ -56,7 +66,7 @@ export class EgrStickyMenuDirective implements OnDestroy, OnInit {
   };
 
 
-  toggleClass(styleNameNew: string, styleNameOld: string): void {
+  private toggleClass(styleNameNew: string, styleNameOld: string): void {
     this._renderer.removeClass(this._elemRef.nativeElement, styleNameOld);
     this._renderer.addClass(this._elemRef.nativeElement, styleNameNew);
   }

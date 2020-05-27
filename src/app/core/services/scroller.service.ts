@@ -59,6 +59,24 @@ export class ScrollerService {
         );
   }
 
+  public onScrolledUp$(): Observable<[Position, Position]> {
+    return this.scrollObservable$
+        //.pipe(throttle(() => interval(500))) dont think i need to throttle since scrollObservable$ already does
+        .pipe(
+            map((doc: Document) => {
+                  return {
+                    scrollHeight: doc.documentElement.scrollHeight,
+                    scrollTop:    doc.documentElement.scrollTop || doc.body.scrollTop,
+                    clientHeight: doc.documentElement.clientHeight
+                  } as Position;
+                }
+            ))
+        .pipe(pairwise<Position>())
+        .pipe(filter((positions: [Position, Position]) =>
+            this.isUserScrollingUp(positions))
+        );
+  }
+
 
   private isScrollExpectedPercent(position:Position, percent:number) {
     return ((position.scrollTop + position.clientHeight) / position.scrollHeight) > (percent/100);
@@ -66,6 +84,10 @@ export class ScrollerService {
 
   private isUserScrollingDown(positions:Array<Position>) {
     return positions[0].scrollTop < positions[1].scrollTop;
+  }
+
+  private isUserScrollingUp(positions:Array<Position>) {
+    return positions[0].scrollTop > positions[1].scrollTop;
   }
 }
 
