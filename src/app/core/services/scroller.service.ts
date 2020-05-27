@@ -58,7 +58,15 @@ export class ScrollerService {
             .pipe(pairwise<Position>())
             .pipe(filter((positions: [Position, Position]) =>
                 this.isUserScrollingDown(positions) && this.isScrollExpectedPercent(ignorePercentage, positions[1]))
-            );
+            )
+            .pipe(
+                map((result: [Position, Position]) => {
+                        //This last mapping is not necessary its only for debugging
+                        // console.log(result, 'scrollDown');
+                        console.log(result[0], result[1], result[0].scrollTop > result[1].scrollTop, "scrollDown");
+                        return result; //do nothing just pass thru result
+                    }
+                ));
     }
 
     public onScrolledUp$(): Observable<[Position, Position]> {
@@ -71,14 +79,21 @@ export class ScrollerService {
                             scrollTop: window.document.documentElement.scrollTop || window.document.body.scrollTop,
                             clientHeight: window.document.documentElement.clientHeight
                         } as Position;
-                        console.log(value, 'scrollUp');
                         return value;
                     }
                 ))
             .pipe(pairwise<Position>())
             .pipe(filter((positions: [Position, Position]) =>
                 this.isUserScrollingUp(positions))
-            );
+            )
+            .pipe(
+                map((result: [Position, Position]) => {
+                        //This last mapping is not necessary its only for debugging
+                        //console.log(result, 'scrollUp');
+                        console.log(result[0], result[1], result[0].scrollTop > result[1].scrollTop, "scrollUp");
+                        return result; //do nothing just pass thru result
+                    }
+                ));
     }
 
 
@@ -94,8 +109,6 @@ export class ScrollerService {
     }
 
     private isUserScrollingUp(positions: Array<Position>) {
-        console.log(positions[0], positions[1], positions[0].scrollTop > positions[1].scrollTop, "values for up");
-
         return positions[0].scrollTop > positions[1].scrollTop;
     }
 }
