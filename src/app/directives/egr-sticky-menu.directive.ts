@@ -33,16 +33,15 @@ import {Subject} from "rxjs";
 export class EgrStickyMenuDirective implements OnInit, OnDestroy {
 
   private subKiller$ = new Subject();
-  private prevScrollpos = window.pageYOffset;
 
   constructor(private _elemRef: ElementRef,
               private _renderer: Renderer2,
               private _scrollerService: ScrollerService) { }
 
   ngOnInit() {
-    this._scrollerService.scrollObservable$.pipe(takeUntil(this.subKiller$)).subscribe(event => {
-      this.scrollDirectionAction(event);
-    });
+    this.initScrollDown();
+    this.initScrollUp();
+
     //add show class
     this._renderer.addClass(this._elemRef.nativeElement, 'show-element');
   }
@@ -52,18 +51,26 @@ export class EgrStickyMenuDirective implements OnInit, OnDestroy {
     this.subKiller$.complete()
   }
 
-  private scrollDirectionAction = (event): void => {
-    //handle your scroll here
-    //notice the 'odd' function assignment to a class field
-    //this is used to be able to remove the event listener
-    let currentScrollPos = window.pageYOffset;
-    if (this.prevScrollpos > currentScrollPos) {
-      this.toggleClass('hide-element', 'show-element');
-    } else {
-      this.toggleClass('show-element', 'hide-element');
-    }
-    this.prevScrollpos = currentScrollPos;
-  };
+  private initScrollDown(): void {
+    this._scrollerService.onScrolledDown$(true).pipe(takeUntil(this.subKiller$)).subscribe(event => {
+      this.scrollDownAction(event);
+    });
+  }
+
+  private initScrollUp(): void {
+    this._scrollerService.onScrolledUp$().pipe(takeUntil(this.subKiller$)).subscribe(event => {
+      this.scrollUpAction(event);
+    });
+  }
+
+
+  private scrollUpAction = (event): void => {
+    this.toggleClass('hide-element', 'show-element');
+  }
+
+  private scrollDownAction = (event): void => {
+    this.toggleClass('show-element', 'hide-element');
+  }
 
 
   private toggleClass(styleNameNew: string, styleNameOld: string): void {
