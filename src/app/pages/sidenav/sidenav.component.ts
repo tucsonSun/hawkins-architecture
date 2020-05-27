@@ -22,7 +22,7 @@ import {filter, map, takeUntil} from "rxjs/operators";
 })
 export class SidenavComponent implements OnInit, OnDestroy {
 
-    private subKiller = new Subject();
+    private subKiller$ = new Subject();
     private routerSub$: Subscription
     private state$: Subscription;
     private currentPathName: string;
@@ -38,15 +38,15 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
 
     ngOnDestroy() {
-        this.subKiller.next()
-        this.subKiller.complete()
+        this.subKiller$.next()
+        this.subKiller$.complete()
     }
 
     // This will be used for closing the sidenav drawer and scrolling to the top of screen
     ngOnInit() {
         //init RouteSub
         this.routerSub$ = this.router.events.pipe(
-            takeUntil(this.subKiller),
+            takeUntil(this.subKiller$),
         ).subscribe((routerEvent: Event) => {
             this.closeSideNav(routerEvent);
             this.showLoader(routerEvent);
@@ -57,7 +57,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         this.state$ = this.router.events.pipe(
             filter(e => e instanceof NavigationStart),
             map(() => this.router.getCurrentNavigation().extras.state),
-            takeUntil(this.subKiller),
+            takeUntil(this.subKiller$),
         ).subscribe((state: any) => {
             console.log('************************************************************state');
             const value = state ? state.data['sectionId'] : null;
