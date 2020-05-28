@@ -29,7 +29,7 @@ export class EgrScrollToDirective {
       this.scrollToTopOfPage();
     }
     else {
-      this.scrollToElement(this.appEgrScrollTo);
+      this.scrollToElementId(this.appEgrScrollTo);
     }
   }
 
@@ -39,7 +39,7 @@ export class EgrScrollToDirective {
     return this.scrollerService.scrollToTopOfPage();
   }
 
-  scrollToElement(elementId: string): void {
-    return this.scrollerService.scrollToElement(elementId);
+  scrollToElementId(elementId: string): void {
+    return this.scrollerService.scrollToElementId(elementId);
   }
 }

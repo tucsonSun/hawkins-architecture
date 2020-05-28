@@ -28,15 +28,23 @@ export class ScrollerService {
     }
 
     public scrollToTopOfPage(): void {
+        //FYI: For some reason window.scrollTo didnt work when position:fix in parent
         window.scrollTo({top: 0, behavior: 'smooth'});
+
+        //const element = document.getElementsByTagName("app-root")[0];
+        //this.scrollToElement(element);
     }
 
-    public scrollToElement(elementId: string): void {
+    public scrollToElementId(elementId: string): void {
         const element = document.querySelector(elementId);
+        this.scrollToElement(element);
+    }
+
+    public scrollToElement(element: Element): void {
         if (element) {
             element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
         } else {
-            throw `Error with EgrScrollToDirective: '${elementId}' element not found on page.`;
+            throw `Error with method scrollToElement: '${element}' element not found on page.`;
         }
     }
 

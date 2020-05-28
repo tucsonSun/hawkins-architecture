@@ -63,7 +63,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
             const value = state ? state.data['sectionId'] : null;
             console.log(`Route sectionId "${value}"`);
             if (value) {
-                setTimeout(() => { this.scrollerService.scrollToElement(`#${value}`), 1000 });
+                setTimeout(() => { this.scrollerService.scrollToElementId(`#${value}`), 1000 });
             } else {
                 this.scrollerService.scrollToTopOfPage();
             }
