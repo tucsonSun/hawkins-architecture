@@ -24,7 +24,9 @@ export class ScrollerService {
 
 
     private initScrollObs(): void {
-        this.scrollObservable$ = fromEvent<Event>(window, "scroll").pipe(throttle(() => interval(500)));
+        this.scrollObservable$ = fromEvent<Event>(window, "scroll").pipe(
+            throttle(() => interval(300))
+        );
     }
 
     public scrollToTopOfPage(): void {
@@ -59,7 +61,6 @@ export class ScrollerService {
                             scrollTop: window.document.documentElement.scrollTop || window.document.body.scrollTop,
                             clientHeight: window.document.documentElement.clientHeight
                         } as Position;
-                        console.log(value, 'scrollDown');
                         return value;
                     }
                 ))
@@ -70,7 +71,6 @@ export class ScrollerService {
             .pipe(
                 map((result: [Position, Position]) => {
                         //This last mapping is not necessary its only for debugging
-                        // console.log(result, 'scrollDown');
                         console.log(result[0], result[1], result[0].scrollTop > result[1].scrollTop, "scrollDown");
                         return result; //do nothing just pass thru result
                     }
@@ -97,7 +97,6 @@ export class ScrollerService {
             .pipe(
                 map((result: [Position, Position]) => {
                         //This last mapping is not necessary its only for debugging
-                        //console.log(result, 'scrollUp');
                         console.log(result[0], result[1], result[0].scrollTop > result[1].scrollTop, "scrollUp");
                         return result; //do nothing just pass thru result
                     }
