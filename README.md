@@ -31,7 +31,26 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Step 1: Run `npm install -g angular-cli-ghpages` First install the angular-cli-ghpages globally:
 
 Step 2: Run `ng build --prod --base-href "<repo-name>"` Now use the Angular CLI with the --base-href flag to build your project and set the correct base href location:
+    
+    Example `ng build --prod --base-href "https://tucsonsun.github.io/hawkins-architecture/index.html"` 
+
 
 Step 3: Run `ngh --dir dist/hawkins-architecture` to dply the generated dist/hawkins-architecture folder
 
+
+Step 4: Validate that `gh-pages` branch was created:
+    
+    Example `https://github.com/tucsonSun/hawkins-architecture/branches` 
+
+Step 5: Make repository public (otherwise GitHubPages is not free)
+
+Step 6: Go to github.com/<repoName> -> Settings -> GitHub Pages
+    
+    Example: Your site is ready to be published at https://tucsonsun.github.io/hawkins-architecture/
+
+
+See GitHub Resources
+
 https://alligator.io/angular/deploying-angular-app-github-pages/
+https://www.telerik.com/blogs/quick-angular-2-hosting-angular-cli-github-pages
+https://www.youtube.com/watch?v=ACFBy8PI7J0
