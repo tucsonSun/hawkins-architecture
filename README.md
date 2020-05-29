@@ -48,6 +48,7 @@ Step 6: Go to github.com/<repoName> -> Settings -> GitHub Pages
     
     Example: Your site is ready to be published at https://tucsonsun.github.io/hawkins-architecture/
 
+Step 7: In order for your site to be published, a Jekyll theme must be chosen, even if you don’t use Jekyll at all.
 
 See GitHub Resources
 
