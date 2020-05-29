@@ -84,17 +84,36 @@ mat-sidenav-content {
   min-height: 50vh;
 }
 
-//Mobile styling
-@media (max-width: 430px) {
+////Mobile styling
+//@media (max-width: 430px) {
+//  .router-outlet-container {
+//    padding: inherit;
+//  }
+//
+//  mat-sidenav-content {
+//    mat-toolbar {
+//      .header-button {
+//        &.nav-button::after {
+//          display: none;
+//        }
+//      }
+//    }
+//  }
+//}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (max-width: 767px) {
   .router-outlet-container {
     padding: inherit;
   }
-
   mat-sidenav-content {
     mat-toolbar {
       .header-button {
         &.nav-button::after {
-          left: 5vw;
+          display: none;
         }
       }
     }
