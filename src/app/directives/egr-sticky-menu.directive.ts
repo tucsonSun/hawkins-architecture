@@ -65,11 +65,11 @@ export class EgrStickyMenuDirective implements OnInit, OnDestroy {
 
 
   private scrollUpAction = (event): void => {
-    this.toggleClass('hide-element', 'show-element');
+    this.toggleClass('show-element', 'hide-element');
   }
 
   private scrollDownAction = (event): void => {
-    this.toggleClass('show-element', 'hide-element');
+    this.toggleClass('hide-element', 'show-element');
   }
 
 

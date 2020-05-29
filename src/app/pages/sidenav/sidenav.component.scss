@@ -6,6 +6,24 @@
   //border: 1px solid red;
 }
 
+.stick-header-content {
+  margin-top: 64px; //compensate for height of mat-toolbar because of fixed position
+
+  .stick-header-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    &.show-element {
+      top: 0;
+      transition: top 0.25s ease-in;
+    }
+    &.hide-element {
+      top: -64px;
+      transition: top 0.25s ease-out;
+    }
+  }
+}
+
 /*** Styling for Fixed header ------------------ START ----------**/
 //mat-sidenav-container {
 //  position: fixed;
@@ -44,7 +62,6 @@
 mat-sidenav-content {
   mat-toolbar {
     display: flex;
-    border: 1px solid blue;
 
     .header-button {
       flex-basis: 5%;
