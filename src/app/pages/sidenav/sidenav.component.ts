@@ -117,7 +117,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         this.colorPickerService.setColorClass(`${color}`);
     }
 
-    public snavToggle(snav) {
+    public snavToggle(snav: MatSidenav) {
         snav.toggle();
     }
 
