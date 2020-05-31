@@ -32,7 +32,7 @@ Step 1: Run `npm install -g angular-cli-ghpages` First install the angular-cli-g
 
 Step 2: Run `ng build --prod --base-href "<repo-name>"` Now use the Angular CLI with the --base-href flag to build your project and set the correct base href location:
     
-    Example `ng build --prod --base-href "https://tucsonsun.github.io/hawkins-architecture/index.html"` 
+    Example `ng build --prod --base-href "https://tucsonsun.github.io/hawkins-architecture/"` 
 
 
 Step 3: Run `ngh --dir dist/hawkins-architecture` to dply the generated dist/hawkins-architecture folder
