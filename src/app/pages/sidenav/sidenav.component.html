@@ -83,17 +83,18 @@
   <mat-sidenav-content class="stick-header-content">
     <mat-toolbar color="primary" class="stick-header-fixed" appEgrStickyMenu>
       <button
-        class="header-button nav-button"
+        class="menu-header-button nav-button"
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
+        onclick="this.blur()"
         (click)="snavToggle(snav)">
         <mat-icon>menu</mat-icon>
       </button>
       <span class="header-title-container">
         <a class="header-title-link" routerLink=".">{{ title }}</a>
       </span>
-      <span class="header-button">
+      <span class="color-header-button">
         <button mat-icon-button [matMenuTriggerFor]="menu">
           <mat-icon>format_color_fill</mat-icon>
         </button>
@@ -110,8 +111,6 @@
           <button mat-menu-item (click)="pickColor('my-light-theme3')">
             <div class="color-swatch" mat-menu-item>Light Yellow</div>
           </button>
-
-
         </mat-menu>
       </span>
     </mat-toolbar>

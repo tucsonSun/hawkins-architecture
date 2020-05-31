@@ -25,12 +25,11 @@
   }
 }
 /*** Styling for Fixed header ------------------ END ----------**/
-
 mat-sidenav-content {
   mat-toolbar {
     display: flex;
 
-    .header-button {
+    .menu-header-button {
       flex-basis: 5%;
       display: flex;
       justify-content: center;
@@ -92,7 +91,7 @@ mat-sidenav-content {
 //
 //  mat-sidenav-content {
 //    mat-toolbar {
-//      .header-button {
+//      .menu-header-button {
 //        &.nav-button::after {
 //          display: none;
 //        }
@@ -111,7 +110,7 @@ mat-sidenav-content {
   }
   mat-sidenav-content {
     mat-toolbar {
-      .header-button {
+      .menu-header-button {
         &.nav-button::after {
           display: none;
         }
