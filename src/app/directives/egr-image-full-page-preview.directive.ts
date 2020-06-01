@@ -13,14 +13,25 @@ export class EgrImageFullPagePreviewDirective implements OnInit{
   public currentElementOriginalClassValues: string[];
   public imageElementOriginalClassValues: string[];
 
+  //If HTMLElement clicked then go into preview mode
   @HostListener('click' , ['$event']) onclick($event) {
-    $event.preventDefault(); //ignore native button clicks
+    $event.preventDefault();
     this.addOrRemoveClasses();
   }
 
+  //If escape button is pressed then hide image
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
-    //only hide only if image is in preview mode
+    //only hide the image if isImageInLargePreviewMode=true
     if (this.isImageInLargePreviewMode) {
+      this.addOrRemoveClasses();
+    }
+  }
+
+  //If in mobile mode and mobile (native) back button is pressed then close if
+  @HostListener('window:popstate', ['$event']) onPopState($event) {
+    //only hide the image if isImageInLargePreviewMode=true
+    if (this.isImageInLargePreviewMode) {
+      $event.preventDefault();
       this.addOrRemoveClasses();
     }
   }
