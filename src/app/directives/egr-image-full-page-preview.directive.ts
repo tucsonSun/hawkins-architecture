@@ -1,11 +1,17 @@
-import {Directive, ElementRef, HostListener, Input, OnInit, Renderer2} from '@angular/core';
+import {Directive, ElementRef, HostListener, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
+import {MyAppRouterService} from "../core/services/my-app-router.service";
+import {Router} from "@angular/router";
+import {Subject} from "rxjs";
+import {takeUntil} from "rxjs/operators";
+import {LocationStrategy} from "@angular/common";
 
 @Directive({
   selector: '[appEgrImageFullPagePreview]'
 })
 
-export class EgrImageFullPagePreviewDirective implements OnInit{
+export class EgrImageFullPagePreviewDirective implements OnInit, OnDestroy {
 
+  private subKiller$ = new Subject();
   private imgFullPageClassContainerName = 'img-full-page-preview';
   public isImageInLargePreviewMode = false;
   public parentElement: Element;
@@ -33,20 +39,38 @@ export class EgrImageFullPagePreviewDirective implements OnInit{
     }
   }
 
-  //If in mobile mode and mobile (native) back button is pressed then close if
-  @HostListener('window:popstate', ['$event']) onPopState($event) {
-    //only hide the image if isImageInLargePreviewMode=true
-    if (this.isImageInLargePreviewMode) {
-      $event.preventDefault();
-      this.endPreviewMode();
-    }
-  }
+  // //If in mobile mode and mobile (native) back button is pressed then close if
+  // @HostListener('window:popstate', ['$event']) onPopState($event) {
+  //   //only hide the image if isImageInLargePreviewMode=true
+  //   if (this.isImageInLargePreviewMode) {
+  //     $event.preventDefault();
+  //     this.endPreviewMode();
+  //   }
+  // }
 
-  constructor(private elRef: ElementRef, private renderer: Renderer2) {}
+  constructor(private elRef: ElementRef,
+              private renderer: Renderer2,
+              private router: Router,
+              private myAppRouterService: MyAppRouterService) {}
 
   ngOnInit(): void {
     this.initParentElement();
     this.initImageElement();
+    this.initBackPageSub();
+  }
+
+  ngOnDestroy() {
+    this.subKiller$.next()
+    this.subKiller$.complete()
+  }
+
+  public initBackPageSub(): void {
+    this.myAppRouterService.backButton$(this.router.events).pipe(takeUntil(this.subKiller$)).subscribe( result => {
+      console.log("***************************************************** Backbutton clicked")
+      if (this.isImageInLargePreviewMode) {
+        this.endPreviewMode();
+      }
+    });
   }
 
   public initParentElement(): void {
