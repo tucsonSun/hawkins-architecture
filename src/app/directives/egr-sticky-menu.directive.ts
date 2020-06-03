@@ -52,23 +52,27 @@ export class EgrStickyMenuDirective implements OnInit, OnDestroy {
   }
 
   private initScrollDown(): void {
-    this._scrollerService.onScrolledDown$(true).pipe(takeUntil(this.subKiller$)).subscribe(event => {
-      this.scrollDownAction(event);
+    this._scrollerService.onScrolledDown$(true).pipe(takeUntil(this.subKiller$)).subscribe(result => {
+      this.hideMenuAction();
     });
   }
 
   private initScrollUp(): void {
-    this._scrollerService.onScrolledUp$().pipe(takeUntil(this.subKiller$)).subscribe(event => {
-      this.scrollUpAction(event);
+    this._scrollerService.onScrolledUp$().pipe(takeUntil(this.subKiller$)).subscribe(result => {
+      if (result[1].isTopOfPage) {
+        this.hideMenuAction();
+      } else {
+        this.showMenuAction();
+      }
     });
   }
 
 
-  private scrollUpAction = (event): void => {
+  private showMenuAction = (): void => {
     this.toggleClass('show-element', 'hide-element');
   }
 
-  private scrollDownAction = (event): void => {
+  private hideMenuAction = (): void => {
     this.toggleClass('hide-element', 'show-element');
   }
 

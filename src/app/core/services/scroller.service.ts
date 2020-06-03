@@ -6,7 +6,8 @@ import {filter, map, pairwise, throttle} from "rxjs/operators";
 export interface Position {
     scrollHeight: number,
     scrollTop: number,
-    clientHeight: number
+    clientHeight: number,
+    isTopOfPage: boolean,
 }
 
 
@@ -59,7 +60,8 @@ export class ScrollerService {
                         const value = {
                             scrollHeight: window.document.documentElement.scrollHeight,
                             scrollTop: window.document.documentElement.scrollTop || window.document.body.scrollTop,
-                            clientHeight: window.document.documentElement.clientHeight
+                            clientHeight: window.document.documentElement.clientHeight,
+                            isTopOfPage: (window.document.documentElement.scrollTop || window.document.body.scrollTop) === 0
                         } as Position;
                         return value;
                     }
@@ -85,7 +87,8 @@ export class ScrollerService {
                         const value = {
                             scrollHeight: window.document.documentElement.scrollHeight,
                             scrollTop: window.document.documentElement.scrollTop || window.document.body.scrollTop,
-                            clientHeight: window.document.documentElement.clientHeight
+                            clientHeight: window.document.documentElement.clientHeight,
+                            isTopOfPage: (window.document.documentElement.scrollTop || window.document.body.scrollTop) === 0
                         } as Position;
                         return value;
                     }
