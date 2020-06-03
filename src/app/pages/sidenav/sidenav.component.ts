@@ -67,7 +67,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
         this.navigationEndSub$ = this.myAppRouterService.navigationEnd$(this.router.events).pipe(
             takeUntil(this.subKiller$),
         ).subscribe((routerEvent: NavigationEnd) => {
-            console.log('initNavigationEndSubscribe fired.................. ');
+                // console.log('initNavigationEndSubscribe fired.................. ');
                 this.closeSideNav(routerEvent);
                 this.setCurrentPathName(routerEvent);
                 this.setScrollToSection();
