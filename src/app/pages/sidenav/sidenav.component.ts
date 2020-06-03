@@ -78,6 +78,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
     public setScrollToSection(): void {
         if (this.currentStateValue) {
             this.scrollerService.scrollToElementId(`#${this.currentStateValue}`); //only scrollToSection when we have a currentStateValue
+        } else {
+            this.scrollerService.scrollToTopOfPage(); //default to top of page
         }
         this.currentStateValue = null; //reset currentStateValue after scroll complete
     }
