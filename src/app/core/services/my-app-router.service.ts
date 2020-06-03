@@ -104,36 +104,4 @@ export class MyAppRouterService implements OnInit {
                     }
                 ));
     }
-    public backButton$2(routerEventsObs$: Observable<Event>): Observable<NavigationEnd> {
-        let navigationStart$ = this.navigationStart$(routerEventsObs$);
-
-        return navigationStart$
-            .pipe(filter((eventNav: NavigationStart) => eventNav.restoredState && eventNav.restoredState != null))
-            .pipe(throttle(() => interval(300)))
-            .pipe(
-                map((result: any) => {
-                        // This "restoredState" property is defined when the navigation
-                        // event is triggered by a "popstate" event (ex, back / forward
-                        // buttons). It will contain the ID of the earlier navigation event
-                        // to which the browser is returning.
-                        // --
-                        // CAUTION: This ID may not be part of the current page rendering.
-                        // This value is pulled out of the browser; and, may exist across
-                        // page refreshes.
-
-                        if ( result.restoredState ) {
-
-                            console.log(
-                                "restoring navigation id:",
-                                result.restoredState.navigationId
-                            );
-                            console.log(result.restoredState);
-
-                        }
-
-                        return result; //do nothing just pass thru result
-                    }
-                ));
-    }
-
 }
