@@ -16,14 +16,20 @@ export class EgrImageFullPagePreviewDirective implements OnInit{
   //If HTMLElement clicked then go into preview mode
   @HostListener('click' , ['$event']) onclick($event) {
     $event.preventDefault();
-    this.addOrRemoveClasses();
+    //this.startPreviewMode();
+
+    if (this.isImageInLargePreviewMode) {
+      this.endPreviewMode();
+    } else {
+      this.startPreviewMode();
+    }
   }
 
   //If escape button is pressed then hide image
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
     //only hide the image if isImageInLargePreviewMode=true
     if (this.isImageInLargePreviewMode) {
-      this.addOrRemoveClasses();
+      this.endPreviewMode();
     }
   }
 
@@ -32,7 +38,7 @@ export class EgrImageFullPagePreviewDirective implements OnInit{
     //only hide the image if isImageInLargePreviewMode=true
     if (this.isImageInLargePreviewMode) {
       $event.preventDefault();
-      this.addOrRemoveClasses();
+      this.endPreviewMode();
     }
   }
 
@@ -57,7 +63,7 @@ export class EgrImageFullPagePreviewDirective implements OnInit{
     }
   }
 
-  public initImageElement(): void {
+  private initImageElement(): void {
     const imageElement = this.elRef.nativeElement.querySelector('img') as HTMLImageElement;
 
     if (imageElement) {
@@ -68,13 +74,18 @@ export class EgrImageFullPagePreviewDirective implements OnInit{
     }
   }
 
-  public addOrRemoveClasses(): void {
+  private startPreviewMode(): void {
     if (!this.isImageInLargePreviewMode) {
       this.addElementClasses();
-    } else {
+    }
+    this.isImageInLargePreviewMode = true;
+  }
+
+  private endPreviewMode(): void {
+    if (this.isImageInLargePreviewMode) {
       this.removeElementClasses();
     }
-    this.isImageInLargePreviewMode = !this.isImageInLargePreviewMode;
+    this.isImageInLargePreviewMode = false;
   }
 
 
