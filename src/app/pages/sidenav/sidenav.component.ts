@@ -1,16 +1,12 @@
 import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {
     ActivatedRoute,
-    Event,
     NavigationEnd,
-    NavigationError,
     NavigationStart,
-    ParamMap,
     Router
 } from '@angular/router';
-import {Observable, Subject, Subscription} from 'rxjs';
+import {Subject, Subscription} from 'rxjs';
 import {MatSidenav} from "@angular/material/sidenav";
-import {paths} from "../../app-routing.module";
 import {ColorPickerService} from "../../core/services/color-picker.service";
 import {ScrollerService} from "../../core/services/scroller.service";
 import {filter, map, takeUntil} from "rxjs/operators";
@@ -74,18 +70,16 @@ export class SidenavComponent implements OnInit, OnDestroy {
             console.log('initNavigationEndSubscribe fired.................. ');
                 this.closeSideNav(routerEvent);
                 this.setCurrentPathName(routerEvent);
-                this.setSmoothScrollTo();
+                this.setScrollToSection();
             }
         );
     }
 
-    public setSmoothScrollTo(): void {
+    public setScrollToSection(): void {
         if (this.currentStateValue) {
-            this.scrollerService.scrollToElementId(`#${this.currentStateValue}`)
-        } else {
-            this.scrollerService.scrollToTopOfPage();
+            this.scrollerService.scrollToElementId(`#${this.currentStateValue}`); //only scrollToSection when we have a currentStateValue
         }
-        this.currentStateValue = null; //reset after scroll complete
+        this.currentStateValue = null; //reset currentStateValue after scroll complete
     }
 
     public setCurrentPathName(routerEvent: any): void {
