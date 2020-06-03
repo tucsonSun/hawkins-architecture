@@ -61,7 +61,7 @@ export class ScrollerService {
                             scrollHeight: window.document.documentElement.scrollHeight,
                             scrollTop: window.document.documentElement.scrollTop || window.document.body.scrollTop,
                             clientHeight: window.document.documentElement.clientHeight,
-                            isTopOfPage: (window.document.documentElement.scrollTop || window.document.body.scrollTop) === 0
+                            isTopOfPage: this.isUserPositionAtTopOfPage()
                         } as Position;
                         return value;
                     }
@@ -88,7 +88,7 @@ export class ScrollerService {
                             scrollHeight: window.document.documentElement.scrollHeight,
                             scrollTop: window.document.documentElement.scrollTop || window.document.body.scrollTop,
                             clientHeight: window.document.documentElement.clientHeight,
-                            isTopOfPage: (window.document.documentElement.scrollTop || window.document.body.scrollTop) === 0
+                            isTopOfPage: this.isUserPositionAtTopOfPage()
                         } as Position;
                         return value;
                     }
@@ -114,12 +114,22 @@ export class ScrollerService {
         return ((position.scrollTop + position.clientHeight) / position.scrollHeight) > (this._scrollPercent / 100);
     }
 
-    private isUserScrollingDown(positions: Array<Position>) {
+    private isUserScrollingDown(positions: Array<Position>): boolean {
         return positions[0].scrollTop < positions[1].scrollTop;
     }
 
-    private isUserScrollingUp(positions: Array<Position>) {
+    private isUserScrollingUp(positions: Array<Position>): boolean {
         return positions[0].scrollTop > positions[1].scrollTop;
+    }
+
+    private isUserPositionAtTopOfPage(): boolean {
+        let isExactTop = (window.document.documentElement.scrollTop || window.document.body.scrollTop) === 0;
+        return isExactTop;
+    }
+
+    public isScrollPositionCloseToTop(defaultTopValue: number = 400): boolean {
+        const isCloseToTop = (window.document.documentElement.scrollTop || window.document.body.scrollTop)  <= defaultTopValue; //400 is a rough estimte can be changed...
+        return isCloseToTop;
     }
 }
 
