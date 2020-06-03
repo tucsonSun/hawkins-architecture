@@ -14,6 +14,7 @@ import {paths} from "../../app-routing.module";
 import {ColorPickerService} from "../../core/services/color-picker.service";
 import {ScrollerService} from "../../core/services/scroller.service";
 import {filter, map, takeUntil} from "rxjs/operators";
+import {MyAppRouterService} from "../../core/services/my-app-router.service";
 
 @Component({
     selector: 'app-sidenav',
@@ -23,16 +24,18 @@ import {filter, map, takeUntil} from "rxjs/operators";
 export class SidenavComponent implements OnInit, OnDestroy {
 
     private subKiller$ = new Subject();
-    private routerSub$: Subscription
+    private navigationEndSub$: Subscription
     private state$: Subscription;
     private currentPathName: string;
+    private currentStateValue: any;
     @ViewChild('snav') public sidenav: MatSidenav;
     public title = `Architect Hawkins LLC`;
 
     constructor(private router: Router,
                 private activeRoute: ActivatedRoute,
                 private colorPickerService: ColorPickerService,
-                private scrollerService: ScrollerService) {
+                private scrollerService: ScrollerService,
+                private myAppRouterService: MyAppRouterService) {
 
     }
 
@@ -44,33 +47,48 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
     // This will be used for closing the sidenav drawer and scrolling to the top of screen
     ngOnInit() {
-        //init RouteSub
-        this.routerSub$ = this.router.events.pipe(
-            takeUntil(this.subKiller$),
-        ).subscribe((routerEvent: Event) => {
-            this.closeSideNav(routerEvent);
-            this.showLoader(routerEvent);
-            this.setCurrentPage(routerEvent);
-        });
+        this.initNavigationEndSubscribe();
+        //init stateSub
+        this.initNavState();
+    }
 
+    private initNavState(): void {
         //init stateSub
         this.state$ = this.router.events.pipe(
             filter(e => e instanceof NavigationStart),
             map(() => this.router.getCurrentNavigation().extras.state),
             takeUntil(this.subKiller$),
         ).subscribe((state: any) => {
-            console.log('************************************************************state');
-            const value = state ? state.data['sectionId'] : null;
-            console.log(`Route sectionId "${value}"`);
-            if (value) {
-                setTimeout(() => { this.scrollerService.scrollToElementId(`#${value}`), 1000 });
-            } else {
-                this.scrollerService.scrollToTopOfPage();
-            }
+            console.log('************************************************************state start');
+            this.currentStateValue = state ? state.data['sectionId'] : null;
+            console.log(`Route sectionId from getCurrentNavigation().extras.state)="${this.currentStateValue}"`);
+            console.log('************************************************************state end');
         });
     }
 
-    public setCurrentPage(routerEvent: any): void {
+    private initNavigationEndSubscribe(): void {
+        //init NavigationEnd subscribe
+        this.navigationEndSub$ = this.myAppRouterService.navigationEnd$(this.router.events).pipe(
+            takeUntil(this.subKiller$),
+        ).subscribe((routerEvent: NavigationEnd) => {
+            console.log('initNavigationEndSubscribe fired.................. ');
+                this.closeSideNav(routerEvent);
+                this.setCurrentPathName(routerEvent);
+                this.setSmoothScrollTo();
+            }
+        );
+    }
+
+    public setSmoothScrollTo(): void {
+        if (this.currentStateValue) {
+            this.scrollerService.scrollToElementId(`#${this.currentStateValue}`)
+        } else {
+            this.scrollerService.scrollToTopOfPage();
+        }
+        this.currentStateValue = null; //reset after scroll complete
+    }
+
+    public setCurrentPathName(routerEvent: any): void {
         if (routerEvent instanceof NavigationEnd) {
             // Hide loading indicator
             this.currentPathName = (routerEvent as NavigationEnd).url.substr(1);
@@ -78,29 +96,29 @@ export class SidenavComponent implements OnInit, OnDestroy {
         }
     }
 
-    private showLoader(routerEvent: any): void {
-        if (routerEvent instanceof NavigationStart) {
-            // Show loading indicator
-        }
-
-        if (routerEvent instanceof NavigationEnd) {
-            // Hide loading indicator
-            //console.log(routerEvent, "end");
-        }
-
-        if (routerEvent instanceof NavigationError) {
-            // Hide loading indicator
-
-            // Present error to user
-            //console.log(routerEvent.error);
-        }
-    }
+    // private showLoader(routerEvent: any): void {
+    //     if (routerEvent instanceof NavigationStart) {
+    //         // Show loading indicator
+    //     }
+    //
+    //     if (routerEvent instanceof NavigationEnd) {
+    //         // Hide loading indicator
+    //         //console.log(routerEvent, "end");
+    //     }
+    //
+    //     if (routerEvent instanceof NavigationError) {
+    //         // Hide loading indicator
+    //
+    //         // Present error to user
+    //         //console.log(routerEvent.error);
+    //     }
+    // }
 
     /**
      * Method will close the side nav and scoll to top of page
      * @param routerEvent
      */
-    private closeSideNav(routerEvent: any): void {
+    private closeSideNav(routerEvent: NavigationEnd): void {
         if (this.sidenav && routerEvent instanceof NavigationEnd) {
             this.sidenav.close();
         } else {
@@ -117,8 +135,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
         this.colorPickerService.setColorClass(`${color}`);
     }
 
-    public snavToggle(snav: MatSidenav) {
-        snav.toggle();
+    public snavToggle(natSidenav: MatSidenav) {
+        natSidenav.toggle();
     }
 
 
