@@ -3,30 +3,24 @@
   .flex-container {
     align-items: center;
     justify-content: center;
-    .phone-section {
+    .button-section {
       display: flex;
       align-items: center;
       justify-content: center;
-      a {
-        display: inline-block;
-      }
-      a.phone-icon {
+      a.button-icon {
         margin-top: 10px;
+        margin-bottom: 30px;
+        display: inline-block;
+        position: relative;
+        padding-left: 40px;
+        mat-icon {
+          padding-right: 4px;
+          position: absolute;
+          top: 0;
+          left: 3px;
+          color: var(--bg4);
+        }
       }
-    }
-  }
-}
-#contact .contact-details {
-  .speech-bubble {
-    a {
-      display: inline-block;
-      height: 100%;
-      position: relative;
-    }
-    .email-icon-title {
-      display: inline-block;
-      position: absolute;
-      top: 55%; left: 60px;
     }
   }
 }
