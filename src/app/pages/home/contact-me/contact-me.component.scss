@@ -12,11 +12,11 @@
         margin-bottom: 30px;
         display: inline-block;
         position: relative;
-        padding-left: 40px;
+        padding: 5px 10px 5px 40px;
         mat-icon {
           padding-right: 4px;
           position: absolute;
-          top: 0;
+          top: 5px;
           left: 3px;
           color: var(--bg4);
         }
