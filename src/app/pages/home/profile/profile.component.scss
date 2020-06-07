@@ -1,9 +1,25 @@
-
-
-
-
 #profile {
   .profile-text {
     padding: 0 10px;
   }
+
+  .container {
+    .flex-container {
+      .col-half {
+        .profile-picture {
+          text-align: center;
+          svg {
+            g {
+              path {
+                stroke: var(--warn);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
+
+
+
