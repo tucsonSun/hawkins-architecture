@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {PortfolioSpecialtySchoolsComponent} from "./portfolio-specialty-schools/portfolio-specialty-schools.component";
-import {PortfolioServiceFacilitiesComponent} from "./portfolio-service-facilities/portfolio-service-facilities.component";
-import {PortfolioTechnicalEducationComponent} from "./portfolio-technical-education/portfolio-technical-education.component";
-import {PortfolioCommunityComponent} from "./portfolio-community/portfolio-community.component";
+import {PortfolioSpecialtySchoolsComponent} from "./Depracated/portfolio-specialty-schools/portfolio-specialty-schools.component";
+import {PortfolioServiceFacilitiesComponent} from "./Depracated/portfolio-service-facilities/portfolio-service-facilities.component";
+import {PortfolioTechnicalEducationComponent} from "./Depracated/portfolio-technical-education/portfolio-technical-education.component";
+import {PortfolioCommunityComponent} from "./Depracated/portfolio-community/portfolio-community.component";
 
 
 export const PORFILE_PATHS = {
@@ -21,22 +21,18 @@ const routes: Routes = [
     path: 'undefined',
     redirectTo: ''
   },
-   // Child component
   {
     path: PORFILE_PATHS.CHILD_PORTFOLIO_SPECIALITY,
     component: PortfolioSpecialtySchoolsComponent
   },
-  // Child component
   {
     path: PORFILE_PATHS.CHILD_PORTFOLIO_TECH_EDUCATION,
     component: PortfolioTechnicalEducationComponent
   },
-  // Child component
   {
     path: PORFILE_PATHS.CHILD_PORTFOLIO_FACILITIES,
     component: PortfolioServiceFacilitiesComponent
   },
-  // Child component
   {
     path: PORFILE_PATHS.CHILD_PORTFOLIO_COMMUNITY,
     component: PortfolioCommunityComponent
