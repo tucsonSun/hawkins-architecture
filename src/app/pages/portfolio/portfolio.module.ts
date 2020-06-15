@@ -12,9 +12,9 @@ import {LaveenElementarySchoolComponent} from "./specialty-schools/laveen-elemen
 import { WestMECCentralCampusComponent } from './career-tech-education/west-meccentral-campus/west-meccentral-campus.component';
 import { WestMECNorthwestCampusComponent } from './career-tech-education/west-mecnorthwest-campus/west-mecnorthwest-campus.component';
 import { WestMECSouthwestCampusComponent } from './career-tech-education/west-mecsouthwest-campus/west-mecsouthwest-campus.component';
-import { BuckeyeElementrayMaintenanceComponent } from './support-service-facilites/buckeye-elementray-maintenance/buckeye-elementray-maintenance.component';
-import { DistractOfficeMaintenanceComponent } from './support-service-facilites/distract-office-maintenance/distract-office-maintenance.component';
-import { MadisonElementarySchoolDistractComponent } from './support-service-facilites/madison-elementary-school-distract/madison-elementary-school-distract.component';
+import { BuckeyeElementaryMaintenanceComponent } from './support-service-facilities/buckeye-elementary-maintenance/buckeye-elementary-maintenance.component';
+import { DistractOfficeMaintenanceComponent } from './support-service-facilities/distract-office-maintenance/distract-office-maintenance.component';
+import { MadisonElementarySchoolDistractComponent } from './support-service-facilities/madison-elementary-school-distract/madison-elementary-school-distract.component';
 import { TohonoOodhamMuseumCulturalCenterComponent } from './cultural-community/tohono-oodham-museum-cultural-center/tohono-oodham-museum-cultural-center.component';
 
 
@@ -29,7 +29,7 @@ const components: any[] = [
   WestMECCentralCampusComponent,
   WestMECNorthwestCampusComponent,
   WestMECSouthwestCampusComponent,
-  BuckeyeElementrayMaintenanceComponent,
+  BuckeyeElementaryMaintenanceComponent,
   DistractOfficeMaintenanceComponent,
   MadisonElementarySchoolDistractComponent,
   TohonoOodhamMuseumCulturalCenterComponent
