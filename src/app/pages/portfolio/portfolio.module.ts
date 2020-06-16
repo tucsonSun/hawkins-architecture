@@ -16,6 +16,10 @@ import { BuckeyeElementaryMaintenanceComponent } from './support-service-facilit
 import { DistractOfficeMaintenanceComponent } from './support-service-facilities/distract-office-maintenance/distract-office-maintenance.component';
 import { MadisonElementarySchoolDistractComponent } from './support-service-facilities/madison-elementary-school-distract/madison-elementary-school-distract.component';
 import { TohonoOodhamMuseumCulturalCenterComponent } from './cultural-community/tohono-oodham-museum-cultural-center/tohono-oodham-museum-cultural-center.component';
+import { HeaderCulturalCommunityComponent } from './cultural-community/header-cultural-community/header-cultural-community.component';
+import { HeaderCareerTechEducationComponent } from './career-tech-education/header-career-tech-education/header-career-tech-education.component';
+import { HeaderSpecialtySchoolsComponent } from './specialty-schools/header-specialty-schools/header-specialty-schools.component';
+import { HeaderSupportServiceFacilitiesComponent } from './support-service-facilities/header-support-service-facilities/header-support-service-facilities.component';
 
 
 const components: any[] = [
@@ -32,7 +36,12 @@ const components: any[] = [
   BuckeyeElementaryMaintenanceComponent,
   DistractOfficeMaintenanceComponent,
   MadisonElementarySchoolDistractComponent,
-  TohonoOodhamMuseumCulturalCenterComponent
+  TohonoOodhamMuseumCulturalCenterComponent,
+
+  HeaderCulturalCommunityComponent,
+  HeaderCareerTechEducationComponent,
+  HeaderSpecialtySchoolsComponent,
+  HeaderSupportServiceFacilitiesComponent
 ];
 
 @NgModule({
