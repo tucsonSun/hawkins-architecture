@@ -1,7 +1,7 @@
 import {Directive, OnDestroy, OnInit, ElementRef, Renderer2} from '@angular/core';
-import {ScrollerService} from "../core/services/scroller.service";
-import {takeUntil} from "rxjs/operators";
-import {Subject} from "rxjs";
+import {ScrollerService} from '../core/services/scroller.service';
+import {takeUntil} from 'rxjs/operators';
+import {Subject} from 'rxjs';
 
 
 
@@ -42,13 +42,13 @@ export class EgrStickyMenuDirective implements OnInit, OnDestroy {
     this.initScrollDown();
     this.initScrollUp();
 
-    //add show class
+    // add show class
     this._renderer.addClass(this._elemRef.nativeElement, 'show-element');
   }
 
   ngOnDestroy() {
-    this.subKiller$.next()
-    this.subKiller$.complete()
+    this.subKiller$.next();
+    this.subKiller$.complete();
   }
 
   private initScrollDown(): void {

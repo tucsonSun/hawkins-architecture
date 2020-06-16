@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnDestroy, OnInit, Renderer2} from '@angular/core';
-import {ColorPickerService} from "./core/services/color-picker.service";
-import {Observable} from "rxjs";
+import {ColorPickerService} from './core/services/color-picker.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 export class AppComponent implements  OnInit, OnDestroy{
   public title = 'hawkins-architecture';
   public themeClass$: Observable<string>;
-  
+
   constructor( private colorPicker: ColorPickerService) {
 
     this.themeClass$ = this.colorPicker.getColorClass();
@@ -20,6 +20,6 @@ export class AppComponent implements  OnInit, OnDestroy{
   }
 
   ngOnInit(): void {
-    //this.addClass();
+    // this.addClass();
   }
 }

@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {PageNotFoundComponent} from "./pages/page-not-found/page-not-found.component";
+import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 
 
 
@@ -9,7 +9,7 @@ export const paths = {
     PORTFOLIO: 'portfolio',
     BOOKS: 'books',
     ROUTE404: '404',
-}
+};
 
 
 const routes: Routes = [
@@ -18,7 +18,7 @@ const routes: Routes = [
     { path: paths.PORTFOLIO, loadChildren: () => import('./pages/portfolio/portfolio.module').then(m => m.PortfolioModule) },
     { path: paths.BOOKS, loadChildren: () => import('./pages/books/books.module').then(m => m.BooksModule) },
 
-    //defaults
+    // defaults
     { path: '', redirectTo: paths.HOME, pathMatch: 'full'},    // redirect to `first-component`
     { path: '**', component: PageNotFoundComponent }, // Wildcard route for a 404 page
 ];

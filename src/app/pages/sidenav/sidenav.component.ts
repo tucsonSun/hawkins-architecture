@@ -6,11 +6,11 @@ import {
     Router
 } from '@angular/router';
 import {Subject, Subscription} from 'rxjs';
-import {MatSidenav} from "@angular/material/sidenav";
-import {ColorPickerService} from "../../core/services/color-picker.service";
-import {ScrollerService} from "../../core/services/scroller.service";
-import {filter, map, takeUntil} from "rxjs/operators";
-import {MyAppRouterService} from "../../core/services/my-app-router.service";
+import {MatSidenav} from '@angular/material/sidenav';
+import {ColorPickerService} from '../../core/services/color-picker.service';
+import {ScrollerService} from '../../core/services/scroller.service';
+import {filter, map, takeUntil} from 'rxjs/operators';
+import {MyAppRouterService} from '../../core/services/my-app-router.service';
 
 @Component({
     selector: 'app-sidenav',
@@ -20,7 +20,7 @@ import {MyAppRouterService} from "../../core/services/my-app-router.service";
 export class SidenavComponent implements OnInit, OnDestroy {
 
     private subKiller$ = new Subject();
-    private navigationEndSub$: Subscription
+    private navigationEndSub$: Subscription;
     private state$: Subscription;
     private currentPathName: string;
     private currentStateValue: any;
@@ -37,33 +37,33 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
 
     ngOnDestroy() {
-        this.subKiller$.next()
-        this.subKiller$.complete()
+        this.subKiller$.next();
+        this.subKiller$.complete();
     }
 
     // This will be used for closing the sidenav drawer and scrolling to the top of screen
     ngOnInit() {
         this.initNavigationEndSubscribe();
-        //init stateSub
+        // init stateSub
         this.initNavState();
     }
 
     private initNavState(): void {
-        //init stateSub
+        // init stateSub
         this.state$ = this.router.events.pipe(
             filter(e => e instanceof NavigationStart),
             map(() => this.router.getCurrentNavigation().extras.state),
             takeUntil(this.subKiller$),
         ).subscribe((state: any) => {
             console.log('************************************************************state start');
-            this.currentStateValue = state ? state.data['sectionId'] : null;
+            this.currentStateValue = state ? state.data.sectionId : null;
             console.log(`Route sectionId from getCurrentNavigation().extras.state)="${this.currentStateValue}"`);
             console.log('************************************************************state end');
         });
     }
 
     private initNavigationEndSubscribe(): void {
-        //init NavigationEnd subscribe
+        // init NavigationEnd subscribe
         this.navigationEndSub$ = this.myAppRouterService.navigationEnd$(this.router.events).pipe(
             takeUntil(this.subKiller$),
         ).subscribe((routerEvent: NavigationEnd) => {
@@ -77,18 +77,18 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
     public setScrollToSection(): void {
         if (this.currentStateValue) {
-            this.scrollerService.scrollToElementId(`#${this.currentStateValue}`); //only scrollToSection when we have a currentStateValue
+            this.scrollerService.scrollToElementId(`#${this.currentStateValue}`); // only scrollToSection when we have a currentStateValue
         } else {
-            this.scrollerService.scrollToTopOfPage(); //default to top of page
+            this.scrollerService.scrollToTopOfPage(); // default to top of page
         }
-        this.currentStateValue = null; //reset currentStateValue after scroll complete
+        this.currentStateValue = null; // reset currentStateValue after scroll complete
     }
 
     public setCurrentPathName(routerEvent: any): void {
         if (routerEvent instanceof NavigationEnd) {
             // Hide loading indicator
             this.currentPathName = (routerEvent as NavigationEnd).url.substr(1);
-            console.log(`currentPageName=${this.currentPathName}`)
+            console.log(`currentPageName=${this.currentPathName}`);
         }
     }
 
@@ -112,7 +112,7 @@ export class SidenavComponent implements OnInit, OnDestroy {
 
     /**
      * Method will close the side nav and scoll to top of page
-     * @param routerEvent
+     * @param routerEvent - router event
      */
     private closeSideNav(routerEvent: NavigationEnd): void {
         if (this.sidenav && routerEvent instanceof NavigationEnd) {

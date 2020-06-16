@@ -1,9 +1,9 @@
 import {Directive, ElementRef, HostListener, Input, OnDestroy, OnInit, Renderer2} from '@angular/core';
-import {MyAppRouterService} from "../core/services/my-app-router.service";
-import {Router} from "@angular/router";
-import {Subject} from "rxjs";
-import {takeUntil} from "rxjs/operators";
-import {LocationStrategy} from "@angular/common";
+import {MyAppRouterService} from '../core/services/my-app-router.service';
+import {Router} from '@angular/router';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
+import {LocationStrategy} from '@angular/common';
 
 @Directive({
   selector: '[appEgrImageFullPagePreview]'
@@ -19,10 +19,10 @@ export class EgrImageFullPagePreviewDirective implements OnInit, OnDestroy {
   public currentElementOriginalClassValues: string[];
   public imageElementOriginalClassValues: string[];
 
-  //If HTMLElement clicked then go into preview mode
+  // If HTMLElement clicked then go into preview mode
   @HostListener('click' , ['$event']) onclick($event) {
     $event.preventDefault();
-    //this.startPreviewMode();
+    // this.startPreviewMode();
 
     if (this.isImageInLargePreviewMode) {
       this.endPreviewMode();
@@ -31,9 +31,9 @@ export class EgrImageFullPagePreviewDirective implements OnInit, OnDestroy {
     }
   }
 
-  //If escape button is pressed then hide image
+  // If escape button is pressed then hide image
   @HostListener('document:keydown.escape', ['$event']) onKeydownHandler(event: KeyboardEvent) {
-    //only hide the image if isImageInLargePreviewMode=true
+    // only hide the image if isImageInLargePreviewMode=true
     if (this.isImageInLargePreviewMode) {
       this.endPreviewMode();
     }
@@ -60,13 +60,13 @@ export class EgrImageFullPagePreviewDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.subKiller$.next()
-    this.subKiller$.complete()
+    this.subKiller$.next();
+    this.subKiller$.complete();
   }
 
   public initBackPageSub(): void {
     this.myAppRouterService.backButton$(this.router.events).pipe(takeUntil(this.subKiller$)).subscribe( result => {
-      console.log("***************************************************** Backbutton clicked")
+      console.log('***************************************************** Backbutton clicked');
       if (this.isImageInLargePreviewMode) {
         this.endPreviewMode();
       }
@@ -83,7 +83,7 @@ export class EgrImageFullPagePreviewDirective implements OnInit, OnDestroy {
         this.currentElementOriginalClassValues = parentElement.className.split(' ');
       }
     } else {
-      throw `Error with EgrImageFullPagePreviewDirective: We were expecting a element but none was found. ${parentElement}`;
+      throw new Error(`Error with EgrImageFullPagePreviewDirective: We were expecting a element but none was found. ${parentElement}`);
     }
   }
 
@@ -94,7 +94,7 @@ export class EgrImageFullPagePreviewDirective implements OnInit, OnDestroy {
       this.imageElement = imageElement;
       this.imageElementOriginalClassValues = imageElement.className.split(' ');
     } else {
-      throw `Error with EgrImageFullPagePreviewDirective: We were expecting a "img" child element for parent element but none was found. ${this.elRef.nativeElement}`;
+      throw new Error(`Error with EgrImageFullPagePreviewDirective: We were expecting a "img" child element for parent element but none was found. ${this.elRef.nativeElement}`);
     }
   }
 

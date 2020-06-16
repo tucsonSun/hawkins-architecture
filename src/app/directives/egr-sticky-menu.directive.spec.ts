@@ -1,6 +1,6 @@
 import {EgrStickyMenuDirective} from './egr-sticky-menu.directive';
-import {ElementRef, Renderer2} from "@angular/core";
-import {async, TestBed} from "@angular/core/testing";
+import {ElementRef, Renderer2} from '@angular/core';
+import {async, TestBed} from '@angular/core/testing';
 
 describe('EgrStickyMenuDirective', () => {
     let fixture;

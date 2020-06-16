@@ -1,5 +1,5 @@
 import {Directive, HostListener, Input} from '@angular/core';
-import {ScrollerService} from "../core/services/scroller.service";
+import {ScrollerService} from '../core/services/scroller.service';
 
 
 /**
@@ -8,7 +8,7 @@ import {ScrollerService} from "../core/services/scroller.service";
  * <a mat-raised-button [appEgrScrollTo]="'#profile'">
  *    <span class="btn-description">Profile</span>
  *    <mat-icon class="example-icon">supervisor_account</mat-icon>
- *</a>
+ * </a>
  *
  * <div #profile>Your target</div>
  */
@@ -20,10 +20,10 @@ import {ScrollerService} from "../core/services/scroller.service";
 export class EgrScrollToDirective {
 
   @Input() appEgrScrollTo: string;
-  @Input() scrollTop: boolean = false;
+  @Input() scrollTop = false;
 
   @HostListener('click' , ['$event']) onclick($event) {
-    $event.preventDefault(); //ignore native button clicks
+    $event.preventDefault(); // ignore native button clicks
 
     if (this.scrollTop) {
       this.scrollToTopOfPage();

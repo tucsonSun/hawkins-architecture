@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {PortfolioSpecialtySchoolsComponent} from "./Depracated/portfolio-specialty-schools/portfolio-specialty-schools.component";
-import {PortfolioServiceFacilitiesComponent} from "./Depracated/portfolio-service-facilities/portfolio-service-facilities.component";
-import {PortfolioTechnicalEducationComponent} from "./Depracated/portfolio-technical-education/portfolio-technical-education.component";
-import {PortfolioCommunityComponent} from "./Depracated/portfolio-community/portfolio-community.component";
-import {TohonoOodhamMuseumCulturalCenterComponent} from "./cultural-community/tohono-oodham-museum-cultural-center/tohono-oodham-museum-cultural-center.component";
-import {LaveenElementarySchoolComponent} from "./specialty-schools/laveen-elementary-school/laveen-elementary-school.component";
-import {PhoenixDaySchoolForTheDeafComponent} from "./specialty-schools/phoenix-day-school-for-the-deaf/phoenix-day-school-for-the-deaf.component";
-import {WestMECCentralCampusComponent} from "./career-tech-education/west-meccentral-campus/west-meccentral-campus.component";
-import {WestMECNorthwestCampusComponent} from "./career-tech-education/west-mecnorthwest-campus/west-mecnorthwest-campus.component";
-import {WestMECSouthwestCampusComponent} from "./career-tech-education/west-mecsouthwest-campus/west-mecsouthwest-campus.component";
-import {BuckeyeElementaryMaintenanceComponent} from "./support-service-facilities/buckeye-elementary-maintenance/buckeye-elementary-maintenance.component";
-import {DistractOfficeMaintenanceComponent} from "./support-service-facilities/distract-office-maintenance/distract-office-maintenance.component";
-import {MadisonElementarySchoolDistractComponent} from "./support-service-facilities/madison-elementary-school-distract/madison-elementary-school-distract.component";
+import {PortfolioSpecialtySchoolsComponent} from './Depracated/portfolio-specialty-schools/portfolio-specialty-schools.component';
+import {PortfolioServiceFacilitiesComponent} from './Depracated/portfolio-service-facilities/portfolio-service-facilities.component';
+import {PortfolioTechnicalEducationComponent} from './Depracated/portfolio-technical-education/portfolio-technical-education.component';
+import {PortfolioCommunityComponent} from './Depracated/portfolio-community/portfolio-community.component';
+import {TohonoOodhamMuseumCulturalCenterComponent} from './cultural-community/tohono-oodham-museum-cultural-center/tohono-oodham-museum-cultural-center.component';
+import {LaveenElementarySchoolComponent} from './specialty-schools/laveen-elementary-school/laveen-elementary-school.component';
+import {PhoenixDaySchoolForTheDeafComponent} from './specialty-schools/phoenix-day-school-for-the-deaf/phoenix-day-school-for-the-deaf.component';
+import {WestMECCentralCampusComponent} from './career-tech-education/west-meccentral-campus/west-meccentral-campus.component';
+import {WestMECNorthwestCampusComponent} from './career-tech-education/west-mecnorthwest-campus/west-mecnorthwest-campus.component';
+import {WestMECSouthwestCampusComponent} from './career-tech-education/west-mecsouthwest-campus/west-mecsouthwest-campus.component';
+import {BuckeyeElementaryMaintenanceComponent} from './support-service-facilities/buckeye-elementary-maintenance/buckeye-elementary-maintenance.component';
+import {DistractOfficeMaintenanceComponent} from './support-service-facilities/distract-office-maintenance/distract-office-maintenance.component';
+import {MadisonElementarySchoolDistractComponent} from './support-service-facilities/madison-elementary-school-distract/madison-elementary-school-distract.component';
 
 
 export const PORFILE_PATHS = {
@@ -32,10 +32,10 @@ export const PORFILE_PATHS = {
   CHILD_SUPPORT_SERVICE_FACILITIES_BEM: 'buckeye-elementary-maintenance',
   CHILD_SUPPORT_SERVICE_FACILITIES_DOM: 'distract-office',
   CHILD_SUPPORT_SERVICE_FACILITIES_MESD: 'madison-elementary-school',
-}
+};
 
 
-//todo: THIS ROUTE SETup FOR CHILDREN IS NOT RIGHT BUT GOT TI TO WORK FOR NOW....
+// todo: THIS ROUTE SETup FOR CHILDREN IS NOT RIGHT BUT GOT TI TO WORK FOR NOW....
 const routes: Routes = [
   {
     path: 'undefined',

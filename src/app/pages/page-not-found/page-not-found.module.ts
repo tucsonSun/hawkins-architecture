@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {AppRoutingModule} from "../../app-routing.module";
-import {PageNotFoundComponent} from "./page-not-found.component";
+import {AppRoutingModule} from '../../app-routing.module';
+import {PageNotFoundComponent} from './page-not-found.component';
 
 const components: any[] = [
   PageNotFoundComponent

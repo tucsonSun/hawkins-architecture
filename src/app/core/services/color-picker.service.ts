@@ -7,7 +7,7 @@ import {BehaviorSubject, Observable, Subject} from 'rxjs';
 })
 export class ColorPickerService {
 
-  //private subKiller = new Subject<void>()
+  // private subKiller = new Subject<void>()
   private APP_COLOR_PICKER_KEY = 'app-color-picker';
   initialClass = 'my-light-theme';
   colorClass$: BehaviorSubject<string> = new BehaviorSubject(this.initialClass);
@@ -21,7 +21,10 @@ export class ColorPickerService {
   //   this.subKiller.complete()
   // }
 
-  /** Get local storage value for style **/
+  /**
+   * Get local storage value for style
+   * @param overlayContainer - overlay
+   */
   public initColorClass(overlayContainer: OverlayContainer, ): void {
     const storageClass = localStorage.getItem(this.APP_COLOR_PICKER_KEY);
     console.log(storageClass);

@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
-import {fromEvent, interval, Observable} from "rxjs";
-import {filter, map, pairwise, throttle} from "rxjs/operators";
+import {fromEvent, interval, Observable} from 'rxjs';
+import {filter, map, pairwise, throttle} from 'rxjs/operators';
 
 
 export interface Position {
-    scrollHeight: number,
-    scrollTop: number,
-    clientHeight: number,
-    isTopOfPage: boolean,
+    scrollHeight: number;
+    scrollTop: number;
+    clientHeight: number;
+    isTopOfPage: boolean;
 }
 
 
@@ -16,7 +16,7 @@ export interface Position {
 })
 export class ScrollerService {
 
-    private _scrollPercent: number = 80;
+    private _scrollPercent = 80;
     public scrollObservable$ = new Observable();
 
     constructor() {
@@ -25,17 +25,17 @@ export class ScrollerService {
 
 
     private initScrollObs(): void {
-        this.scrollObservable$ = fromEvent<Event>(window, "scroll").pipe(
+        this.scrollObservable$ = fromEvent<Event>(window, 'scroll').pipe(
             throttle(() => interval(300))
         );
     }
 
     public scrollToTopOfPage(): void {
-        //FYI: For some reason window.scrollTo didnt work when position:fix in parent
+        // FYI: For some reason window.scrollTo didnt work when position:fix in parent
         window.scrollTo({top: 0, behavior: 'smooth'});
 
-        //const element = document.getElementsByTagName("app-root")[0];
-        //this.scrollToElement(element);
+        // const element = document.getElementsByTagName("app-root")[0];
+        // this.scrollToElement(element);
     }
 
     public scrollToElementId(elementId: string): void {
@@ -45,16 +45,16 @@ export class ScrollerService {
 
     public scrollToElement(element: Element): void {
         if (element) {
-            element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+            element.scrollIntoView({behavior: 'smooth', block: 'start', inline: 'nearest'});
         } else {
-            throw `Error with method scrollToElement: '${element}' element not found on page.`;
+            throw new Error(`Error with method scrollToElement: '${element}' element not found on page.`);
         }
     }
 
 
     public onScrolledDown$(ignorePercentage: boolean = false): Observable<[Position, Position]> {
         return this.scrollObservable$
-            //.pipe(throttle(() => interval(500))) dont think i need to throttle since scrollObservable$ already does
+            // .pipe(throttle(() => interval(500))) dont think i need to throttle since scrollObservable$ already does
             .pipe(
                 map((event: Event) => {
                         const value = {
@@ -72,16 +72,16 @@ export class ScrollerService {
             )
             .pipe(
                 map((result: [Position, Position]) => {
-                        //This last mapping is not necessary its only for debugging
-                        console.log(result[0], result[1], result[0].scrollTop > result[1].scrollTop, "scrollDown");
-                        return result; //do nothing just pass thru result
+                        // This last mapping is not necessary its only for debugging
+                        console.log(result[0], result[1], result[0].scrollTop > result[1].scrollTop, 'scrollDown');
+                        return result; // do nothing just pass thru result
                     }
                 ));
     }
 
     public onScrolledUp$(): Observable<[Position, Position]> {
         return this.scrollObservable$
-            //.pipe(throttle(() => interval(500))) dont think i need to throttle since scrollObservable$ already does
+            // .pipe(throttle(() => interval(500))) dont think i need to throttle since scrollObservable$ already does
             .pipe(
                 map((event: Event) => {
                         const value = {
@@ -99,9 +99,9 @@ export class ScrollerService {
             )
             .pipe(
                 map((result: [Position, Position]) => {
-                        //This last mapping is not necessary its only for debugging
-                        console.log(result[0], result[1], result[0].scrollTop > result[1].scrollTop, "scrollUp");
-                        return result; //do nothing just pass thru result
+                        // This last mapping is not necessary its only for debugging
+                        console.log(result[0], result[1], result[0].scrollTop > result[1].scrollTop, 'scrollUp');
+                        return result; // do nothing just pass thru result
                     }
                 ));
     }
@@ -109,7 +109,7 @@ export class ScrollerService {
 
     private isScrollExpectedPercent(ignorePercentage: boolean, position: Position) {
         if (ignorePercentage) {
-            return true; //do nothing since ignore true
+            return true; // do nothing since ignore true
         }
         return ((position.scrollTop + position.clientHeight) / position.scrollHeight) > (this._scrollPercent / 100);
     }
@@ -123,12 +123,12 @@ export class ScrollerService {
     }
 
     private isUserPositionAtTopOfPage(): boolean {
-        let isExactTop = (window.document.documentElement.scrollTop || window.document.body.scrollTop) === 0;
+        const isExactTop = (window.document.documentElement.scrollTop || window.document.body.scrollTop) === 0;
         return isExactTop;
     }
 
     public isScrollPositionCloseToTop(defaultTopValue: number = 400): boolean {
-        const isCloseToTop = (window.document.documentElement.scrollTop || window.document.body.scrollTop)  <= defaultTopValue; //400 is a rough estimte can be changed...
+        const isCloseToTop = (window.document.documentElement.scrollTop || window.document.body.scrollTop)  <= defaultTopValue; // 400 is a rough estimte can be changed...
         return isCloseToTop;
     }
 }

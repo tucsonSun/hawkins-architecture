@@ -1,6 +1,6 @@
 import {Injectable, OnInit} from '@angular/core';
-import {interval, Observable, Subscription} from "rxjs";
-import {filter, map, pairwise, takeUntil, throttle} from "rxjs/operators";
+import {interval, Observable, Subscription} from 'rxjs';
+import {filter, map, pairwise, takeUntil, throttle} from 'rxjs/operators';
 import {
     ActivatedRoute,
     Event,
@@ -9,20 +9,18 @@ import {
     NavigationStart,
     Router,
     RouterEvent
-} from "@angular/router";
-import {Position} from "./scroller.service";
+} from '@angular/router';
+import {Position} from './scroller.service';
 
 @Injectable({
     providedIn: 'root'
 })
-export class MyAppRouterService implements OnInit {
+export class MyAppRouterService {
 
 
 
     constructor() {
     }
-
-    ngOnInit(): void {}
 
 
     public navigationStart$(routerEventsObs$: Observable<Event>): Observable<NavigationStart> {
@@ -30,7 +28,7 @@ export class MyAppRouterService implements OnInit {
             .pipe(filter((event: Event) => event instanceof NavigationStart))
             .pipe(
                 map((event: Event) => {
-                        return event as NavigationStart; //do nothing just pass thru result
+                        return event as NavigationStart; // do nothing just pass thru result
                     }
                 ));
     }
@@ -40,7 +38,7 @@ export class MyAppRouterService implements OnInit {
             .pipe(filter((event: Event) =>  event instanceof NavigationEnd))
             .pipe(
                 map((event: Event) => {
-                        return event as NavigationEnd; //do nothing just pass thru result
+                        return event as NavigationEnd; // do nothing just pass thru result
                     }
                 ));
     }
@@ -50,7 +48,7 @@ export class MyAppRouterService implements OnInit {
             .pipe(filter((event: Event) => event instanceof NavigationError))
             .pipe(
                 map((event: Event) => {
-                        return event as NavigationError; //do nothing just pass thru result
+                        return event as NavigationError; // do nothing just pass thru result
                     }
                 ));
     }
@@ -74,7 +72,7 @@ export class MyAppRouterService implements OnInit {
      *
      */
     public backButton$(routerEventsObs$: Observable<Event>): Observable<NavigationEnd> {
-        let navigationStart$ = this.navigationStart$(routerEventsObs$);
+        const navigationStart$ = this.navigationStart$(routerEventsObs$);
 
         return navigationStart$
             .pipe(filter((eventNav: NavigationStart) => eventNav.restoredState && eventNav.restoredState != null))
@@ -100,7 +98,7 @@ export class MyAppRouterService implements OnInit {
                         //
                         // }
 
-                        return result; //do nothing just pass thru result
+                        return result; // do nothing just pass thru result
                     }
                 ));
     }
