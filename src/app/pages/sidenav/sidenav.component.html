@@ -1,16 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav opened="false" mode="over" #snav>
     <mat-nav-list>
-      <!--<mat-list-item>
-        <h4
-          matLine
-          routerLink="/home"
-          [routerLinkActiveOptions]="{ exact: true }"
-          routerLinkActive="active-link">
-          <mat-icon mat-list-icon class="example-icon">home</mat-icon>
-          Home
-        </h4>
-      </mat-list-item>-->
 
       <mat-list-item>
         <mat-icon mat-list-icon>home</mat-icon>
@@ -50,6 +40,23 @@
 <!--        <a mat-list-item class="right" [appEgrScrollTo]="'#services'" (click)="closeSideNavAction()">Services</a>-->
 <!--        <a mat-list-item class="right" [appEgrScrollTo]="'#contact'" (click)="closeSideNavAction()">Contact</a>-->
       </div>
+
+
+<!--      <mat-list-item (click)="showSpecialtySchoolsSubmenu = !showSpecialtySchoolsSubmenu" class="parent">
+        <span class="full-width" *ngIf="showSpecialtySchoolsSubmenu">Parent Menu</span>
+        <mat-icon mat-list-icon>home</mat-icon>
+        <mat-icon class="menu-button" [ngClass]="{'rotated' : showSpecialtySchoolsSubmenu}">expand_more</mat-icon>
+      </mat-list-item>
+      <div class="submenu" [ngClass]="{'expanded' : showSpecialtySchoolsSubmenu}" *ngIf="showSpecialtySchoolsSubmenu">
+        <a mat-list-item
+           routerLink="/portfolio/service-facilities"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link">Service Facilities</a>
+        <a mat-list-item
+           routerLink="/portfolio/specialty-schools"
+           [routerLinkActiveOptions]="{ exact: true }"
+           routerLinkActive="active-link">Specialty Schools</a>
+      </div>-->
 
 
       <mat-list-item>
