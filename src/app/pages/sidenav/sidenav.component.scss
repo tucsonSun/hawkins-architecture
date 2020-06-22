@@ -6,6 +6,15 @@
   //border: 1px solid red;
 }
 
+.not-rotated {
+  transform: rotate(0deg); /* Equal to rotateZ(0deg) */
+  transition: transform 0.5s;
+}
+.rotated {
+  transform: rotate(180deg); /* Equal to rotateZ(180deg) */
+  transition: transform 0.5s;
+}
+
 /*** Styling for Fixed header ------------------ START ----------**/
 .stick-header-content {
   margin-top: 64px; //compensate for height of mat-toolbar because of fixed position
