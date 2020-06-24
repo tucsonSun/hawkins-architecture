@@ -33,6 +33,17 @@
     }
   }
 }
+
+/**
+  Make the submenu buttons align right
+ */
+:host ::ng-deep mat-nav-list > mat-list-item.right {
+  .mat-list-item-content {
+    justify-content: flex-end;
+  }
+}
+
+
 /*** Styling for Fixed header ------------------ END ----------**/
 mat-sidenav-content {
   mat-toolbar {
