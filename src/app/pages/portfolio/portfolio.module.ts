@@ -3,10 +3,6 @@ import { NgModule } from '@angular/core';
 import { PortfolioRoutingModule } from './portfolio-routing.module';
 import {AngularMaterialModule} from '../../modules/angular-material.module';
 import {DirectivesModule} from '../../directives/directives.module';
-import {PortfolioCommunityComponent} from './Depracated/portfolio-community/portfolio-community.component';
-import {PortfolioServiceFacilitiesComponent} from './Depracated/portfolio-service-facilities/portfolio-service-facilities.component';
-import {PortfolioSpecialtySchoolsComponent} from './Depracated/portfolio-specialty-schools/portfolio-specialty-schools.component';
-import {PortfolioTechnicalEducationComponent} from './Depracated/portfolio-technical-education/portfolio-technical-education.component';
 import { PhoenixDaySchoolForTheDeafComponent } from './specialty-schools/phoenix-day-school-for-the-deaf/phoenix-day-school-for-the-deaf.component';
 import {LaveenElementarySchoolComponent} from './specialty-schools/laveen-elementary-school/laveen-elementary-school.component';
 import { WestMECCentralCampusComponent } from './career-tech-education/west-meccentral-campus/west-meccentral-campus.component';
@@ -23,11 +19,6 @@ import { HeaderSupportServiceFacilitiesComponent } from './support-service-facil
 
 
 const components: any[] = [
-  PortfolioCommunityComponent,
-  PortfolioServiceFacilitiesComponent,
-  PortfolioSpecialtySchoolsComponent,
-  PortfolioTechnicalEducationComponent,
-
   PhoenixDaySchoolForTheDeafComponent,
   LaveenElementarySchoolComponent,
   WestMECCentralCampusComponent,
