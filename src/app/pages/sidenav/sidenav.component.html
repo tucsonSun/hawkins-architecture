@@ -42,22 +42,93 @@
       </div>
 
 
-<!--      <mat-list-item (click)="showSpecialtySchoolsSubmenu = !showSpecialtySchoolsSubmenu" class="parent">
-        <span class="full-width" *ngIf="showSpecialtySchoolsSubmenu">Portfolio - SPECIALTY SCHOOLS</span>
-        <mat-icon mat-list-icon>home</mat-icon>
-        <mat-icon class="menu-button" [ngClass]="{'rotated' : showSpecialtySchoolsSubmenu}">expand_more</mat-icon>
-      </mat-list-item>
-      <div class="submenu" [ngClass]="{'expanded' : showSpecialtySchoolsSubmenu}" *ngIf="showSpecialtySchoolsSubmenu">
-        <a mat-list-item
-           routerLink="/portfolio/service-facilities"
-           [routerLinkActiveOptions]="{ exact: true }"
-           routerLinkActive="active-link">Service Facilities</a>
-        <a mat-list-item
-           routerLink="/portfolio/specialty-schools"
-           [routerLinkActiveOptions]="{ exact: true }"
-           routerLinkActive="active-link">Specialty Schools</a>
-      </div>-->
 
+        <mat-list-item>
+            <mat-icon mat-list-icon>desktop_windows</mat-icon>
+            <span class="full-width">Portfolio</span>
+        </mat-list-item>
+        <mat-list-item class="right" [matMenuTriggerFor]="belowMenu1">
+            <span class="full-width">Specialty Schools</span>
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSpecialtySchoolsSubmenu, 'not-rotated' : !showSpecialtySchoolsSubmenu}">
+                expand_more
+            </mat-icon>
+
+            <mat-menu #belowMenu1="matMenu" yPosition="below">
+                <button mat-menu-item
+                        routerLink="/portfolio/phoenix-day-school-for-the-deaf"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">Phoenix Day School for the Deaf</button>
+                <button mat-menu-item
+                        routerLink="/portfolio/laveen-elementary-for-the-deaf"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">Laveen Elementary School</button>
+            </mat-menu>
+        </mat-list-item>
+
+
+        <mat-list-item class="right" [matMenuTriggerFor]="belowMenu2">
+            <span class="full-width">Career & Tech Education</span>
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSpecialtySchoolsSubmenu, 'not-rotated' : !showSpecialtySchoolsSubmenu}">
+                expand_more
+            </mat-icon>
+
+            <mat-menu #belowMenu2="matMenu" yPosition="below">
+                <button mat-menu-item
+                        routerLink="/portfolio/west-mec-central-campus"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">West-MEC Central Campus</button>
+                <button mat-menu-item
+                        routerLink="/portfolio/west-mec-northwest-campus"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">West-MEC Northwest Campus</button>
+                <button mat-menu-item
+                        routerLink="/portfolio/west-mec-southwest-campus"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">West-MEC Southwest Campus</button>
+            </mat-menu>
+        </mat-list-item>
+
+
+        <mat-list-item class="right" [matMenuTriggerFor]="belowMenu3">
+            <span class="full-width">Support Service Facilities</span>
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSpecialtySchoolsSubmenu, 'not-rotated' : !showSpecialtySchoolsSubmenu}">
+                expand_more
+            </mat-icon>
+
+            <mat-menu #belowMenu3="matMenu" yPosition="below">
+                <button mat-menu-item
+                        routerLink="/portfolio/buckeye-elementary-maintenance"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">Buckeye Elementary School District #33</button>
+                <button mat-menu-item
+                        routerLink="/portfolio/distract-office"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">District Office & Maintenance/Transportation Complex</button>
+                <button mat-menu-item
+                        routerLink="/portfolio/madison-elementary-school"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">Madison Elementary School District #38 - Warehouse Facility</button>
+            </mat-menu>
+        </mat-list-item>
+
+
+        <mat-list-item class="right" [matMenuTriggerFor]="belowMenu4">
+            <span class="full-width">Cultural/Community</span>
+            <mat-icon class="menu-button" [ngClass]="{'rotated' : showSpecialtySchoolsSubmenu, 'not-rotated' : !showSpecialtySchoolsSubmenu}">
+                expand_more
+            </mat-icon>
+
+            <mat-menu #belowMenu4="matMenu" yPosition="below">
+                <button mat-menu-item
+                        routerLink="/portfolio/tohono-ooham-museum"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        routerLinkActive="active-link">Tohono O’odham Museum & Cultural Center</button>
+            </mat-menu>
+        </mat-list-item>
+
+
+
+------------------------------- OLD BELOW
 
       <mat-list-item (click)="showSpecialtySchoolsSubmenu = !showSpecialtySchoolsSubmenu" class="parent">
         <span class="full-width">Portfolio - Specialty Schools</span>
