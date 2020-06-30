@@ -14,6 +14,7 @@ footer.footer {
 footer.footer #backToHomeButtonId {
   position: relative;
   .page-scroll {
+    z-index: 1;
     @include center-v--unk;
     margin-top: -55px;
   }

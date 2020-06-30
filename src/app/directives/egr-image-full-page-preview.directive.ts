@@ -3,7 +3,6 @@ import {MyAppRouterService} from '../core/services/my-app-router.service';
 import {Router} from '@angular/router';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
-import {LocationStrategy} from '@angular/common';
 
 @Directive({
   selector: '[appEgrImageFullPagePreview]'
@@ -22,7 +21,6 @@ export class EgrImageFullPagePreviewDirective implements OnInit, OnDestroy {
   // If HTMLElement clicked then go into preview mode
   @HostListener('click' , ['$event']) onclick($event) {
     $event.preventDefault();
-    // this.startPreviewMode();
 
     if (this.isImageInLargePreviewMode) {
       this.endPreviewMode();
@@ -62,6 +60,9 @@ export class EgrImageFullPagePreviewDirective implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subKiller$.next();
     this.subKiller$.complete();
+    if (this.isImageInLargePreviewMode) {
+      this.endPreviewMode();
+    }
   }
 
   public initBackPageSub(): void {
