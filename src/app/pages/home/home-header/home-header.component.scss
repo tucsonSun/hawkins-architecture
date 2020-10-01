@@ -3,59 +3,71 @@
 //---------------------------------------------------------------------*/
 //  HOME Color
 //---------------------------------------------------------------------*/
-header.hero .bg-img-table-cell .hero-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 
-  .company-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    padding: 5px 5px;
-
-    .company-logo{
-      content: url('src/assets/logos/ArchitectHawkinsLogo-VECTORLOGO+TAG-bw.jpg');
-      background-color: rgba(255,255,255,0.8);
-      width: 100%;
-    }
-
-    .company-slogan {
-      padding: 15px 15px;
-      //width: 100%;
-      background-color: rgba(255,255,255,0.8);
-      color: var(--fg);
-    }
-
-    .page-scroll {
-      margin-top: 40px;
-    }
-  }
-}
+//header.hero .bg-img-table-cell .hero-container {
+//  display: flex;
+//  flex-direction: column;
+//  align-items: center;
+//  justify-content: center;
+//
+//  .company-container {
+//    display: flex;
+//    flex-direction: column;
+//    align-items: center;
+//    justify-content: center;
+//    width: 30%;
+//    padding: 5px 5px;
+//
+//    .company-logo{
+//      content: url('src/assets/logos/ArchitectHawkinsLogo-VECTORLOGO+TAG-bw.jpg');
+//      background-color: rgba(255,255,255,0.8);
+//      width: 100%;
+//    }
+//
+//    .company-slogan {
+//      padding: 15px 15px;
+//      //width: 100%;
+//      background-color: rgba(255,255,255,0.8);
+//      color: var(--fg);
+//    }
+//
+//    .page-scroll {
+//      margin-top: 40px;
+//    }
+//  }
+//}
 
 /*---------------------------------------------------------------------*/
 /*  4.1. HERO Background Image
 /*---------------------------------------------------------------------*/
 
-header.hero-bg-img {
-  background-image: url('src/assets/logos/ArchitectHawkinsLogo-VECTORLOGO+TAG-bw.jpg');
-  overflow: hidden;
+.responsive {
+  width: 100%;
+  //height: auto;
 }
 
-header.hero-bg-img > .bg-img-table-container {
-  background-color: rgba(0,0,0, 0.1);
-}
+//.hero-image {
+//  background: url('src/assets/logos/ArchitectHawkinsLogo-VECTORLOGO+TAG-bw.jpg') no-repeat center;
+//  background-size: 100% 100%;
+//  height: 630px;
+//}
 
-
-
-
-header.hero .bg-img-table-cell .hero-container {
-  @media (max-width: 768px) {
-    .company-container {
-      width: 80%;
-    }
-  }
-}
+//header.hero-bg-img {
+//  background-image: url('src/assets/logos/ArchitectHawkinsLogo-VECTORLOGO+TAG-bw.jpg');
+//  overflow: hidden;
+//}
+//
+//header.hero-bg-img > .bg-img-table-container {
+//  background-color: rgba(0,0,0, 0.1);
+//}
+//
+//
+//
+//
+//header.hero .bg-img-table-cell .hero-container {
+//  @media (max-width: 768px) {
+//    .company-container {
+//      width: 80%;
+//    }
+//  }
+//}
