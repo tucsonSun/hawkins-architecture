@@ -5,10 +5,21 @@
 
   .container {
     .flex-container {
+      flex-direction: column;
+      align-items: center;
+
       .col-half {
         .profile-picture {
           text-align: center;
           svg {
+            width: 100%;
+            height: 500px;
+
+            @media (max-width: 768px) {
+              width: 100vw;
+              height: 123vw;
+              viewBox: "0 0 640 540";
+            }
             g {
               path {
                 stroke: var(--warn);
