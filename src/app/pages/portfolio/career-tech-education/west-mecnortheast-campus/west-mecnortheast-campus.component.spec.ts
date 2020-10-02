@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WestMECNorthwestCampusComponent } from './west-mecnorthwest-campus.component';
+import { WestMecnortheastCampusComponent } from './west-mecnortheast-campus.component';
 
 describe('WestMECNorthwestCampusComponent', () => {
-  let component: WestMECNorthwestCampusComponent;
-  let fixture: ComponentFixture<WestMECNorthwestCampusComponent>;
+  let component: WestMecnortheastCampusComponent;
+  let fixture: ComponentFixture<WestMecnortheastCampusComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WestMECNorthwestCampusComponent ]
+      declarations: [ WestMecnortheastCampusComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WestMECNorthwestCampusComponent);
+    fixture = TestBed.createComponent(WestMecnortheastCampusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
