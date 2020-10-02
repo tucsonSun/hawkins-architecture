@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header-specialty-schools',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-specialty-schools.component.scss']
 })
 export class HeaderSpecialtySchoolsComponent implements OnInit {
+
+  @Input() showPhoenixDaySchoolForTheDeafVerbiage = false;
+  @Input() showLaveenElementrySchoolVerbiage = false;
 
   constructor() { }
 
