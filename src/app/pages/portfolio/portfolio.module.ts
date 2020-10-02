@@ -9,7 +9,6 @@ import { WestMECCentralCampusComponent } from './career-tech-education/west-mecc
 import { WestMecnortheastCampusComponent } from './career-tech-education/west-mecnortheast-campus/west-mecnortheast-campus.component';
 import { WestMECSouthwestCampusComponent } from './career-tech-education/west-mecsouthwest-campus/west-mecsouthwest-campus.component';
 import { BuckeyeElementaryMaintenanceComponent } from './support-service-facilities/buckeye-elementary-maintenance/buckeye-elementary-maintenance.component';
-import { DistractOfficeMaintenanceComponent } from './support-service-facilities/distract-office-maintenance/distract-office-maintenance.component';
 import { MadisonElementarySchoolDistractComponent } from './support-service-facilities/madison-elementary-school-distract/madison-elementary-school-distract.component';
 import { TohonoOodhamMuseumCulturalCenterComponent } from './cultural-community/tohono-oodham-museum-cultural-center/tohono-oodham-museum-cultural-center.component';
 import { HeaderCulturalCommunityComponent } from './cultural-community/header-cultural-community/header-cultural-community.component';
@@ -25,7 +24,6 @@ const components: any[] = [
   WestMecnortheastCampusComponent,
   WestMECSouthwestCampusComponent,
   BuckeyeElementaryMaintenanceComponent,
-  DistractOfficeMaintenanceComponent,
   MadisonElementarySchoolDistractComponent,
   TohonoOodhamMuseumCulturalCenterComponent,
 

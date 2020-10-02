@@ -7,7 +7,6 @@ import {WestMECCentralCampusComponent} from './career-tech-education/west-meccen
 import {WestMecnortheastCampusComponent} from './career-tech-education/west-mecnortheast-campus/west-mecnortheast-campus.component';
 import {WestMECSouthwestCampusComponent} from './career-tech-education/west-mecsouthwest-campus/west-mecsouthwest-campus.component';
 import {BuckeyeElementaryMaintenanceComponent} from './support-service-facilities/buckeye-elementary-maintenance/buckeye-elementary-maintenance.component';
-import {DistractOfficeMaintenanceComponent} from './support-service-facilities/distract-office-maintenance/distract-office-maintenance.component';
 import {MadisonElementarySchoolDistractComponent} from './support-service-facilities/madison-elementary-school-distract/madison-elementary-school-distract.component';
 
 
@@ -21,7 +20,6 @@ export const PORFILE_PATHS = {
   CHILD_CAREER_TECH_EDUCATION_WMNE: 'west-mec-northeast-campus',
   CHILD_CAREER_TECH_EDUCATION_WMSW: 'west-mec-southwest-campus',
   CHILD_SUPPORT_SERVICE_FACILITIES_BEM: 'buckeye-elementary-maintenance',
-  CHILD_SUPPORT_SERVICE_FACILITIES_DOM: 'distract-office',
   CHILD_SUPPORT_SERVICE_FACILITIES_MESD: 'madison-elementary-school',
 };
 
@@ -50,10 +48,6 @@ const routes: Routes = [
   {
     path:  PORFILE_PATHS.CHILD_SUPPORT_SERVICE_FACILITIES_BEM,
     component:  BuckeyeElementaryMaintenanceComponent
-  },
-  {
-    path:  PORFILE_PATHS.CHILD_SUPPORT_SERVICE_FACILITIES_DOM,
-    component:  DistractOfficeMaintenanceComponent
   },
   {
     path:  PORFILE_PATHS.CHILD_SUPPORT_SERVICE_FACILITIES_MESD,
