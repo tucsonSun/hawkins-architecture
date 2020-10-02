@@ -6,7 +6,7 @@ import {DirectivesModule} from '../../directives/directives.module';
 import { PhoenixDaySchoolForTheDeafComponent } from './specialty-schools/phoenix-day-school-for-the-deaf/phoenix-day-school-for-the-deaf.component';
 import {LaveenElementarySchoolComponent} from './specialty-schools/laveen-elementary-school/laveen-elementary-school.component';
 import { WestMECCentralCampusComponent } from './career-tech-education/west-meccentral-campus/west-meccentral-campus.component';
-import { WestMECNorthwestCampusComponent } from './career-tech-education/west-mecnorthwest-campus/west-mecnorthwest-campus.component';
+import { WestMecnortheastCampusComponent } from './career-tech-education/west-mecnortheast-campus/west-mecnortheast-campus.component';
 import { WestMECSouthwestCampusComponent } from './career-tech-education/west-mecsouthwest-campus/west-mecsouthwest-campus.component';
 import { BuckeyeElementaryMaintenanceComponent } from './support-service-facilities/buckeye-elementary-maintenance/buckeye-elementary-maintenance.component';
 import { DistractOfficeMaintenanceComponent } from './support-service-facilities/distract-office-maintenance/distract-office-maintenance.component';
@@ -22,7 +22,7 @@ const components: any[] = [
   PhoenixDaySchoolForTheDeafComponent,
   LaveenElementarySchoolComponent,
   WestMECCentralCampusComponent,
-  WestMECNorthwestCampusComponent,
+  WestMecnortheastCampusComponent,
   WestMECSouthwestCampusComponent,
   BuckeyeElementaryMaintenanceComponent,
   DistractOfficeMaintenanceComponent,
