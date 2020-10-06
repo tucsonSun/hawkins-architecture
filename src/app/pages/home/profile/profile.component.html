@@ -38,10 +38,31 @@
                         <div class="row">
                             <div id="resumeButtonId"   class="col-md-12">
                                 <div class="page-scroll text-center">
-                                    <a href="#resume" mat-raised-button [appEgrScrollTo]="'#profile'" color="primary">
-                                        <i class="icon-File-Download"></i> More...
-                                    </a>
-                                    <app-accordion></app-accordion>
+<!--                                    <a href="#resume" mat-raised-button [appEgrScrollTo]="'#profile'" color="primary">-->
+<!--                                        <i class="icon-File-Download"></i> More...-->
+<!--                                    </a>-->
+                                    <app-accordion [title]="'More...'">
+                                        <p>I have been practicing architecture since 2004; I am a licensed architect
+                                            in the State of Arizona.  I hold an NCARB certification, providing the                                              opportunity to work across the United States, through the ability of
+                                            acquiring licensing reciprocity, through this certification.  I have worked
+                                            on multiple building types ranging from educational facilities, office                                              buildings, support service facilities, as well as involved in residential
+                                            work and consultation and planning and designing projects over the course
+                                            of my experience.</p>
+
+                                        <p>I am actively working on developing a sustainable lifestyle –
+                                            which includes active research and design development in off-grid                                                   design.</p>
+
+                                        <p class="bold">Resume & References Available Upon Request</p>
+
+                                        <p class="bold ">Additional Resources:</p>
+                                        <div>Arizona State Board of Technical Registration
+                                            <div><a class="bold" href="https://btr.az.gov/">https://btr.az.gov</a></div>
+                                         </div>
+                                        <div>
+                                            National Council of Architectural Registration Boards
+                                            <div><a class="bold" href="https://www.ncarb.org/">https://www.ncarb.org</a></div>
+                                        </div>
+                                    </app-accordion>
                                 </div>
                             </div>
                         </div>
