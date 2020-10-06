@@ -9,6 +9,7 @@ import {ServicesComponent} from './services/services.component';
 import {StrengthsComponent} from './strengths/strengths.component';
 import {DirectivesModule} from '../../directives/directives.module';
 import { HomeHeaderComponent } from './home-header/home-header.component';
+import {ComponentsModule} from "../../components/components.module";
 
 const components: any[] = [
   HomeComponent,
@@ -22,6 +23,7 @@ const components: any[] = [
 @NgModule({
   imports: [
     CommonModule,
+    ComponentsModule,
     HomeRoutingModule,
     DirectivesModule,
 

@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import {FooterComponent} from './footer/footer.component';
 import {AngularMaterialModule} from '../modules/angular-material.module';
 import {DirectivesModule} from '../directives/directives.module';
+import { AccordionComponent } from './accordion/accordion.component';
 
 
 const components: any[] = [
   FooterComponent,
+  AccordionComponent,
 ];
 
 
