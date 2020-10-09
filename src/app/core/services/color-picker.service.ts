@@ -9,8 +9,8 @@ export class ColorPickerService {
 
   // private subKiller = new Subject<void>()
   private APP_COLOR_PICKER_KEY = 'app-color-picker';
-  initialClass = 'my-light-theme';
-  colorClass$: BehaviorSubject<string> = new BehaviorSubject(this.initialClass);
+  public initialClass = 'my-light-theme3';
+  public colorClass$: BehaviorSubject<string> = new BehaviorSubject(this.initialClass);
 
   constructor(private overlayContainer: OverlayContainer) {
     this.initColorClass(overlayContainer);

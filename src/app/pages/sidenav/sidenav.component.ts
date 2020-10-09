@@ -20,9 +20,6 @@ import {MyAppRouterService} from '../../core/services/my-app-router.service';
 export class SidenavComponent implements OnInit, OnDestroy {
 
     public showSpecialtySchoolsSubmenu = false;
-    public showCareerTechnicalEducationSubmenu = false;
-    public showSupportServiceFacilitiesSubmenu = false;
-    public showCulturalCommunitySubmenu = false;
 
     private subKiller$ = new Subject();
     private navigationEndSub$: Subscription;
