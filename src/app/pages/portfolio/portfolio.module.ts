@@ -15,6 +15,7 @@ import { HeaderCulturalCommunityComponent } from './cultural-community/header-cu
 import { HeaderCareerTechEducationComponent } from './career-tech-education/header-career-tech-education/header-career-tech-education.component';
 import { HeaderSpecialtySchoolsComponent } from './specialty-schools/header-specialty-schools/header-specialty-schools.component';
 import { HeaderSupportServiceFacilitiesComponent } from './support-service-facilities/header-support-service-facilities/header-support-service-facilities.component';
+import { ProjectDisclaimerComponent } from './project-disclaimer/project-disclaimer.component';
 
 
 const components: any[] = [
@@ -30,7 +31,8 @@ const components: any[] = [
   HeaderCulturalCommunityComponent,
   HeaderCareerTechEducationComponent,
   HeaderSpecialtySchoolsComponent,
-  HeaderSupportServiceFacilitiesComponent
+  HeaderSupportServiceFacilitiesComponent,
+  ProjectDisclaimerComponent,
 ];
 
 @NgModule({
