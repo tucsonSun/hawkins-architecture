@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "lint-fix": "./node_modules/.bin/tslint 'src/**/*.ts?(x)' --fix",
-    "git-dply": "ng build --prod --base-href \"https://tucsonsun.github.io/hawkins-architecture/\" && ngh --dir dist/hawkins-architecture"
+    "git-dply": "ng build --prod --base-href \"https://architecthawkins.github.io/hawkins-architecture/\" && ngh --dir dist/hawkins-architecture"
   },
   "private": true,
   "dependencies": {
