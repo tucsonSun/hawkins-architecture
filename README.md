@@ -32,7 +32,7 @@ Step 1: Run `npm install -g angular-cli-ghpages` First install the angular-cli-g
 
 Step 2: Run `ng build --prod --base-href "<repo-name>"` Now use the Angular CLI with the --base-href flag to build your project and set the correct base href location:
     
-    Example `ng build --prod --base-href "https://tucsonsun.github.io/hawkins-architecture/"` 
+    Example `ng build --prod --base-href "https://architecthawkins.github.io/hawkins-architecture/"` 
 
 
 Step 3: Run `ngh --dir dist/hawkins-architecture` to dply the generated dist/hawkins-architecture folder
@@ -40,13 +40,13 @@ Step 3: Run `ngh --dir dist/hawkins-architecture` to dply the generated dist/haw
 
 Step 4: Validate that `gh-pages` branch was created:
     
-    Example `https://github.com/tucsonSun/hawkins-architecture/branches` 
+    Example `https://github.com/architecthawkins/hawkins-architecture/branches` 
 
 Step 5: Make repository public (otherwise GitHubPages is not free)
 
 Step 6: Go to github.com/<repoName> -> Settings -> GitHub Pages
     
-    Example: Your site is ready to be published at https://tucsonsun.github.io/hawkins-architecture/
+    Example: Your site is ready to be published at https://architecthawkins.github.io/hawkins-architecture/
 
 Step 7: In order for your site to be published, a Jekyll theme must be chosen, even if you don’t use Jekyll at all.
 
